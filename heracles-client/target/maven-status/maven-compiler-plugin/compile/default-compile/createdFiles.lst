@@ -1,0 +1,9 @@
+com/song/heracles/client/configuration/ProducerConfiguration$ProducerConfigurationBuilder.class
+com/song/heracles/client/exception/HeraclesClientException.class
+com/song/heracles/client/api/DefaultProducer.class
+com/song/heracles/client/api/HeraclesClient.class
+com/song/heracles/client/configuration/ClientConfiguration.class
+com/song/heracles/client/configuration/ProducerConfiguration.class
+com/song/heracles/client/configuration/ClientConfiguration$ClientConfigurationBuilder.class
+com/song/heracles/client/api/MessageId.class
+com/song/heracles/client/api/Producer.class

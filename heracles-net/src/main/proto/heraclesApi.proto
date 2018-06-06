@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+option java_package = "com.song.heracles.net.proto";
+package com.song.fastmq.broker.net;
+option java_outer_classname = "HeraclesProto";
+
+service HeraclesApi {
+    rpc handleProducerConnect (ProducerConnectRequest) returns (ProducerResponse) {
+    }
+
+    rpc handleSendMessage (SendMessageRequest) returns (SendMessageResponse) {
+    }
+
+
+
+}
+
+message MessageIdData {
+    uint64 logSegmentSequenceNo = 1;
+    uint64 entryId = 2;
+    uint64 slotId = 3;
+}
+
+/// Create a new Producer on a topic, assigning the given producer_id,
+/// all messages sent with this producer_id will be persisted on the topic
+message ProducerConnectRequest {
+    string topic = 1;
+    uint64 producerId = 2;
+
+    /// If a producer name is specified, the name will be used,
+    /// otherwise the broker will generate a unique name
+    string producer_name = 3;
+}
+
+/// Response from CommandProducer
+message ProducerResponse {
+    string producer_name = 1;
+    uint64 producer_id = 2;
+}
+
+message SendMessageRequest {
+    uint64 producer_id = 1;
+    uint64 sequence_id = 2;
+    Message message = 3;
+}
+
+message SendMessageResponse {
+    uint64 producer_id = 1;
+    uint64 sequence_id = 2;
+    MessageIdData message_id = 3;
+}
+
+
+message Message {
+    map<string, string> headers = 1;
+    bytes body = 2;
+}
