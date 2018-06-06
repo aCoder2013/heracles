@@ -1,8 +1,0 @@
-clientId: default
-clusterName: default-cluster
-zkServers: 127.0.0.1:2181
-zooKeeperSessionTimeoutMillis: 60000
-zookeeperConnectionTimeout: 15000
-brokerPort: 7160
-bindAddress: 0.0.0.0
-distributedLogUri: distributedlog://127.0.0.1:7000/messaging/my_namespace
