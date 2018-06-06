@@ -18,6 +18,6 @@
 
 6. admin api : create a topic 
 
-7. broker state management ,such as which broker owns the topoc (maybe store this metadata in zookeeper).
+7. broker state management ,such as which broker owns the topic (maybe store this metadata in zookeeper).
 
 
