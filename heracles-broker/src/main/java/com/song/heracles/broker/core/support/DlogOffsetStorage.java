@@ -30,7 +30,7 @@ public class DlogOffsetStorage implements OffsetStorage {
 	}
 
 	@Override
-	public void persisit(TopicPartition topicPartition, Offset offset) {
+	public void persist(TopicPartition topicPartition, Offset offset) {
 
 	}
 

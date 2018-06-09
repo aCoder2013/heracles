@@ -13,5 +13,5 @@ public interface OffsetStorage extends Closeable {
 
 	void update(TopicPartition topicPartition, Offset offset);
 
-	void persisit(TopicPartition topicPartition, Offset offset);
+	void persist(TopicPartition topicPartition, Offset offset);
 }
