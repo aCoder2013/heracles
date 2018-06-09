@@ -6,7 +6,6 @@ import com.song.heracles.common.util.TimeBasedIdGenerator;
 import com.song.heracles.store.core.Stream;
 import com.song.heracles.store.core.StreamFactory;
 import com.song.heracles.store.core.StreamOp;
-import com.song.heracles.store.core.StreamPartition;
 import com.song.heracles.store.exception.HeraclesStorageException;
 import com.song.heracles.store.exception.StreamNotAvailableStorageException;
 import com.song.heracles.store.exception.StreamNotReadyStorageException;
