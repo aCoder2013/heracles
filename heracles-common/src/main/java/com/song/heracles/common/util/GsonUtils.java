@@ -13,6 +13,10 @@ public class GsonUtils {
 
 	private static final Gson gson = new GsonBuilder().create();
 
+	public static <T> T fromJson(String json, Class<T> clz) {
+		return gson.fromJson(json, clz);
+	}
+
 	public static String toJson(Object obj) {
 		try {
 			return gson.toJson(obj);

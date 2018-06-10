@@ -2,7 +2,7 @@ package com.song.heracles.broker.core.consumer;
 
 import com.song.heracles.broker.core.Message;
 import com.song.heracles.broker.core.Offset;
-import com.song.heracles.broker.core.TopicPartition;
+import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.store.core.Stream;
 
 import org.apache.distributedlog.LogRecordWithDLSN;
@@ -25,7 +25,7 @@ public class DefaultConsumer implements Consumer {
 
 	private String topic;
 
-	private TopicPartition topicPartition;
+	private PartitionedTopic partitionedTopic;
 
 	private final Stream stream;
 
@@ -33,9 +33,9 @@ public class DefaultConsumer implements Consumer {
 
 	private volatile AsyncLogReader currentLogReader = null;
 
-	public DefaultConsumer(String topic, TopicPartition topicPartition, Stream stream, Offset offset) {
+	public DefaultConsumer(String topic, PartitionedTopic partitionedTopic, Stream stream, Offset offset) {
 		this.topic = topic;
-		this.topicPartition = topicPartition;
+		this.partitionedTopic = partitionedTopic;
 		this.stream = stream;
 		checkNotNull(offset);
 		this.offset = offset;
@@ -62,8 +62,8 @@ public class DefaultConsumer implements Consumer {
 	}
 
 	@Override
-	public TopicPartition getTopicPartition() {
-		return this.topicPartition;
+	public PartitionedTopic getPartitionedTopic() {
+		return this.partitionedTopic;
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class DefaultConsumer implements Consumer {
 				pullMessageFuture.complete(Collections.emptyList());
 			}
 		}).exceptionally(throwable -> {
-			log.error("Pull message failed :" + topicPartition.toString(), throwable);
+			log.error("Pull message failed :" + partitionedTopic.toString(), throwable);
 			pullMessageFuture.completeExceptionally(throwable);
 			return null;
 		});
@@ -93,7 +93,7 @@ public class DefaultConsumer implements Consumer {
 		currentLogReader.asyncClose()
 			.thenAccept(aVoid -> closeFuture.complete(null))
 			.exceptionally(throwable -> {
-				log.error("Close consumer failed :" + topicPartition.toString(), throwable);
+				log.error("Close consumer failed :" + partitionedTopic.toString(), throwable);
 				closeFuture.completeExceptionally(throwable);
 				return null;
 			});

@@ -7,7 +7,7 @@ import lombok.Data;
  * Define a relationship between virtual topic and actual partitioned topic.
  * <p>For example:<pre>
  * 	 base-message-1
- * </pre> wil producer a TopicPartition(base-message,1)
+ * </pre> wil producer a PartitionedTopic(base-message,1)
  *
  * </p>
  *
@@ -15,7 +15,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class TopicPartition {
+public class PartitionedTopic {
 
 	/**
 	 * original topic name

@@ -7,11 +7,25 @@ import java.io.Closeable;
  */
 public interface OffsetStorage extends Closeable {
 
-	void start();
+	void start() throws Exception;
 
-	Offset get(TopicPartition topicPartition);
+	/**
+	 * Get offset from cache, if it's not in the cache ,then it will try to fetch offset from the storage
+	 */
+	Offset readOffsetFromCache(PartitionedTopic partitionedTopic) throws Exception;
 
-	void update(TopicPartition topicPartition, Offset offset);
+	/**
+	 * Get offset directly from storage
+	 */
+	Offset readOffsetFromStorage(PartitionedTopic partitionedTopic) throws Exception;
 
-	void persist(TopicPartition topicPartition, Offset offset);
+	/**
+	 * Update offset in the cache
+	 */
+	void updateOffset(PartitionedTopic partitionedTopic, Offset offset);
+
+	/**
+	 * Persist offset into storage
+	 */
+	void persistOffset(PartitionedTopic partitionedTopic) throws Exception;
 }

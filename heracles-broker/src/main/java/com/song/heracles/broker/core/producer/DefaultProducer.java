@@ -1,6 +1,6 @@
 package com.song.heracles.broker.core.producer;
 
-import com.song.heracles.broker.core.TopicPartition;
+import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.common.constants.ErrorCode;
 import com.song.heracles.common.exception.HeraclesException;
 import com.song.heracles.common.util.Result;
@@ -23,13 +23,13 @@ public class DefaultProducer implements Producer {
 
 	private final String topic;
 
-	private final TopicPartition topicPartition;
+	private final PartitionedTopic partitionedTopic;
 
 	private final Stream stream;
 
-	public DefaultProducer(String topic, TopicPartition topicPartition, Stream stream) {
+	public DefaultProducer(String topic, PartitionedTopic partitionedTopic, Stream stream) {
 		this.topic = topic;
-		this.topicPartition = topicPartition;
+		this.partitionedTopic = partitionedTopic;
 		this.stream = stream;
 	}
 
@@ -39,7 +39,7 @@ public class DefaultProducer implements Producer {
 	}
 
 	@Override
-	public TopicPartition getTopicPartition() {
+	public PartitionedTopic getPartitionedTopic() {
 		return null;
 	}
 

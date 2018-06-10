@@ -1,7 +1,7 @@
 package com.song.heracles.broker.core.consumer;
 
 import com.song.heracles.broker.core.Message;
-import com.song.heracles.broker.core.TopicPartition;
+import com.song.heracles.broker.core.PartitionedTopic;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -15,7 +15,7 @@ public interface Consumer {
 
 	String getTopic();
 
-	TopicPartition getTopicPartition();
+	PartitionedTopic getPartitionedTopic();
 
 	CompletableFuture<List<Message>> pullMessages(int maxNumber);
 

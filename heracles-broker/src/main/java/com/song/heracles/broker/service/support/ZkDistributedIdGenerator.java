@@ -3,7 +3,6 @@ package com.song.heracles.broker.service.support;
 import com.song.heracles.broker.service.DistributedIdGenerator;
 
 import org.apache.curator.framework.CuratorFramework;
-import org.apache.curator.framework.recipes.atomic.DistributedAtomicLong;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs;
 
@@ -21,13 +20,10 @@ public class ZkDistributedIdGenerator implements DistributedIdGenerator {
 
 	private final int instanceId;
 
-	private final AtomicLong counter;
-
-	private DistributedAtomicLong distributedAtomicLong;
+	private final AtomicLong counter = new AtomicLong();
 
 	public ZkDistributedIdGenerator(CuratorFramework client, String counterPath, String prefix) throws Exception {
 		this.prefix = prefix;
-		this.counter = new AtomicLong();
 		String createPath = client
 			.create()
 			.creatingParentsIfNeeded()
