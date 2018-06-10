@@ -1,8 +1,8 @@
 package com.song.heracles.broker.core;
 
 import com.song.heracles.broker.config.BrokerConfiguration;
-import com.song.heracles.broker.core.producer.Producer;
 import com.song.heracles.broker.core.producer.DefaultProducer;
+import com.song.heracles.broker.core.producer.Producer;
 import com.song.heracles.broker.core.support.SeparatorTopicPartitionConverter;
 import com.song.heracles.broker.service.BrokerService;
 import com.song.heracles.store.core.Stream;
@@ -58,7 +58,7 @@ public class ProducerManager implements Closeable {
 	public CompletableFuture<Producer> create(String topic) {
 		CompletableFuture<Producer> completableFuture = new CompletableFuture<>();
 		Stream stream = streamFactory.getOrOpenStream(topic);
-		Producer producer = new DefaultProducer(topic, topicPartitionConverter.convert(topic), stream);
+		Producer producer = new DefaultProducer(topicPartitionConverter.convert(topic), stream);
 		producer.start()
 			.thenRun(() -> completableFuture.complete(producer))
 			.exceptionally(throwable -> {

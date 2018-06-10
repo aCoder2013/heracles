@@ -13,45 +13,39 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
 import io.netty.buffer.ByteBuf;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author song
  */
 @Slf4j
+@ToString
 public class DefaultProducer implements Producer {
-
-	private final String topic;
 
 	private final PartitionedTopic partitionedTopic;
 
 	private final Stream stream;
 
-	public DefaultProducer(String topic, PartitionedTopic partitionedTopic, Stream stream) {
-		this.topic = topic;
+	public DefaultProducer(PartitionedTopic partitionedTopic, Stream stream) {
 		this.partitionedTopic = partitionedTopic;
 		this.stream = stream;
 	}
 
 	@Override
 	public String getTopic() {
-		return this.topic;
+		return this.partitionedTopic.getTopic();
 	}
 
 	@Override
 	public PartitionedTopic getPartitionedTopic() {
-		return null;
+		return this.partitionedTopic;
 	}
 
 	@Override
 	public CompletableFuture<Void> start() {
 		CompletableFuture<Void> completableFuture = new CompletableFuture<>();
-		stream.start()
-			.thenAccept(aVoid -> completableFuture.complete(null))
-			.exceptionally(throwable -> {
-				completableFuture.completeExceptionally(throwable);
-				return null;
-			});
+		completableFuture.complete(null);
 		return completableFuture;
 	}
 
@@ -79,7 +73,7 @@ public class DefaultProducer implements Producer {
 	@Override
 	public CompletableFuture<DLSN> sendAsync(ByteBuf payload) {
 		CompletableFuture<DLSN> completableFuture = new CompletableFuture<>();
-		WriteOp writeOp = new WriteOp(topic, payload.nioBuffer());
+		WriteOp writeOp = new WriteOp(this.partitionedTopic.getOriginalTopic(), payload.nioBuffer());
 		stream.submitOp(writeOp);
 		writeOp.getResultAsync().thenAccept(writeResponse -> {
 			ErrorCode errorCode = writeResponse.getCode();
@@ -98,13 +92,5 @@ public class DefaultProducer implements Producer {
 	@Override
 	public CompletableFuture<Void> close() {
 		return stream.closeAsync();
-	}
-
-	@Override
-	public String toString() {
-		return "DefaultProducer{" +
-			"topic='" + topic + '\'' +
-			", stream=" + stream +
-			'}';
 	}
 }

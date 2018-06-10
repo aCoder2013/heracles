@@ -24,4 +24,8 @@ public class PartitionedTopic {
 
 	private int index;
 
+	public String getOriginalTopic() {
+		return topic + "-" + index;
+	}
+
 }
