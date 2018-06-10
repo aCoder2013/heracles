@@ -10,9 +10,6 @@ service HeraclesApi {
 
     rpc handleSendMessage (SendMessageRequest) returns (SendMessageResponse) {
     }
-
-
-
 }
 
 message MessageIdData {
@@ -49,7 +46,6 @@ message SendMessageResponse {
     uint64 sequence_id = 2;
     MessageIdData message_id = 3;
 }
-
 
 message Message {
     map<string, string> headers = 1;

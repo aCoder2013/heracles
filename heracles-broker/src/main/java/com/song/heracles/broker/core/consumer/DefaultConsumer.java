@@ -2,6 +2,7 @@ package com.song.heracles.broker.core.consumer;
 
 import com.song.heracles.broker.core.Message;
 import com.song.heracles.broker.core.Offset;
+import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.store.core.Stream;
 
@@ -15,40 +16,32 @@ import java.util.concurrent.CompletableFuture;
 
 import lombok.extern.slf4j.Slf4j;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 /**
  * @author song
  */
 @Slf4j
 public class DefaultConsumer implements Consumer {
 
-	private String topic;
-
 	private PartitionedTopic partitionedTopic;
 
 	private final Stream stream;
 
-	private volatile Offset offset = null;
+	private volatile Offset offset;
 
 	private volatile AsyncLogReader currentLogReader = null;
 
-	public DefaultConsumer(String topic, PartitionedTopic partitionedTopic, Stream stream, Offset offset) {
-		this.topic = topic;
+	public DefaultConsumer(PartitionedTopic partitionedTopic, Stream stream, OffsetStorage offsetStorage) throws Exception {
 		this.partitionedTopic = partitionedTopic;
 		this.stream = stream;
-		checkNotNull(offset);
-		this.offset = offset;
+		this.offset = offsetStorage.readOffsetFromCache(partitionedTopic);
 	}
 
 	@Override
 	public CompletableFuture<Void> start() {
 		CompletableFuture<Void> startFuture = new CompletableFuture<>();
 		stream.asyncOpenReader(offset.getDlsn()).thenAccept(asyncLogReader -> {
-			synchronized (this) {
-				currentLogReader = asyncLogReader;
-				startFuture.complete(null);
-			}
+			currentLogReader = asyncLogReader;
+			startFuture.complete(null);
 		}).exceptionally(throwable -> {
 			startFuture.completeExceptionally(throwable);
 			return null;
@@ -58,7 +51,7 @@ public class DefaultConsumer implements Consumer {
 
 	@Override
 	public String getTopic() {
-		return this.topic;
+		return this.partitionedTopic.getTopic();
 	}
 
 	@Override
@@ -70,7 +63,7 @@ public class DefaultConsumer implements Consumer {
 	public CompletableFuture<List<Message>> pullMessages(int maxNumber) {
 		CompletableFuture<List<Message>> pullMessageFuture = new CompletableFuture<>();
 		currentLogReader.readBulk(maxNumber).thenAccept(logRecordWithDLSNS -> {
-			if (logRecordWithDLSNS != null) {
+			if (logRecordWithDLSNS != null && logRecordWithDLSNS.size() > 0) {
 				List<Message> messages = new ArrayList<>(logRecordWithDLSNS.size());
 				for (LogRecordWithDLSN logRecordWithDLSN : logRecordWithDLSNS) {
 					messages.add(new Message(new Offset(logRecordWithDLSN.getDlsn()), logRecordWithDLSN.getPayload()));
@@ -91,7 +84,7 @@ public class DefaultConsumer implements Consumer {
 	public CompletableFuture<Void> close() {
 		CompletableFuture<Void> closeFuture = new CompletableFuture<>();
 		currentLogReader.asyncClose()
-			.thenAccept(aVoid -> closeFuture.complete(null))
+			.thenRun(() -> closeFuture.complete(null))
 			.exceptionally(throwable -> {
 				log.error("Close consumer failed :" + partitionedTopic.toString(), throwable);
 				closeFuture.completeExceptionally(throwable);

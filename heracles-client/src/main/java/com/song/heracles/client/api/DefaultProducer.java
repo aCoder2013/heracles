@@ -56,12 +56,13 @@ public class DefaultProducer implements Producer {
 			.build();
 		heraclesClient.handleProducerConnect(producerConnectRequest, asyncResult -> {
 			if (asyncResult.succeeded()) {
-				log.error("Producer started successfully.");
+				log.info("Producer started successfully.");
 			} else {
 				result.setThrowable(asyncResult.cause());
 			}
 			latch.countDown();
 		});
+		// TODO: 2018/6/10 Add timeout
 		latch.await();
 		if (result.getThrowable() != null) {
 			throw new HeraclesClientException(result.getThrowable());
