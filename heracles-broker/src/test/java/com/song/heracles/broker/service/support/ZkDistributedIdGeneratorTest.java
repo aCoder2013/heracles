@@ -1,7 +1,6 @@
 package com.song.heracles.broker.service.support;
 
 import com.song.heracles.broker.service.DistributedIdGenerator;
-
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryNTimes;
@@ -23,10 +22,11 @@ public class ZkDistributedIdGeneratorTest {
 
 	@Before
 	public void setUp() throws Exception {
-		TestingServer zookeeper = new TestingServer(2181, false);
+		TestingServer zookeeper = new TestingServer(2182, false);
 		zookeeper.start();
-		client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", new RetryNTimes(3, 1000));
+		client = CuratorFrameworkFactory.newClient("127.0.0.1:2182", new RetryNTimes(3, 1000));
 		client.start();
+		client.blockUntilConnected();
 	}
 
 	@Test

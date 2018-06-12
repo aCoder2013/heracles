@@ -3,7 +3,7 @@ package com.song.heracles.store.core.support;
 import com.song.heracles.common.concurrent.OrderedExecutor;
 import com.song.heracles.store.core.Stream;
 import com.song.heracles.store.core.StreamFactory;
-
+import lombok.extern.slf4j.Slf4j;
 import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.api.namespace.Namespace;
 import org.apache.distributedlog.common.concurrent.FutureUtils;
@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author song
@@ -58,7 +56,6 @@ public class DefaultStreamFactory implements StreamFactory {
 				stream = oldStream;
 			} else {
 				log.info("Create stream [{}] .", name);
-				stream.start();
 			}
 		}
 		return stream;

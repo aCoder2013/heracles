@@ -39,6 +39,7 @@ public class ProducerManager implements Closeable {
 	public void start() throws IOException {
 		BrokerConfiguration brokerConfiguration = brokerService.getBrokerConfiguration();
 		DistributedLogConfiguration dlConfig = brokerService.getdLogConfig();
+		//FIXME:Cleanup resources
 		Namespace namespace = NamespaceBuilder.newBuilder()
 			.conf(dlConfig)
 			.uri(URI.create(brokerConfiguration.getDistributedLogUri()))

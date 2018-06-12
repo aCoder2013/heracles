@@ -6,15 +6,13 @@ import com.song.heracles.common.exception.HeraclesException;
 import com.song.heracles.common.util.Result;
 import com.song.heracles.store.core.Stream;
 import com.song.heracles.store.core.support.WriteOp;
-
+import io.netty.buffer.ByteBuf;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.distributedlog.DLSN;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
-
-import io.netty.buffer.ByteBuf;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author song
@@ -45,7 +43,14 @@ public class DefaultProducer implements Producer {
 	@Override
 	public CompletableFuture<Void> start() {
 		CompletableFuture<Void> completableFuture = new CompletableFuture<>();
-		completableFuture.complete(null);
+		stream.start()
+				.thenRun(()->{
+                    completableFuture.complete(null);
+				})
+				.exceptionally(throwable -> {
+					completableFuture.completeExceptionally(throwable);
+					return null;
+				});
 		return completableFuture;
 	}
 
