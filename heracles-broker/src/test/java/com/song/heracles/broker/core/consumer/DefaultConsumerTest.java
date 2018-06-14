@@ -96,5 +96,6 @@ public class DefaultConsumerTest {
         FutureUtils.ignore(streamFactory.closeStreams());
         offsetStorage.close();
         curatorFramework.close();
+        namespace.close();
     }
 }
