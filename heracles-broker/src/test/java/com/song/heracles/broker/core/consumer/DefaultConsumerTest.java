@@ -1,13 +1,15 @@
-package com.song.heracles.broker.core.producer;
+package com.song.heracles.broker.core.consumer;
 
+import com.song.heracles.broker.core.Message;
+import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;
+import com.song.heracles.broker.core.support.ZkOffsetStorage;
 import com.song.heracles.common.concurrent.OrderedExecutor;
-import com.song.heracles.common.exception.HeraclesException;
 import com.song.heracles.store.core.StreamFactory;
 import com.song.heracles.store.core.support.DefaultStreamFactory;
-import io.netty.buffer.Unpooled;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.distributedlog.DLSN;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.retry.RetryNTimes;
 import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.DistributedLogConstants;
 import org.apache.distributedlog.api.namespace.Namespace;
@@ -18,20 +20,24 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.net.URI;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
-/**
- * @author song
- */
-@Slf4j
-public class DefaultProducerTest {
+public class DefaultConsumerTest {
 
-    private Producer producer;
+    private Consumer consumer;
+
     private StreamFactory streamFactory;
 
     private Namespace namespace;
+
+    private OffsetStorage offsetStorage;
+
+    private CuratorFramework curatorFramework;
 
     @Before
     public void setUp() throws Exception {
@@ -49,9 +55,13 @@ public class DefaultProducerTest {
         streamFactory = new DefaultStreamFactory("default", dlConfig, namespace, OrderedExecutor.newBuilder().build());
         PartitionedTopic partitionedTopic = new PartitionedTopic("messaging-stream", 1);
         String originalTopic = partitionedTopic.getOriginalTopic();
-        producer = new DefaultProducer(partitionedTopic, streamFactory.getOrOpenStream(originalTopic));
+        curatorFramework = CuratorFrameworkFactory.newClient("127.0.0.1:2181", new RetryNTimes(3, 1000));
+        curatorFramework.start();
+        offsetStorage = new ZkOffsetStorage(curatorFramework);
+        offsetStorage.start();
+        consumer = new DefaultConsumer(partitionedTopic, streamFactory.getOrOpenStream(originalTopic), offsetStorage);
         CountDownLatch latch = new CountDownLatch(1);
-        producer.start().thenRun(latch::countDown).exceptionally(throwable -> {
+        consumer.start().thenRun(latch::countDown).exceptionally(throwable -> {
             throwable.printStackTrace();
             latch.countDown();
             return null;
@@ -59,36 +69,32 @@ public class DefaultProducerTest {
         latch.await();
     }
 
-    @Test(timeout = 5000L)
-    public void send() {
-        try {
-            DLSN dlsn = producer.send(Unpooled.wrappedBuffer("Hello World".getBytes()));
-            assertThat(dlsn).isNotNull();
-        } catch (InterruptedException | HeraclesException e) {
-            e.printStackTrace();
-        }
+    @Test(timeout = 5000000L)
+    public void pullMessages() throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(1);
+        CompletableFuture<List<Message>> future = consumer.pullMessages(10);
+        future.thenAccept(messages -> {
+            for (Message message : messages) {
+                assertNotNull(message);
+                assertNotNull(message.getOffset());
+                assertNotNull(message.getPayload());
+                assertEquals("Hello World", new String(message.getPayload()));
+            }
+            latch.countDown();
+        }).exceptionally(throwable -> {
+            throwable.printStackTrace();
+            latch.countDown();
+            return null;
+        });
+        latch.await();
     }
 
-    @Test(timeout = 5000L)
-    public void sendAsync() throws HeraclesException, InterruptedException {
-        for (int i = 0; i < 100; i++) {
-            CountDownLatch latch = new CountDownLatch(1);
-            producer.sendAsync(Unpooled.wrappedBuffer("Hello World".getBytes()))
-                    .thenAccept(dlsn -> {
-                        assertThat(dlsn).isNotNull();
-                        latch.countDown();
-                    }).exceptionally(throwable -> {
-                throwable.printStackTrace();
-                latch.countDown();
-                return null;
-            });
-            latch.await();
-        }
-    }
 
     @After
     public void tearDown() throws Exception {
-        producer.close();
+        FutureUtils.ignore(consumer.close());
         FutureUtils.ignore(streamFactory.closeStreams());
+        offsetStorage.close();
+        curatorFramework.close();
     }
 }

@@ -9,7 +9,7 @@ import com.song.heracles.store.core.StreamOp;
 import com.song.heracles.store.exception.HeraclesStorageException;
 import com.song.heracles.store.exception.StreamNotAvailableStorageException;
 import com.song.heracles.store.exception.StreamNotReadyStorageException;
-
+import lombok.extern.slf4j.Slf4j;
 import org.apache.distributedlog.DLSN;
 import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.api.AsyncLogReader;
@@ -19,12 +19,11 @@ import org.apache.distributedlog.api.namespace.Namespace;
 import org.apache.distributedlog.common.concurrent.FutureUtils;
 import org.apache.distributedlog.exceptions.AlreadyClosedException;
 import org.apache.distributedlog.exceptions.OwnershipAcquireFailedException;
+import org.apache.distributedlog.exceptions.StreamUnavailableException;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.locks.ReentrantLock;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author song
@@ -147,8 +146,12 @@ public class DefaultStream implements Stream {
 		orderedExecutor.chooseThread(streamName).submit(() -> {
 			try {
 				AsyncLogReader asyncLogReader = distributedLogManager.getAsyncLogReader(dlsn);
-				completableFuture.complete(asyncLogReader);
-			} catch (IOException e) {
+				if (asyncLogReader != null) {
+					completableFuture.complete(asyncLogReader);
+				}else {
+					completableFuture.completeExceptionally(new StreamUnavailableException("Get AsyncLogReader from DLog failed."));
+				}
+			} catch (Exception e) {
 				completableFuture.completeExceptionally(e);
 			}
 		});

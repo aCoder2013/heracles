@@ -9,7 +9,10 @@ import com.song.heracles.common.constants.ErrorCode;
 import com.song.heracles.common.exception.HeraclesException;
 import com.song.heracles.common.util.NetUtils;
 import com.song.heracles.net.RemotingServer;
-
+import io.vertx.core.Vertx;
+import io.vertx.grpc.VertxServer;
+import io.vertx.grpc.VertxServerBuilder;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -23,11 +26,6 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-import io.vertx.core.Vertx;
-import io.vertx.grpc.VertxServer;
-import io.vertx.grpc.VertxServerBuilder;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author song
@@ -81,6 +79,7 @@ public class BrokerService implements Closeable {
 				curatorFramework.start();
 				producerNameGenerator = new ZkDistributedIdGenerator(curatorFramework, PRODUCER_NAME_PATTERN, brokerConfiguration.getClusterName());
 				dLogConfig = new DistributedLogConfiguration();
+				//TODO:need some customization here
 				dLogConfig.setImmediateFlushEnabled(true);
 				dLogConfig.setOutputBufferSize(0);
 				dLogConfig.setPeriodicFlushFrequencyMilliSeconds(0);

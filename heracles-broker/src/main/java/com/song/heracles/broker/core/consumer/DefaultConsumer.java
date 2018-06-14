@@ -5,7 +5,7 @@ import com.song.heracles.broker.core.Offset;
 import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.store.core.Stream;
-
+import lombok.extern.slf4j.Slf4j;
 import org.apache.distributedlog.LogRecordWithDLSN;
 import org.apache.distributedlog.api.AsyncLogReader;
 
@@ -14,15 +14,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * @author song
  */
 @Slf4j
 public class DefaultConsumer implements Consumer {
 
-	private PartitionedTopic partitionedTopic;
+	private final PartitionedTopic partitionedTopic;
 
 	private final Stream stream;
 
@@ -39,10 +37,13 @@ public class DefaultConsumer implements Consumer {
 	@Override
 	public CompletableFuture<Void> start() {
 		CompletableFuture<Void> startFuture = new CompletableFuture<>();
-		stream.asyncOpenReader(offset.getDlsn()).thenAccept(asyncLogReader -> {
+		stream.start().thenRun(() -> stream.asyncOpenReader(offset.getDlsn()).thenAccept(asyncLogReader -> {
 			currentLogReader = asyncLogReader;
 			startFuture.complete(null);
 		}).exceptionally(throwable -> {
+			startFuture.completeExceptionally(throwable);
+			return null;
+		})).exceptionally(throwable -> {
 			startFuture.completeExceptionally(throwable);
 			return null;
 		});

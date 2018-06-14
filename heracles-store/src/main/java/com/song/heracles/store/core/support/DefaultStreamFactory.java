@@ -55,7 +55,7 @@ public class DefaultStreamFactory implements StreamFactory {
 			if (oldStream != null) {
 				stream = oldStream;
 			} else {
-				log.info("Create stream [{}] .", name);
+				log.info("Create Stream [{}] .", name);
 			}
 		}
 		return stream;
