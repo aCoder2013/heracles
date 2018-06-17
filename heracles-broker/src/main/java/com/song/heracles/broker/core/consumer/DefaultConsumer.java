@@ -40,6 +40,7 @@ public class DefaultConsumer implements Consumer {
 		stream.start().thenRun(() -> stream.asyncOpenReader(offset.getDlsn()).thenAccept(asyncLogReader -> {
 			currentLogReader = asyncLogReader;
 			startFuture.complete(null);
+			log.info("Consumer[{}] has started.", partitionedTopic.getOriginalTopic());
 		}).exceptionally(throwable -> {
 			startFuture.completeExceptionally(throwable);
 			return null;
