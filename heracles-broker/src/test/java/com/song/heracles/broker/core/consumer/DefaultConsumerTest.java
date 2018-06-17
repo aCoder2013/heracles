@@ -69,7 +69,7 @@ public class DefaultConsumerTest {
         latch.await();
     }
 
-    @Test(timeout = 5000000L)
+    @Test(timeout = 5000L)
     public void pullMessages() throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
         CompletableFuture<List<Message>> future = consumer.pullMessages(10);
