@@ -8,6 +8,7 @@ import com.song.heracles.common.util.TimeBasedIdGenerator;
 import com.song.heracles.net.RemotingClient;
 import com.song.heracles.net.proto.HeraclesApiGrpc;
 
+import com.song.heracles.net.proto.HeraclesApiGrpc.HeraclesApiVertxStub;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.io.Closeable;
@@ -41,6 +42,14 @@ public class HeraclesClient implements Closeable {
 			throw new HeraclesClientException("Create producer failed,may all servers are crashed?");
 		}
 		return new DefaultProducer(configuration, heraclesClient, producerIdGenerator.nextId());
+	}
+
+	public Consumer createConsumer(String topic,String consumerName) throws HeraclesClientException {
+		HeraclesApiVertxStub heraclesClient = remotingClient.createHeraclesClient();
+		if (heraclesClient == null) {
+			throw new HeraclesClientException("Create consumer failed,may all servers are crashed?");
+		}
+		return new DefaultConsumer(topic,consumerName,heraclesClient,System.currentTimeMillis());
 	}
 
 	public ClientConfiguration getClientConfiguration() {

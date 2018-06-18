@@ -4,17 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @author song
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MessageId {
+public class Message {
 
-  private long logSegmentSequenceNo;
-  private long entryId;
-  private long slotId;
+  private MessageId messageId;
 
+  private byte[] body;
 
 }

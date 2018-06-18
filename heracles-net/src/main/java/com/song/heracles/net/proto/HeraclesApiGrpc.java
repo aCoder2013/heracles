@@ -120,6 +120,102 @@ public final class HeraclesApiGrpc {
      }
      return getHandleSendMessageMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getHandleConsumerConnectMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest,
+      com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> METHOD_HANDLE_CONSUMER_CONNECT = getHandleConsumerConnectMethod();
+
+  private static volatile io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest,
+      com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> getHandleConsumerConnectMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest,
+      com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> getHandleConsumerConnectMethod() {
+    io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest, com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> getHandleConsumerConnectMethod;
+    if ((getHandleConsumerConnectMethod = HeraclesApiGrpc.getHandleConsumerConnectMethod) == null) {
+      synchronized (HeraclesApiGrpc.class) {
+        if ((getHandleConsumerConnectMethod = HeraclesApiGrpc.getHandleConsumerConnectMethod) == null) {
+          HeraclesApiGrpc.getHandleConsumerConnectMethod = getHandleConsumerConnectMethod = 
+              io.grpc.MethodDescriptor.<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest, com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "com.song.fastmq.broker.net.HeraclesApi", "handleConsumerConnect"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new HeraclesApiMethodDescriptorSupplier("handleConsumerConnect"))
+                  .build();
+          }
+        }
+     }
+     return getHandleConsumerConnectMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getHandleConsumerPullMessageMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest,
+      com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> METHOD_HANDLE_CONSUMER_PULL_MESSAGE = getHandleConsumerPullMessageMethod();
+
+  private static volatile io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest,
+      com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> getHandleConsumerPullMessageMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest,
+      com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> getHandleConsumerPullMessageMethod() {
+    io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest, com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> getHandleConsumerPullMessageMethod;
+    if ((getHandleConsumerPullMessageMethod = HeraclesApiGrpc.getHandleConsumerPullMessageMethod) == null) {
+      synchronized (HeraclesApiGrpc.class) {
+        if ((getHandleConsumerPullMessageMethod = HeraclesApiGrpc.getHandleConsumerPullMessageMethod) == null) {
+          HeraclesApiGrpc.getHandleConsumerPullMessageMethod = getHandleConsumerPullMessageMethod = 
+              io.grpc.MethodDescriptor.<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest, com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "com.song.fastmq.broker.net.HeraclesApi", "handleConsumerPullMessage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new HeraclesApiMethodDescriptorSupplier("handleConsumerPullMessage"))
+                  .build();
+          }
+        }
+     }
+     return getHandleConsumerPullMessageMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getHandlePullOffsetMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest,
+      com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> METHOD_HANDLE_PULL_OFFSET = getHandlePullOffsetMethod();
+
+  private static volatile io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest,
+      com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> getHandlePullOffsetMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest,
+      com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> getHandlePullOffsetMethod() {
+    io.grpc.MethodDescriptor<com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest, com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> getHandlePullOffsetMethod;
+    if ((getHandlePullOffsetMethod = HeraclesApiGrpc.getHandlePullOffsetMethod) == null) {
+      synchronized (HeraclesApiGrpc.class) {
+        if ((getHandlePullOffsetMethod = HeraclesApiGrpc.getHandlePullOffsetMethod) == null) {
+          HeraclesApiGrpc.getHandlePullOffsetMethod = getHandlePullOffsetMethod = 
+              io.grpc.MethodDescriptor.<com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest, com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "com.song.fastmq.broker.net.HeraclesApi", "handlePullOffset"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new HeraclesApiMethodDescriptorSupplier("handlePullOffset"))
+                  .build();
+          }
+        }
+     }
+     return getHandlePullOffsetMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -169,6 +265,27 @@ public final class HeraclesApiGrpc {
       asyncUnimplementedUnaryCall(getHandleSendMessageMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void handleConsumerConnect(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest request,
+        io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getHandleConsumerConnectMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void handleConsumerPullMessage(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest request,
+        io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getHandleConsumerPullMessageMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void handlePullOffset(com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest request,
+        io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getHandlePullOffsetMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -185,6 +302,27 @@ public final class HeraclesApiGrpc {
                 com.song.heracles.net.proto.HeraclesProto.SendMessageRequest,
                 com.song.heracles.net.proto.HeraclesProto.SendMessageResponse>(
                   this, METHODID_HANDLE_SEND_MESSAGE)))
+          .addMethod(
+            getHandleConsumerConnectMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest,
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>(
+                  this, METHODID_HANDLE_CONSUMER_CONNECT)))
+          .addMethod(
+            getHandleConsumerPullMessageMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest,
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>(
+                  this, METHODID_HANDLE_CONSUMER_PULL_MESSAGE)))
+          .addMethod(
+            getHandlePullOffsetMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest,
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>(
+                  this, METHODID_HANDLE_PULL_OFFSET)))
           .build();
     }
   }
@@ -222,6 +360,30 @@ public final class HeraclesApiGrpc {
       asyncUnaryCall(
           getChannel().newCall(getHandleSendMessageMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void handleConsumerConnect(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest request,
+        io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getHandleConsumerConnectMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void handleConsumerPullMessage(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest request,
+        io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getHandleConsumerPullMessageMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void handlePullOffset(com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest request,
+        io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getHandlePullOffsetMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -254,6 +416,27 @@ public final class HeraclesApiGrpc {
     public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse handleSendMessage(com.song.heracles.net.proto.HeraclesProto.SendMessageRequest request) {
       return blockingUnaryCall(
           getChannel(), getHandleSendMessageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse handleConsumerConnect(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getHandleConsumerConnectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse handleConsumerPullMessage(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getHandleConsumerPullMessageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse handlePullOffset(com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getHandlePullOffsetMethod(), getCallOptions(), request);
     }
   }
 
@@ -290,6 +473,30 @@ public final class HeraclesApiGrpc {
       return futureUnaryCall(
           getChannel().newCall(getHandleSendMessageMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> handleConsumerConnect(
+        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getHandleConsumerConnectMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> handleConsumerPullMessage(
+        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getHandleConsumerPullMessageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> handlePullOffset(
+        com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getHandlePullOffsetMethod(), getCallOptions()), request);
+    }
   }
 
   /**
@@ -310,6 +517,27 @@ public final class HeraclesApiGrpc {
       asyncUnimplementedUnaryCall(getHandleSendMessageMethod(), HeraclesApiGrpc.toObserver(response.completer()));
     }
 
+    /**
+     */
+    public void handleConsumerConnect(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest request,
+        io.vertx.core.Future<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse> response) {
+      asyncUnimplementedUnaryCall(getHandleConsumerConnectMethod(), HeraclesApiGrpc.toObserver(response.completer()));
+    }
+
+    /**
+     */
+    public void handleConsumerPullMessage(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest request,
+        io.vertx.core.Future<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse> response) {
+      asyncUnimplementedUnaryCall(getHandleConsumerPullMessageMethod(), HeraclesApiGrpc.toObserver(response.completer()));
+    }
+
+    /**
+     */
+    public void handlePullOffset(com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest request,
+        io.vertx.core.Future<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse> response) {
+      asyncUnimplementedUnaryCall(getHandlePullOffsetMethod(), HeraclesApiGrpc.toObserver(response.completer()));
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -326,6 +554,27 @@ public final class HeraclesApiGrpc {
                 com.song.heracles.net.proto.HeraclesProto.SendMessageRequest,
                 com.song.heracles.net.proto.HeraclesProto.SendMessageResponse>(
                   this, METHODID_HANDLE_SEND_MESSAGE)))
+          .addMethod(
+            getHandleConsumerConnectMethod(),
+            asyncUnaryCall(
+              new VertxMethodHandlers<
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest,
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>(
+                  this, METHODID_HANDLE_CONSUMER_CONNECT)))
+          .addMethod(
+            getHandleConsumerPullMessageMethod(),
+            asyncUnaryCall(
+              new VertxMethodHandlers<
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest,
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>(
+                  this, METHODID_HANDLE_CONSUMER_PULL_MESSAGE)))
+          .addMethod(
+            getHandlePullOffsetMethod(),
+            asyncUnaryCall(
+              new VertxMethodHandlers<
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest,
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>(
+                  this, METHODID_HANDLE_PULL_OFFSET)))
           .build();
     }
   }
@@ -363,10 +612,37 @@ public final class HeraclesApiGrpc {
       asyncUnaryCall(
           getChannel().newCall(getHandleSendMessageMethod(), getCallOptions()), request, HeraclesApiGrpc.toObserver(response));
     }
+
+    /**
+     */
+    public void handleConsumerConnect(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest request,
+        io.vertx.core.Handler<io.vertx.core.AsyncResult<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>> response) {
+      asyncUnaryCall(
+          getChannel().newCall(getHandleConsumerConnectMethod(), getCallOptions()), request, HeraclesApiGrpc.toObserver(response));
+    }
+
+    /**
+     */
+    public void handleConsumerPullMessage(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest request,
+        io.vertx.core.Handler<io.vertx.core.AsyncResult<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>> response) {
+      asyncUnaryCall(
+          getChannel().newCall(getHandleConsumerPullMessageMethod(), getCallOptions()), request, HeraclesApiGrpc.toObserver(response));
+    }
+
+    /**
+     */
+    public void handlePullOffset(com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest request,
+        io.vertx.core.Handler<io.vertx.core.AsyncResult<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>> response) {
+      asyncUnaryCall(
+          getChannel().newCall(getHandlePullOffsetMethod(), getCallOptions()), request, HeraclesApiGrpc.toObserver(response));
+    }
   }
 
   private static final int METHODID_HANDLE_PRODUCER_CONNECT = 0;
   private static final int METHODID_HANDLE_SEND_MESSAGE = 1;
+  private static final int METHODID_HANDLE_CONSUMER_CONNECT = 2;
+  private static final int METHODID_HANDLE_CONSUMER_PULL_MESSAGE = 3;
+  private static final int METHODID_HANDLE_PULL_OFFSET = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -392,6 +668,18 @@ public final class HeraclesApiGrpc {
         case METHODID_HANDLE_SEND_MESSAGE:
           serviceImpl.handleSendMessage((com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) request,
               (io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.SendMessageResponse>) responseObserver);
+          break;
+        case METHODID_HANDLE_CONSUMER_CONNECT:
+          serviceImpl.handleConsumerConnect((com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) request,
+              (io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>) responseObserver);
+          break;
+        case METHODID_HANDLE_CONSUMER_PULL_MESSAGE:
+          serviceImpl.handleConsumerPullMessage((com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) request,
+              (io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>) responseObserver);
+          break;
+        case METHODID_HANDLE_PULL_OFFSET:
+          serviceImpl.handlePullOffset((com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) request,
+              (io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -442,6 +730,39 @@ public final class HeraclesApiGrpc {
               (io.vertx.core.Future<com.song.heracles.net.proto.HeraclesProto.SendMessageResponse>) io.vertx.core.Future.<com.song.heracles.net.proto.HeraclesProto.SendMessageResponse>future().setHandler(ar -> {
                 if (ar.succeeded()) {
                   ((io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.SendMessageResponse>) responseObserver).onNext(ar.result());
+                  responseObserver.onCompleted();
+                } else {
+                  responseObserver.onError(ar.cause());
+                }
+              }));
+          break;
+        case METHODID_HANDLE_CONSUMER_CONNECT:
+          serviceImpl.handleConsumerConnect((com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) request,
+              (io.vertx.core.Future<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>) io.vertx.core.Future.<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>future().setHandler(ar -> {
+                if (ar.succeeded()) {
+                  ((io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse>) responseObserver).onNext(ar.result());
+                  responseObserver.onCompleted();
+                } else {
+                  responseObserver.onError(ar.cause());
+                }
+              }));
+          break;
+        case METHODID_HANDLE_CONSUMER_PULL_MESSAGE:
+          serviceImpl.handleConsumerPullMessage((com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) request,
+              (io.vertx.core.Future<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>) io.vertx.core.Future.<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>future().setHandler(ar -> {
+                if (ar.succeeded()) {
+                  ((io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse>) responseObserver).onNext(ar.result());
+                  responseObserver.onCompleted();
+                } else {
+                  responseObserver.onError(ar.cause());
+                }
+              }));
+          break;
+        case METHODID_HANDLE_PULL_OFFSET:
+          serviceImpl.handlePullOffset((com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) request,
+              (io.vertx.core.Future<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>) io.vertx.core.Future.<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>future().setHandler(ar -> {
+                if (ar.succeeded()) {
+                  ((io.grpc.stub.StreamObserver<com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse>) responseObserver).onNext(ar.result());
                   responseObserver.onCompleted();
                 } else {
                   responseObserver.onError(ar.cause());
@@ -511,6 +832,9 @@ public final class HeraclesApiGrpc {
               .setSchemaDescriptor(new HeraclesApiFileDescriptorSupplier())
               .addMethod(getHandleProducerConnectMethod())
               .addMethod(getHandleSendMessageMethod())
+              .addMethod(getHandleConsumerConnectMethod())
+              .addMethod(getHandleConsumerPullMessageMethod())
+              .addMethod(getHandlePullOffsetMethod())
               .build();
         }
       }

@@ -1,17 +1,29 @@
 package com.song.heracles.broker.service;
 
 import com.song.heracles.broker.config.BrokerConfiguration;
+import com.song.heracles.broker.core.ConsumerManager;
+import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.ProducerManager;
 import com.song.heracles.broker.core.processor.ServerMessageProcessor;
+import com.song.heracles.broker.core.support.ZkOffsetStorage;
 import com.song.heracles.broker.service.support.ZkDistributedIdGenerator;
 import com.song.heracles.common.concurrent.OrderedExecutor;
 import com.song.heracles.common.constants.ErrorCode;
 import com.song.heracles.common.exception.HeraclesException;
 import com.song.heracles.common.util.NetUtils;
 import com.song.heracles.net.RemotingServer;
+import com.song.heracles.store.core.StreamFactory;
+import com.song.heracles.store.core.support.DefaultStreamFactory;
 import io.vertx.core.Vertx;
 import io.vertx.grpc.VertxServer;
 import io.vertx.grpc.VertxServerBuilder;
+import java.io.Closeable;
+import java.io.IOException;
+import java.net.URI;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.curator.framework.CuratorFramework;
@@ -19,13 +31,8 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryNTimes;
 import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.DistributedLogConstants;
-
-import java.io.Closeable;
-import java.io.IOException;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import org.apache.distributedlog.api.namespace.Namespace;
+import org.apache.distributedlog.api.namespace.NamespaceBuilder;
 
 /**
  * @author song
@@ -35,11 +42,15 @@ public class BrokerService implements Closeable {
 
 	private final static String PRODUCER_NAME_PATTERN = "/counters/producer-name";
 
+	private final static String CONSUMER_NAME_PATTERN = "/counters/consumer-name";
+
 	private AtomicReference<State> state = new AtomicReference<>(State.UNINITIALIZED);
 
 	private BrokerConfiguration brokerConfiguration = null;
 
 	private DistributedIdGenerator producerNameGenerator = null;
+
+	private DistributedIdGenerator consumerNameGenerator = null;
 
 	private Vertx vertx;
 
@@ -51,9 +62,15 @@ public class BrokerService implements Closeable {
 
 	private DistributedLogConfiguration dLogConfig;
 
+	private StreamFactory streamFactory;
+
+  private OffsetStorage offsetStorage;
+
 	private OrderedExecutor orderedExecutor;
 
 	private ProducerManager producerManager;
+
+  private ConsumerManager consumerManager;
 
 	private Lock lock = new ReentrantLock();
 
@@ -78,6 +95,7 @@ public class BrokerService implements Closeable {
 					brokerConfiguration.getZookeeperConnectionTimeout(), new RetryNTimes(3, 3000));
 				curatorFramework.start();
 				producerNameGenerator = new ZkDistributedIdGenerator(curatorFramework, PRODUCER_NAME_PATTERN, brokerConfiguration.getClusterName());
+				consumerNameGenerator = new ZkDistributedIdGenerator(curatorFramework,CONSUMER_NAME_PATTERN,brokerConfiguration.getClientId());
 				dLogConfig = new DistributedLogConfiguration();
 				//TODO:need some customization here
 				dLogConfig.setImmediateFlushEnabled(true);
@@ -88,8 +106,20 @@ public class BrokerService implements Closeable {
 					.name("heracles-broker-pool")
 					.numThreads(20)
 					.build();
+				//FIXME:Cleanup resources
+				Namespace namespace = NamespaceBuilder.newBuilder()
+						.conf(dLogConfig)
+						.uri(URI.create(brokerConfiguration.getDistributedLogUri()))
+						.regionId(DistributedLogConstants.LOCAL_REGION_ID)
+						.clientId(brokerConfiguration.getClientId())
+						.build();
+				streamFactory = new DefaultStreamFactory(brokerConfiguration.getClientId(), dLogConfig, namespace, orderedExecutor);
+        offsetStorage = new ZkOffsetStorage(curatorFramework);
+        offsetStorage.start();
 				producerManager = new ProducerManager(this);
 				producerManager.start();
+        consumerManager = new ConsumerManager(this);
+        consumerManager.start();
 				log.info("Finish to initialize broker service.");
 				this.state.set(State.INITIALIZED);
 			} catch (Exception e) {
@@ -105,13 +135,21 @@ public class BrokerService implements Closeable {
 		return producerManager;
 	}
 
-	public BrokerConfiguration getBrokerConfiguration() {
+  public ConsumerManager getConsumerManager() {
+    return consumerManager;
+  }
+
+  public BrokerConfiguration getBrokerConfiguration() {
 		return brokerConfiguration;
 	}
 
 	public DistributedIdGenerator getProducerNameGenerator() {
 		return producerNameGenerator;
 	}
+
+	public DistributedIdGenerator getConsumerNameGenerator(){
+    return consumerNameGenerator;
+  }
 
 	public DistributedLogConfiguration getdLogConfig() {
 		return dLogConfig;
@@ -121,7 +159,15 @@ public class BrokerService implements Closeable {
 		return orderedExecutor;
 	}
 
-	@Override
+  public StreamFactory getStreamFactory() {
+    return streamFactory;
+  }
+
+  public OffsetStorage getOffsetStorage() {
+    return offsetStorage;
+  }
+
+  @Override
 	public void close() throws IOException {
 		lock.lock();
 		try {
