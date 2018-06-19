@@ -63,6 +63,7 @@ public class DefaultConsumer implements Consumer {
 
 	@Override
 	public CompletableFuture<List<Message>> pullMessages(int maxNumber) {
+		//TODO:fix read maxMaxNumber messages
 		CompletableFuture<List<Message>> pullMessageFuture = new CompletableFuture<>();
 		currentLogReader.readBulk(maxNumber).thenAccept(logRecordWithDLSNS -> {
 			if (logRecordWithDLSNS != null && logRecordWithDLSNS.size() > 0) {
