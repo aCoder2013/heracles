@@ -16,7 +16,6 @@ public class DefaultProducerTest {
 
 	@Test
 	public void connect() throws InterruptedException, HeraclesClientException {
-		CountDownLatch latch = new CountDownLatch(1);
 		ClientConfiguration clientConfiguration = ClientConfiguration.builder()
 			.servers(Collections.singletonList("localhost:7160"))
 			.build();
@@ -25,6 +24,7 @@ public class DefaultProducerTest {
 			.topic("messaging-stream-1")
 			.build());
 		producer.start();
+		CountDownLatch latch = new CountDownLatch(1);
 		producer.sendAsync("Hello World".getBytes()).thenAccept(messageId -> {
 			System.out.println(messageId);
 			latch.countDown();

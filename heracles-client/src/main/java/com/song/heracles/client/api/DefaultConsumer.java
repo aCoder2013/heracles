@@ -10,12 +10,20 @@ import com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest;
 import com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse;
 import com.song.heracles.net.proto.HeraclesProto.MessageIdData;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class DefaultConsumer implements Consumer {
+
+  private static final int DEFAULT_MAX_PULL_MESSAGE_NUMBER = 100;
+
+  private static final long DEFAULT_TIMEOUT_SECOND = 6;
 
   private String topic;
 
@@ -39,7 +47,7 @@ public class DefaultConsumer implements Consumer {
   }
 
   @Override
-  public void start() throws InterruptedException ,HeraclesClientException{
+  public void start() throws InterruptedException, HeraclesClientException {
     Result<Void> result = new Result<>();
     CountDownLatch latch = new CountDownLatch(1);
     ConsumerConnectRequest request = ConsumerConnectRequest.newBuilder()
@@ -47,7 +55,7 @@ public class DefaultConsumer implements Consumer {
         .setConsumerName(consumerName)
         .setTopic(topic)
         .build();
-    heraclesClient.handleConsumerConnect(request,asyncResult -> {
+    heraclesClient.handleConsumerConnect(request, asyncResult -> {
       if (asyncResult.succeeded()) {
         ConsumerConnectResponse connectResponse = asyncResult.result();
         consumerId = connectResponse.getConsumerId();
@@ -58,44 +66,84 @@ public class DefaultConsumer implements Consumer {
       }
       latch.countDown();
     });
-    // TODO: 2018/6/10 Add timeout
-    latch.await();
+    latch.await(DEFAULT_TIMEOUT_SECOND, TimeUnit.SECONDS);
     if (result.getThrowable() != null) {
       throw new HeraclesClientException(result.getThrowable());
     }
   }
 
   @Override
-  public Message receive() throws HeraclesClientException, InterruptedException {
+  public List<Message> receive() throws HeraclesClientException, InterruptedException {
     class Result {
-      Message message = null;
-      Throwable throwable;
+
+      private List<Message> messages = null;
+      private Throwable throwable;
     }
     CountDownLatch latch = new CountDownLatch(1);
     Result result = new Result();
     ConsumerPullMessageRequest request = ConsumerPullMessageRequest.newBuilder()
         .setConsumerId(consumerId)
-        .setMaxMessage(1)
-        .setOffset(MessageIdData.newBuilder().setLogSegmentSequenceNo(0).setEntryId(0).setSlotId(0))
+        .setMaxMessage(DEFAULT_MAX_PULL_MESSAGE_NUMBER)
+        .setOffset(MessageIdData.newBuilder().setLogSegmentSequenceNo(2).setEntryId(0).setSlotId(0))
         .build();
-    heraclesClient.handleConsumerPullMessage(request,asyncResult -> {
-      if(asyncResult.succeeded()){
+    heraclesClient.handleConsumerPullMessage(request, asyncResult -> {
+      if (asyncResult.succeeded()) {
         ConsumerPullMessageResponse pullMessageResponse = asyncResult.result();
         List<HeraclesProto.Message> messages = pullMessageResponse.getMessagesList();
-        if(messages != null && messages.size() > 0){
-          HeraclesProto.Message remoteMessage = messages.get(0);
-          MessageIdData offset = remoteMessage.getOffset();
-          byte[] body = remoteMessage.getBody().toByteArray();
-          Message message = new Message(new MessageId(offset.getLogSegmentSequenceNo(),offset.getEntryId(),offset.getSlotId()),body);
-          result.message = message;
+        if (messages != null && messages.size() > 0) {
+          result.messages = convertToMessage(messages);
+        } else {
+          result.messages = Collections.emptyList();
         }
+        latch.countDown();
       }else {
         result.throwable = asyncResult.cause();
       }
-      latch.countDown();
     });
     latch.await();
-    return result.message;
+    if (result.throwable != null) {
+      throw new HeraclesClientException("Pull message failed:", result.throwable);
+    }
+    return result.messages;
+  }
+
+  @Override
+  public CompletableFuture<List<Message>> receiveAsync() {
+    CompletableFuture<List<Message>> future = new CompletableFuture<>();
+    ConsumerPullMessageRequest request = ConsumerPullMessageRequest.newBuilder()
+        .setConsumerId(consumerId)
+        .setMaxMessage(DEFAULT_MAX_PULL_MESSAGE_NUMBER)
+        .setOffset(MessageIdData.newBuilder().setLogSegmentSequenceNo(0).setEntryId(0).setSlotId(0))
+        .build();
+    heraclesClient.handleConsumerPullMessage(request, asyncResult -> {
+      if (asyncResult.succeeded()) {
+        ConsumerPullMessageResponse pullMessageResponse = asyncResult.result();
+        List<HeraclesProto.Message> messages = pullMessageResponse.getMessagesList();
+        if (messages != null && messages.size() > 0) {
+          List<Message> messageList = convertToMessage(messages);
+          future.complete(messageList);
+        } else {
+          future.complete(Collections.emptyList());
+        }
+      } else {
+        future.completeExceptionally(
+            new HeraclesClientException("Pull Message failed.", asyncResult.cause()));
+      }
+    });
+    return future;
+  }
+
+  private List<Message> convertToMessage(List<HeraclesProto.Message> messages) {
+    List<Message> messageList = new ArrayList<>(messages.size());
+    messages.forEach(remotingMessage -> {
+      MessageIdData offset = remotingMessage.getOffset();
+      byte[] body = remotingMessage.getBody().toByteArray();
+      Message message = new Message(
+          new MessageId(offset.getLogSegmentSequenceNo(), offset.getEntryId(),
+              offset.getSlotId()), body);
+      messageList.add(message);
+    });
+    return messageList;
   }
 
   @Override

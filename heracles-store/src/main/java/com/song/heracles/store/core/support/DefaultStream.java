@@ -294,6 +294,16 @@ public class DefaultStream implements Stream {
 		this.streamState = StreamState.ERROR;
 	}
 
+	@Override
+	public String toString() {
+		return "DefaultStream{" +
+				"streamName='" + streamName + '\'' +
+				", owner='" + owner + '\'' +
+				", streamState=" + streamState +
+				", clientId='" + clientId + '\'' +
+				'}';
+	}
+
 	public enum StreamState {
 		UNINITIALIZED(-1),
 		INITIALIZING(0),
