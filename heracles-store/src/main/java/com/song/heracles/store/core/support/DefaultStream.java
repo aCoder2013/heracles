@@ -198,16 +198,9 @@ public class DefaultStream implements Stream {
 				} else {
 					streamState = StreamState.CLOSING;
 					if (writer != null) {
-						writer.asyncClose().thenAccept(aVoid -> log.info("Writer close successfully."))
+						writer.asyncClose().thenRun(() -> log.info("Writer close successfully."))
 							.exceptionally(throwable -> {
 								log.info("Failed to close writer", throwable);
-								return null;
-							});
-					}
-					if (distributedLogManager != null) {
-						distributedLogManager.asyncClose().thenAccept(aVoid -> log.info("Dlog manager has closed :" + streamName))
-							.exceptionally(throwable -> {
-								log.error("Close dlog manager failed :" + streamName, throwable);
 								return null;
 							});
 					}

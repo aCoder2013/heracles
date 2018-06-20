@@ -1,11 +1,15 @@
 package com.song.heracles.broker.core.producer;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.common.concurrent.OrderedExecutor;
 import com.song.heracles.common.exception.HeraclesException;
 import com.song.heracles.store.core.StreamFactory;
 import com.song.heracles.store.core.support.DefaultStreamFactory;
 import io.netty.buffer.Unpooled;
+import java.net.URI;
+import java.util.concurrent.CountDownLatch;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.distributedlog.DLSN;
 import org.apache.distributedlog.DistributedLogConfiguration;
@@ -16,11 +20,6 @@ import org.apache.distributedlog.common.concurrent.FutureUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.net.URI;
-import java.util.concurrent.CountDownLatch;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author song
@@ -64,6 +63,7 @@ public class DefaultProducerTest {
         try {
             DLSN dlsn = producer.send(Unpooled.wrappedBuffer("Hello World".getBytes()));
             assertThat(dlsn).isNotNull();
+            System.out.println(dlsn);
         } catch (InterruptedException | HeraclesException e) {
             e.printStackTrace();
         }
@@ -89,6 +89,7 @@ public class DefaultProducerTest {
     @After
     public void tearDown() throws Exception {
         producer.close();
+        namespace.close();
         FutureUtils.ignore(streamFactory.closeStreams());
     }
 }

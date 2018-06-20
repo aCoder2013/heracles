@@ -5,14 +5,14 @@ import com.song.heracles.broker.core.Offset;
 import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.store.core.Stream;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.distributedlog.LogRecordWithDLSN;
-import org.apache.distributedlog.api.AsyncLogReader;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.distributedlog.LogRecordWithDLSN;
+import org.apache.distributedlog.api.AsyncLogReader;
 
 /**
  * @author song
@@ -65,7 +65,7 @@ public class DefaultConsumer implements Consumer {
 	public CompletableFuture<List<Message>> pullMessages(int maxNumber) {
 		//TODO:fix read maxMaxNumber messages
 		CompletableFuture<List<Message>> pullMessageFuture = new CompletableFuture<>();
-		currentLogReader.readBulk(maxNumber).thenAccept(logRecordWithDLSNS -> {
+		currentLogReader.readBulk(maxNumber,2500, TimeUnit.MILLISECONDS).thenAccept(logRecordWithDLSNS -> {
 			if (logRecordWithDLSNS != null && logRecordWithDLSNS.size() > 0) {
 				List<Message> messages = new ArrayList<>(logRecordWithDLSNS.size());
 				for (LogRecordWithDLSN logRecordWithDLSN : logRecordWithDLSNS) {

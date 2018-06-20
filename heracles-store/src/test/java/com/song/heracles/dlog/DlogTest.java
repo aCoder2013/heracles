@@ -1,10 +1,14 @@
 package com.song.heracles.dlog;
 
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CountDownLatch;
 import org.apache.distributedlog.DLSN;
 import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.DistributedLogConstants;
 import org.apache.distributedlog.LogRecord;
 import org.apache.distributedlog.LogRecordWithDLSN;
+import org.apache.distributedlog.api.AsyncLogReader;
 import org.apache.distributedlog.api.AsyncLogWriter;
 import org.apache.distributedlog.api.DistributedLogManager;
 import org.apache.distributedlog.api.namespace.Namespace;
@@ -48,7 +52,7 @@ public class DlogTest {
 			/*
 				OwnershipAcquireFailedException
 			 */
-			dlm = namespace.openLog("basic-stream-1");
+			dlm = namespace.openLog("messaging-stream-1");
 			asyncLogWriter = FutureUtils.result(dlm.openAsyncLogWriter());
 			LogRecord logRecord = new LogRecord(System.currentTimeMillis(), "Hello World".getBytes());
 			DLSN dlsn = asyncLogWriter.write(logRecord).get();
@@ -84,13 +88,27 @@ public class DlogTest {
 				.regionId(DistributedLogConstants.LOCAL_REGION_ID)
 				.clientId("console-writer")
 				.build();
-			dlm = namespace.openLog("basic-stream-1");
-			LogRecordWithDLSN record = dlm.getLastLogRecord();
-			byte[] payload = record.getPayload();
-			System.out.println(payload);
-			System.out.println(new String(payload));
-			DLSN dlsn = record.getDlsn();
-			System.out.println(dlsn);
+			dlm = namespace.openLog("messaging-stream-1");
+			AsyncLogReader asyncLogReader = dlm.getAsyncLogReader(DLSN.InitialDLSN);
+			CountDownLatch latch = new CountDownLatch(1);
+			CompletableFuture<List<LogRecordWithDLSN>> completableFuture = asyncLogReader.readBulk(200,2500,TimeUnit.MILLISECONDS);
+			completableFuture.thenAccept(logRecordWithDLSNS -> {
+				logRecordWithDLSNS.forEach(logRecordWithDLSN -> {
+					System.out.println(logRecordWithDLSN.getDlsn() + " -> "+new String(logRecordWithDLSN.getPayload()));
+				});
+				latch.countDown();
+			}).exceptionally(throwable -> {
+				throwable.printStackTrace();
+				latch.countDown();
+				return null;
+			});
+			latch.await();
+//			LogRecordWithDLSN record = dlm.getLastLogRecord();
+//			byte[] payload = record.getPayload();
+//			System.out.println(payload);
+//			System.out.println(new String(payload));
+//			DLSN dlsn = record.getDlsn();
+//			System.out.println(dlsn);
 		} finally {
 			if (dlm != null) {
 				dlm.close();

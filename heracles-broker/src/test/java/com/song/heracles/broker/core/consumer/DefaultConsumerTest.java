@@ -1,5 +1,8 @@
 package com.song.heracles.broker.core.consumer;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import com.song.heracles.broker.core.Message;
 import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;
@@ -7,6 +10,10 @@ import com.song.heracles.broker.core.support.ZkOffsetStorage;
 import com.song.heracles.common.concurrent.OrderedExecutor;
 import com.song.heracles.store.core.StreamFactory;
 import com.song.heracles.store.core.support.DefaultStreamFactory;
+import java.net.URI;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CountDownLatch;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryNTimes;
@@ -18,14 +25,6 @@ import org.apache.distributedlog.common.concurrent.FutureUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.net.URI;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CountDownLatch;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 public class DefaultConsumerTest {
 
@@ -92,10 +91,9 @@ public class DefaultConsumerTest {
 
     @After
     public void tearDown() throws Exception {
-        FutureUtils.ignore(consumer.close());
-        FutureUtils.ignore(streamFactory.closeStreams());
+        FutureUtils.result(consumer.close());
+        FutureUtils.result(streamFactory.closeStreams());
         offsetStorage.close();
         curatorFramework.close();
-        namespace.close();
     }
 }

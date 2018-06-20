@@ -33,6 +33,7 @@ import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.DistributedLogConstants;
 import org.apache.distributedlog.api.namespace.Namespace;
 import org.apache.distributedlog.api.namespace.NamespaceBuilder;
+import org.apache.distributedlog.common.concurrent.FutureUtils;
 
 /**
  * @author song
@@ -176,22 +177,20 @@ public class BrokerService implements Closeable {
 					vertx.close();
 				}
 
-				if (remotingServer != null) {
-					remotingServer.shutdown();
-				}
+				remotingServer.shutdown();
 
-				if (vertxServer != null) {
-					vertxServer.shutdown();
-				}
+				vertxServer.shutdown();
 
-				if (curatorFramework != null) {
-					curatorFramework.close();
-				}
+				curatorFramework.close();
+				offsetStorage.close();
+				FutureUtils.result(streamFactory.closeStreams());
 				state.set(State.CLOSED);
 				log.info("Close broker service.");
 			} else {
 				log.warn("Can't close broker service ,current state is :" + state.get());
 			}
+		} catch (Exception e) {
+			log.error("Error when trying to close BrokerService.", e);
 		} finally {
 			lock.unlock();
 		}
