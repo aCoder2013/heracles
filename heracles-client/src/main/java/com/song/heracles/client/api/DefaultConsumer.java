@@ -9,6 +9,8 @@ import com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse;
 import com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest;
 import com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse;
 import com.song.heracles.net.proto.HeraclesProto.MessageIdData;
+import com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest;
+import com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,6 +32,8 @@ public class DefaultConsumer implements Consumer {
   private long consumerId;
 
   private String consumerName;
+
+  private volatile MessageIdData offset;
 
   private final HeraclesApiGrpc.HeraclesApiVertxStub heraclesClient;
 
@@ -60,7 +64,20 @@ public class DefaultConsumer implements Consumer {
         ConsumerConnectResponse connectResponse = asyncResult.result();
         consumerId = connectResponse.getConsumerId();
         consumerName = connectResponse.getConsumerName();
-        log.info("Consumer started successfully.");
+        heraclesClient.handlePullOffset(PullOffsetRequest.newBuilder()
+                .setConsumerId(consumerId).setConsumerName(consumerName).build(),
+            pullOffsetAsyncResult -> {
+              if (pullOffsetAsyncResult.succeeded()) {
+                PullOffsetResponse pullOffsetResponse = pullOffsetAsyncResult.result();
+                MessageIdData offset = pullOffsetResponse.getOffset();
+                this.offset = offset;
+                log.info("Consumer started successfully,offset:{}.",offset);
+              } else {
+                result.setThrowable(new HeraclesClientException(
+                    "Successfully establish connection to broker ,but failed to fetch offset.",
+                    pullOffsetAsyncResult.cause()));
+              }
+            });
       } else {
         result.setThrowable(asyncResult.cause());
       }
@@ -84,7 +101,7 @@ public class DefaultConsumer implements Consumer {
     ConsumerPullMessageRequest request = ConsumerPullMessageRequest.newBuilder()
         .setConsumerId(consumerId)
         .setMaxMessage(DEFAULT_MAX_PULL_MESSAGE_NUMBER)
-        .setOffset(MessageIdData.newBuilder().setLogSegmentSequenceNo(2).setEntryId(0).setSlotId(0))
+        .setOffset(offset)
         .build();
     heraclesClient.handleConsumerPullMessage(request, asyncResult -> {
       if (asyncResult.succeeded()) {
@@ -96,7 +113,7 @@ public class DefaultConsumer implements Consumer {
           result.messages = Collections.emptyList();
         }
         latch.countDown();
-      }else {
+      } else {
         result.throwable = asyncResult.cause();
       }
     });
@@ -113,7 +130,7 @@ public class DefaultConsumer implements Consumer {
     ConsumerPullMessageRequest request = ConsumerPullMessageRequest.newBuilder()
         .setConsumerId(consumerId)
         .setMaxMessage(DEFAULT_MAX_PULL_MESSAGE_NUMBER)
-        .setOffset(MessageIdData.newBuilder().setLogSegmentSequenceNo(0).setEntryId(0).setSlotId(0))
+        .setOffset(offset)
         .build();
     heraclesClient.handleConsumerPullMessage(request, asyncResult -> {
       if (asyncResult.succeeded()) {
