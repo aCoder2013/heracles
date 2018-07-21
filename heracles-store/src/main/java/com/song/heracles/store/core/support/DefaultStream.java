@@ -87,17 +87,14 @@ public class DefaultStream implements Stream {
 				closeLock.tryLock();
 				setStreamInErrorState();
 				try {
-					if (streamState == StreamState.CLOSING || streamState == StreamState.CLOSED) {
-						return null;
-					}
 					if (streamState == StreamState.INITIALIZED) {
 						FutureUtils.ignore(writer.asyncClose());
 						FutureUtils.ignore(distributedLogManager.asyncClose());
 					}
+					completableFuture.completeExceptionally(throwable);
 				} finally {
 					closeLock.unlock();
 				}
-				completableFuture.completeExceptionally(throwable);
 				return null;
 			});
 		});

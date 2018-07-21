@@ -1,5 +1,6 @@
-package com.song.heracles.broker.core;
+package com.song.heracles.broker.core.message;
 
+import com.song.heracles.broker.core.Offset;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

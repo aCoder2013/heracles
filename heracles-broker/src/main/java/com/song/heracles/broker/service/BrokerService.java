@@ -1,9 +1,9 @@
 package com.song.heracles.broker.service;
 
 import com.song.heracles.broker.config.BrokerConfiguration;
-import com.song.heracles.broker.core.ConsumerManager;
+import com.song.heracles.broker.core.consumer.ConsumerManager;
 import com.song.heracles.broker.core.OffsetStorage;
-import com.song.heracles.broker.core.ProducerManager;
+import com.song.heracles.broker.core.producer.ProducerManager;
 import com.song.heracles.broker.core.processor.ServerMessageProcessor;
 import com.song.heracles.broker.core.support.ZkOffsetStorage;
 import com.song.heracles.broker.service.support.ZkDistributedIdGenerator;

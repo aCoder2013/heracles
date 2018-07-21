@@ -1,6 +1,6 @@
 package com.song.heracles.broker.core.consumer;
 
-import com.song.heracles.broker.core.Message;
+import com.song.heracles.broker.core.message.Message;
 import com.song.heracles.broker.core.Offset;
 import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;

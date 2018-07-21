@@ -13,8 +13,9 @@ import lombok.NoArgsConstructor;
 public class MessageId {
 
   private long logSegmentSequenceNo;
-  private long entryId;
-  private long slotId;
 
+  private long entryId;
+
+  private long slotId;
 
 }

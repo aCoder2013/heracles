@@ -3,7 +3,7 @@ package com.song.heracles.broker.core.consumer;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import com.song.heracles.broker.core.Message;
+import com.song.heracles.broker.core.message.Message;
 import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.broker.core.support.ZkOffsetStorage;

@@ -1,6 +1,6 @@
 package com.song.heracles.broker.core.consumer;
 
-import com.song.heracles.broker.core.Message;
+import com.song.heracles.broker.core.message.Message;
 import com.song.heracles.broker.core.PartitionedTopic;
 
 import java.util.List;

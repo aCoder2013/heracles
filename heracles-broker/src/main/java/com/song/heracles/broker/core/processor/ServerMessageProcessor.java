@@ -1,10 +1,10 @@
 package com.song.heracles.broker.core.processor;
 
 import com.google.protobuf.ByteString;
-import com.song.heracles.broker.core.ConsumerManager;
+import com.song.heracles.broker.core.consumer.ConsumerManager;
 import com.song.heracles.broker.core.Offset;
 import com.song.heracles.broker.core.OffsetStorage;
-import com.song.heracles.broker.core.ProducerManager;
+import com.song.heracles.broker.core.producer.ProducerManager;
 import com.song.heracles.broker.core.consumer.Consumer;
 import com.song.heracles.broker.core.producer.Producer;
 import com.song.heracles.broker.service.BrokerService;
@@ -226,7 +226,7 @@ public class ServerMessageProcessor extends HeraclesApiGrpc.HeraclesApiVertxImpl
             .build());
       });
       if (!messages.isEmpty()) {
-        com.song.heracles.broker.core.Message message = messages.get(messages.size() - 1);
+        com.song.heracles.broker.core.message.Message message = messages.get(messages.size() - 1);
         if (message != null) {
           DLSN nextDLSN = message.getOffset().getDlsn().getNextDLSN();
           if (nextDLSN != null) {
