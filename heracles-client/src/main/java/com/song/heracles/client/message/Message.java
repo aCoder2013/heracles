@@ -1,4 +1,4 @@
-package com.song.heracles.client.api;
+package com.song.heracles.client.message;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

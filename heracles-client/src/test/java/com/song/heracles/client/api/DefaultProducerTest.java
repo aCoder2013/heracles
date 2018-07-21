@@ -4,6 +4,7 @@ import com.song.heracles.client.configuration.ClientConfiguration;
 import com.song.heracles.client.configuration.ProducerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
 
+import com.song.heracles.client.net.HeraclesClient;
 import org.junit.Test;
 
 import java.util.Collections;

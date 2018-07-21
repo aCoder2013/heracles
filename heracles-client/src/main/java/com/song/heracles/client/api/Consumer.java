@@ -1,6 +1,7 @@
 package com.song.heracles.client.api;
 
 import com.song.heracles.client.exception.HeraclesClientException;
+import com.song.heracles.client.message.Message;
 import java.io.Closeable;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;

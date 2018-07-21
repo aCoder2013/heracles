@@ -2,6 +2,8 @@ package com.song.heracles.client.api;
 
 import com.song.heracles.client.configuration.ConsumerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
+import com.song.heracles.client.message.Message;
+import com.song.heracles.client.message.MessageId;
 import com.song.heracles.common.util.Result;
 import com.song.heracles.net.proto.HeraclesApiGrpc;
 import com.song.heracles.net.proto.HeraclesProto;

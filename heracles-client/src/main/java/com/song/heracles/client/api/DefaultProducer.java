@@ -5,6 +5,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import com.google.protobuf.ByteString;
 import com.song.heracles.client.configuration.ProducerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
+import com.song.heracles.client.message.MessageId;
 import com.song.heracles.common.util.Result;
 import com.song.heracles.common.util.ValidateUtils;
 import com.song.heracles.net.proto.HeraclesApiGrpc;

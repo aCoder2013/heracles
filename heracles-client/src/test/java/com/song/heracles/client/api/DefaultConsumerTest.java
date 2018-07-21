@@ -3,6 +3,8 @@ package com.song.heracles.client.api;
 import com.song.heracles.client.configuration.ClientConfiguration;
 import com.song.heracles.client.configuration.ConsumerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
+import com.song.heracles.client.message.Message;
+import com.song.heracles.client.net.HeraclesClient;
 import com.song.heracles.common.util.GsonUtils;
 import java.util.Collections;
 import java.util.List;
