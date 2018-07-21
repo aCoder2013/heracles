@@ -1,5 +1,6 @@
 package com.song.heracles.client.api;
 
+import com.song.heracles.client.configuration.ConsumerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
 import com.song.heracles.common.util.Result;
 import com.song.heracles.net.proto.HeraclesApiGrpc;
@@ -37,11 +38,11 @@ public class DefaultConsumer implements Consumer {
 
   private final HeraclesApiGrpc.HeraclesApiVertxStub heraclesClient;
 
-  public DefaultConsumer(String topic, String consumerName,
+  public DefaultConsumer(ConsumerConfiguration consumerConfiguration,
       HeraclesApiGrpc.HeraclesApiVertxStub heraclesClient, long consumerId) {
-    this.topic = topic;
+    this.topic = consumerConfiguration.getTopic();
+    this.consumerName = consumerConfiguration.getConsumerName();
     this.consumerId = consumerId;
-    this.consumerName = consumerName;
     this.heraclesClient = heraclesClient;
   }
 

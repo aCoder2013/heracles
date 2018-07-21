@@ -1,6 +1,7 @@
 package com.song.heracles.client.api;
 
 import com.song.heracles.client.configuration.ClientConfiguration;
+import com.song.heracles.client.configuration.ConsumerConfiguration;
 import com.song.heracles.client.configuration.ProducerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
 import com.song.heracles.common.util.IdGenerator;
@@ -44,12 +45,12 @@ public class HeraclesClient implements Closeable {
 		return new DefaultProducer(configuration, heraclesClient, producerIdGenerator.nextId());
 	}
 
-	public Consumer createConsumer(String topic,String consumerName) throws HeraclesClientException {
+	public Consumer createConsumer(ConsumerConfiguration consumerConfiguration) throws HeraclesClientException {
 		HeraclesApiVertxStub heraclesClient = remotingClient.createHeraclesClient();
 		if (heraclesClient == null) {
 			throw new HeraclesClientException("Create consumer failed,may all servers are crashed?");
 		}
-		return new DefaultConsumer(topic,consumerName,heraclesClient,System.currentTimeMillis());
+		return new DefaultConsumer(consumerConfiguration, heraclesClient, System.currentTimeMillis());
 	}
 
 	public ClientConfiguration getClientConfiguration() {

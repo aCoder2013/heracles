@@ -1,23 +1,20 @@
 package com.song.heracles.client.api;
 
-import com.google.protobuf.ByteString;
+import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.protobuf.ByteString;
 import com.song.heracles.client.configuration.ProducerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
 import com.song.heracles.common.util.Result;
 import com.song.heracles.common.util.ValidateUtils;
 import com.song.heracles.net.proto.HeraclesApiGrpc;
 import com.song.heracles.net.proto.HeraclesProto;
-
-import org.apache.commons.lang3.StringUtils;
-
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
-
+import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
-
-import static com.google.common.base.Preconditions.checkArgument;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author song
@@ -33,6 +30,10 @@ public class DefaultProducer implements Producer {
 
 	private final long producerId;
 
+	private long startTimeout = 6000;
+
+	private TimeUnit startTimeoutUnit = TimeUnit.MILLISECONDS;
+
 	private final HeraclesApiGrpc.HeraclesApiVertxStub heraclesClient;
 
 	public DefaultProducer(ProducerConfiguration producerConfiguration, HeraclesApiGrpc.HeraclesApiVertxStub heraclesClient, long producerId) {
@@ -41,6 +42,8 @@ public class DefaultProducer implements Producer {
 		checkArgument(result.isSuccess(), result.getMessage());
 		this.topic = producerConfiguration.getTopic();
 		this.producerName = producerConfiguration.getProducerName();
+		this.startTimeout = producerConfiguration.getStartTimeout();
+		this.startTimeoutUnit = producerConfiguration.getStartTimeoutUnit();
 		this.heraclesClient = heraclesClient;
 		this.producerId = producerId;
 	}
@@ -62,8 +65,7 @@ public class DefaultProducer implements Producer {
 			}
 			latch.countDown();
 		});
-		// TODO: 2018/6/10 Add timeout
-		latch.await();
+		latch.await(startTimeout, startTimeoutUnit);
 		if (result.getThrowable() != null) {
 			throw new HeraclesClientException(result.getThrowable());
 		}

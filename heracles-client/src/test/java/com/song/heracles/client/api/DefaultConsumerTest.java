@@ -1,6 +1,7 @@
 package com.song.heracles.client.api;
 
 import com.song.heracles.client.configuration.ClientConfiguration;
+import com.song.heracles.client.configuration.ConsumerConfiguration;
 import com.song.heracles.client.exception.HeraclesClientException;
 import com.song.heracles.common.util.GsonUtils;
 import java.util.Collections;
@@ -20,7 +21,10 @@ public class DefaultConsumerTest {
         .servers(Collections.singletonList("localhost:7160"))
         .build();
     HeraclesClient heraclesClient = new HeraclesClient(clientConfiguration);
-    consumer = heraclesClient.createConsumer("messaging-stream-1", "test-consumer");
+    consumer = heraclesClient.createConsumer(ConsumerConfiguration.builder()
+        .topic("messaging-stream-1")
+        .consumerName("test-consumer")
+        .build());
     consumer.start();
   }
 
