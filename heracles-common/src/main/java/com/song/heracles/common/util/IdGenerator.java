@@ -5,8 +5,8 @@ package com.song.heracles.common.util;
  */
 public interface IdGenerator {
 
-	long INVALID_TXID = -9999;
+    long INVALID_TXID = -9999;
 
-	long nextId();
+    long nextId();
 
 }

@@ -1,9 +1,7 @@
 package com.song.heracles.client.configuration;
 
 import com.song.heracles.common.util.Required;
-
 import java.util.List;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,8 +14,8 @@ import lombok.Setter;
 @Builder
 public class ClientConfiguration {
 
-	@Required
-	private List<String> servers;
+    @Required
+    private List<String> servers;
 
-	private long operationTimeoutMills = 30_000;
+    private long operationTimeoutMills = 30_000;
 }

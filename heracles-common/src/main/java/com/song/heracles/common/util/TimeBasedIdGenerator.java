@@ -9,14 +9,14 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class TimeBasedIdGenerator implements IdGenerator {
 
-	private AtomicLong idGenerator;
+    private AtomicLong idGenerator;
 
-	public TimeBasedIdGenerator(long lastId) {
-		idGenerator = new AtomicLong(Math.max(lastId, System.currentTimeMillis()));
-	}
+    public TimeBasedIdGenerator(long lastId) {
+        idGenerator = new AtomicLong(Math.max(lastId, System.currentTimeMillis()));
+    }
 
-	@Override
-	public long nextId() {
-		return idGenerator.incrementAndGet();
-	}
+    @Override
+    public long nextId() {
+        return idGenerator.incrementAndGet();
+    }
 }

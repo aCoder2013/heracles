@@ -3,9 +3,9 @@ package com.song.heracles.broker.core.consumer;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import com.song.heracles.broker.core.message.Message;
 import com.song.heracles.broker.core.OffsetStorage;
 import com.song.heracles.broker.core.PartitionedTopic;
+import com.song.heracles.broker.core.message.Message;
 import com.song.heracles.broker.core.support.ZkOffsetStorage;
 import com.song.heracles.common.concurrent.OrderedExecutor;
 import com.song.heracles.store.core.StreamFactory;
@@ -14,6 +14,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+import org.apache.bookkeeper.common.concurrent.FutureUtils;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryNTimes;
@@ -21,7 +22,6 @@ import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.DistributedLogConstants;
 import org.apache.distributedlog.api.namespace.Namespace;
 import org.apache.distributedlog.api.namespace.NamespaceBuilder;
-import org.apache.distributedlog.common.concurrent.FutureUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,19 +46,22 @@ public class DefaultConsumerTest {
         dlConfig.setPeriodicFlushFrequencyMilliSeconds(0);
         dlConfig.setLockTimeout(DistributedLogConstants.LOCK_IMMEDIATE);
         namespace = NamespaceBuilder.newBuilder()
-                .conf(dlConfig)
-                .uri(URI.create("distributedlog://127.0.0.1:7000/messaging/my_namespace"))
-                .regionId(DistributedLogConstants.LOCAL_REGION_ID)
-                .clientId("default")
-                .build();
-        streamFactory = new DefaultStreamFactory("default", dlConfig, namespace, OrderedExecutor.newBuilder().build());
+            .conf(dlConfig)
+            .uri(URI.create("distributedlog://127.0.0.1:7000/messaging/my_namespace"))
+            .regionId(DistributedLogConstants.LOCAL_REGION_ID)
+            .clientId("default")
+            .build();
+        streamFactory = new DefaultStreamFactory("default", dlConfig, namespace,
+            OrderedExecutor.newBuilder().build());
         PartitionedTopic partitionedTopic = new PartitionedTopic("messaging-stream", 1);
         String originalTopic = partitionedTopic.getOriginalTopic();
-        curatorFramework = CuratorFrameworkFactory.newClient("127.0.0.1:2181", new RetryNTimes(3, 1000));
+        curatorFramework = CuratorFrameworkFactory
+            .newClient("127.0.0.1:2181", new RetryNTimes(3, 1000));
         curatorFramework.start();
         offsetStorage = new ZkOffsetStorage(curatorFramework);
         offsetStorage.start();
-        consumer = new DefaultConsumer(partitionedTopic, streamFactory.getOrOpenStream(originalTopic), offsetStorage);
+        consumer = new DefaultConsumer(partitionedTopic,
+            streamFactory.getOrOpenStream(originalTopic), offsetStorage);
         CountDownLatch latch = new CountDownLatch(1);
         consumer.start().thenRun(latch::countDown).exceptionally(throwable -> {
             throwable.printStackTrace();

@@ -5,6 +5,6 @@ package com.song.heracles.broker.core;
  */
 public interface TopicPartitionConverter {
 
-	PartitionedTopic convert(String name);
+    PartitionedTopic convert(String name);
 
 }

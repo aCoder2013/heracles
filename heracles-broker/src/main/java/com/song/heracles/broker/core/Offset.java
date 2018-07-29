@@ -1,9 +1,8 @@
 package com.song.heracles.broker.core;
 
-import org.apache.distributedlog.DLSN;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.apache.distributedlog.DLSN;
 
 /**
  * @author song
@@ -12,5 +11,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class Offset {
 
-	private DLSN dlsn;
+    private DLSN dlsn;
 }

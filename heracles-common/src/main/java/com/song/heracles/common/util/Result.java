@@ -10,12 +10,12 @@ import lombok.Setter;
 @Getter
 public class Result<T> {
 
-	private boolean success;
+    private boolean success;
 
-	private T data;
+    private T data;
 
-	private String message;
+    private String message;
 
-	private Throwable throwable;
+    private Throwable throwable;
 
 }

@@ -18,7 +18,7 @@
 
     <properties>
         <junit.version>4.12</junit.version>
-        <distributedlog.version>0.5.0</distributedlog.version>
+        <distributedlog.version>4.7.1</distributedlog.version>
         <commons-lang3.version>3.7</commons-lang3.version>
         <netty-all.version>4.1.22.Final</netty-all.version>
         <os.detected.classifier>osx-x86_64</os.detected.classifier>

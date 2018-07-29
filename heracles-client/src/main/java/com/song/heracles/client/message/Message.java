@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Message {
 
-  private MessageId messageId;
+    private MessageId messageId;
 
-  private byte[] body;
+    private byte[] body;
 
 }

@@ -1,11 +1,9 @@
 package com.song.heracles.store.core.support;
 
 import com.song.heracles.common.constants.ErrorCode;
-
-import org.apache.distributedlog.DLSN;
-
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.distributedlog.DLSN;
 
 /**
  * @author song
@@ -14,12 +12,12 @@ import lombok.Setter;
 @Setter
 public class WriteResponse extends StreamResponse {
 
-	private DLSN dlsn;
+    private DLSN dlsn;
 
-	public WriteResponse() {
-	}
+    public WriteResponse() {
+    }
 
-	public WriteResponse(ErrorCode errorCode, String message) {
-		super(errorCode, message);
-	}
+    public WriteResponse(ErrorCode errorCode, String message) {
+        super(errorCode, message);
+    }
 }

@@ -7,31 +7,31 @@ import com.song.heracles.common.constants.ErrorCode;
  */
 public class StreamResponse {
 
-	private ErrorCode code;
+    private ErrorCode code;
 
-	private String message;
+    private String message;
 
-	public StreamResponse() {
-	}
+    public StreamResponse() {
+    }
 
-	public StreamResponse(ErrorCode code, String message) {
-		this.code = code;
-		this.message = message;
-	}
+    public StreamResponse(ErrorCode code, String message) {
+        this.code = code;
+        this.message = message;
+    }
 
-	public ErrorCode getCode() {
-		return code;
-	}
+    public ErrorCode getCode() {
+        return code;
+    }
 
-	public void setCode(ErrorCode code) {
-		this.code = code;
-	}
+    public void setCode(ErrorCode code) {
+        this.code = code;
+    }
 
-	public String getMessage() {
-		return message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

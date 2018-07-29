@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MessageId {
 
-  private long logSegmentSequenceNo;
+    private long logSegmentSequenceNo;
 
-  private long entryId;
+    private long entryId;
 
-  private long slotId;
+    private long slotId;
 
 }

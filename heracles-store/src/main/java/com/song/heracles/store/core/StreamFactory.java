@@ -8,11 +8,11 @@ import java.util.concurrent.CompletableFuture;
  */
 public interface StreamFactory {
 
-	Stream getStream(String name);
+    Stream getStream(String name);
 
-	Stream getOrOpenStream(String name);
+    Stream getOrOpenStream(String name);
 
-	CompletableFuture<Void> asyncCreateStream(String name);
+    CompletableFuture<Void> asyncCreateStream(String name);
 
-	CompletableFuture<List<Void>> closeStreams();
+    CompletableFuture<List<Void>> closeStreams();
 }

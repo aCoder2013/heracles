@@ -12,12 +12,12 @@ import lombok.Setter;
 @Builder
 public class ConsumerConfiguration {
 
-  @Required
-  private String topic;
+    @Required
+    private String topic;
 
-  private String consumerName;
+    private String consumerName;
 
-  private long startTimeout = 6000;
+    private long startTimeout = 6000;
 
-  private TimeUnit startTimeoutUnit = TimeUnit.MILLISECONDS;
+    private TimeUnit startTimeoutUnit = TimeUnit.MILLISECONDS;
 }

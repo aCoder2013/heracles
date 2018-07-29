@@ -7,13 +7,13 @@ import org.apache.distributedlog.DLSN;
  */
 public class StreamWriteResponse extends StreamResponse {
 
-	private DLSN dlsn;
+    private DLSN dlsn;
 
-	public DLSN getDlsn() {
-		return dlsn;
-	}
+    public DLSN getDlsn() {
+        return dlsn;
+    }
 
-	public void setDlsn(DLSN dlsn) {
-		this.dlsn = dlsn;
-	}
+    public void setDlsn(DLSN dlsn) {
+        this.dlsn = dlsn;
+    }
 }

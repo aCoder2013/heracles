@@ -2,7 +2,6 @@ package com.song.heracles.broker.core.support;
 
 import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.broker.core.TopicPartitionConverter;
-
 import org.apache.commons.lang.StringUtils;
 
 /**
@@ -18,31 +17,31 @@ import org.apache.commons.lang.StringUtils;
  */
 public class SeparatorTopicPartitionConverter implements TopicPartitionConverter {
 
-	private static final String DEFAULT_SEPARATOR = "-";
+    private static final String DEFAULT_SEPARATOR = "-";
 
-	private final String separator;
+    private final String separator;
 
-	public SeparatorTopicPartitionConverter() {
-		this(DEFAULT_SEPARATOR);
-	}
+    public SeparatorTopicPartitionConverter() {
+        this(DEFAULT_SEPARATOR);
+    }
 
-	public SeparatorTopicPartitionConverter(String separator) {
-		this.separator = separator;
-	}
+    public SeparatorTopicPartitionConverter(String separator) {
+        this.separator = separator;
+    }
 
-	@Override
-	public PartitionedTopic convert(String topic) {
-		if (StringUtils.isNotBlank(topic)) {
-			int separatorIndex = topic.lastIndexOf(separator);
-			if (separatorIndex != -1) {
-				String name = topic.substring(0, separatorIndex);
-				try {
-					int index = Integer.parseInt(topic.substring(separatorIndex + 1));
-					return new PartitionedTopic(name, index);
-				} catch (NumberFormatException ignore) {
-				}
-			}
-		}
-		return new PartitionedTopic(topic, 0);
-	}
+    @Override
+    public PartitionedTopic convert(String topic) {
+        if (StringUtils.isNotBlank(topic)) {
+            int separatorIndex = topic.lastIndexOf(separator);
+            if (separatorIndex != -1) {
+                String name = topic.substring(0, separatorIndex);
+                try {
+                    int index = Integer.parseInt(topic.substring(separatorIndex + 1));
+                    return new PartitionedTopic(name, index);
+                } catch (NumberFormatException ignore) {
+                }
+            }
+        }
+        return new PartitionedTopic(topic, 0);
+    }
 }

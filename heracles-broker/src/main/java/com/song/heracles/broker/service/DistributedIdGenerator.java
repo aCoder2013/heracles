@@ -5,5 +5,5 @@ package com.song.heracles.broker.service;
  */
 public interface DistributedIdGenerator {
 
-	String getNextId();
+    String getNextId();
 }

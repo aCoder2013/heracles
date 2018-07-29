@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Message {
 
-	private Offset offset;
+    private Offset offset;
 
-	private byte[] payload;
+    private byte[] payload;
 }

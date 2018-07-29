@@ -1,10 +1,10 @@
 package com.song.heracles.broker.core.support;
 
+import static org.junit.Assert.assertEquals;
+
 import com.song.heracles.broker.core.PartitionedTopic;
 import com.song.heracles.broker.core.TopicPartitionConverter;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SeparatorPartitionedTopicConverterTest {
 

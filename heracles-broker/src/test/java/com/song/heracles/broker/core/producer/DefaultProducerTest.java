@@ -11,12 +11,12 @@ import io.netty.buffer.Unpooled;
 import java.net.URI;
 import java.util.concurrent.CountDownLatch;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.bookkeeper.common.concurrent.FutureUtils;
 import org.apache.distributedlog.DLSN;
 import org.apache.distributedlog.DistributedLogConfiguration;
 import org.apache.distributedlog.DistributedLogConstants;
 import org.apache.distributedlog.api.namespace.Namespace;
 import org.apache.distributedlog.api.namespace.NamespaceBuilder;
-import org.apache.distributedlog.common.concurrent.FutureUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,15 +40,17 @@ public class DefaultProducerTest {
         dlConfig.setPeriodicFlushFrequencyMilliSeconds(0);
         dlConfig.setLockTimeout(DistributedLogConstants.LOCK_IMMEDIATE);
         namespace = NamespaceBuilder.newBuilder()
-                .conf(dlConfig)
-                .uri(URI.create("distributedlog://127.0.0.1:7000/messaging/my_namespace"))
-                .regionId(DistributedLogConstants.LOCAL_REGION_ID)
-                .clientId("default")
-                .build();
-        streamFactory = new DefaultStreamFactory("default", dlConfig, namespace, OrderedExecutor.newBuilder().build());
+            .conf(dlConfig)
+            .uri(URI.create("distributedlog://127.0.0.1:7000/messaging/my_namespace"))
+            .regionId(DistributedLogConstants.LOCAL_REGION_ID)
+            .clientId("default")
+            .build();
+        streamFactory = new DefaultStreamFactory("default", dlConfig, namespace,
+            OrderedExecutor.newBuilder().build());
         PartitionedTopic partitionedTopic = new PartitionedTopic("messaging-stream", 1);
         String originalTopic = partitionedTopic.getOriginalTopic();
-        producer = new DefaultProducer(partitionedTopic, streamFactory.getOrOpenStream(originalTopic));
+        producer = new DefaultProducer(partitionedTopic,
+            streamFactory.getOrOpenStream(originalTopic));
         CountDownLatch latch = new CountDownLatch(1);
         producer.start().thenRun(latch::countDown).exceptionally(throwable -> {
             throwable.printStackTrace();
@@ -74,10 +76,10 @@ public class DefaultProducerTest {
         for (int i = 0; i < 100; i++) {
             CountDownLatch latch = new CountDownLatch(1);
             producer.sendAsync(Unpooled.wrappedBuffer("Hello World".getBytes()))
-                    .thenAccept(dlsn -> {
-                        assertThat(dlsn).isNotNull();
-                        latch.countDown();
-                    }).exceptionally(throwable -> {
+                .thenAccept(dlsn -> {
+                    assertThat(dlsn).isNotNull();
+                    latch.countDown();
+                }).exceptionally(throwable -> {
                 throwable.printStackTrace();
                 latch.countDown();
                 return null;

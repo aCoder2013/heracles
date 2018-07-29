@@ -1,24 +1,23 @@
 package com.song.heracles.store.core;
 
+import java.util.concurrent.CompletableFuture;
 import org.apache.distributedlog.DLSN;
 import org.apache.distributedlog.api.AsyncLogReader;
-
-import java.util.concurrent.CompletableFuture;
 
 /**
  * @author song
  */
 public interface Stream {
 
-	CompletableFuture<Void> start();
+    CompletableFuture<Void> start();
 
-	String getStreamName();
+    String getStreamName();
 
-	String getOwner();
+    String getOwner();
 
-	CompletableFuture<AsyncLogReader> asyncOpenReader(DLSN dlsn);
+    CompletableFuture<AsyncLogReader> asyncOpenReader(DLSN dlsn);
 
-	void submitOp(StreamOp streamOp);
+    void submitOp(StreamOp streamOp);
 
-	CompletableFuture<Void> closeAsync();
+    CompletableFuture<Void> closeAsync();
 }

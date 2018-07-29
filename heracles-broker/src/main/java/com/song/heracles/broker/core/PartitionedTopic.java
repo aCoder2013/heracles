@@ -17,15 +17,15 @@ import lombok.Data;
 @AllArgsConstructor
 public class PartitionedTopic {
 
-	/**
-	 * original topic name
-	 */
-	private String topic;
+    /**
+     * original topic name
+     */
+    private String topic;
 
-	private int index;
+    private int index;
 
-	public String getOriginalTopic() {
-		return topic + "-" + index;
-	}
+    public String getOriginalTopic() {
+        return topic + "-" + index;
+    }
 
 }

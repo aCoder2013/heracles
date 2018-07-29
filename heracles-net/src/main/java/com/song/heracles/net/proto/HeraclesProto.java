@@ -4,8859 +4,9843 @@
 package com.song.heracles.net.proto;
 
 public final class HeraclesProto {
-  private HeraclesProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface MessageIdDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.MessageIdData)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 logSegmentSequenceNo = 1;</code>
-     */
-    long getLogSegmentSequenceNo();
-
-    /**
-     * <code>uint64 entryId = 2;</code>
-     */
-    long getEntryId();
-
-    /**
-     * <code>uint64 slotId = 3;</code>
-     */
-    long getSlotId();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.MessageIdData}
-   */
-  public  static final class MessageIdData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.MessageIdData)
-      MessageIdDataOrBuilder {
-    // Use MessageIdData.newBuilder() to construct.
-    private MessageIdData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MessageIdData() {
-      logSegmentSequenceNo_ = 0L;
-      entryId_ = 0L;
-      slotId_ = 0L;
+    private HeraclesProto() {
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private MessageIdData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              logSegmentSequenceNo_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              entryId_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              slotId_ = input.readUInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
+    public static void registerAllExtensions(
+        com.google.protobuf.ExtensionRegistryLite registry) {
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.class, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder.class);
+    public static void registerAllExtensions(
+        com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+            (com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    public static final int LOGSEGMENTSEQUENCENO_FIELD_NUMBER = 1;
-    private long logSegmentSequenceNo_;
-    /**
-     * <code>uint64 logSegmentSequenceNo = 1;</code>
-     */
-    public long getLogSegmentSequenceNo() {
-      return logSegmentSequenceNo_;
+    public interface MessageIdDataOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.MessageIdData)
+        com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>uint64 logSegmentSequenceNo = 1;</code>
+         */
+        long getLogSegmentSequenceNo();
+
+        /**
+         * <code>uint64 entryId = 2;</code>
+         */
+        long getEntryId();
+
+        /**
+         * <code>uint64 slotId = 3;</code>
+         */
+        long getSlotId();
     }
 
-    public static final int ENTRYID_FIELD_NUMBER = 2;
-    private long entryId_;
-    /**
-     * <code>uint64 entryId = 2;</code>
-     */
-    public long getEntryId() {
-      return entryId_;
-    }
-
-    public static final int SLOTID_FIELD_NUMBER = 3;
-    private long slotId_;
-    /**
-     * <code>uint64 slotId = 3;</code>
-     */
-    public long getSlotId() {
-      return slotId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (logSegmentSequenceNo_ != 0L) {
-        output.writeUInt64(1, logSegmentSequenceNo_);
-      }
-      if (entryId_ != 0L) {
-        output.writeUInt64(2, entryId_);
-      }
-      if (slotId_ != 0L) {
-        output.writeUInt64(3, slotId_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (logSegmentSequenceNo_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, logSegmentSequenceNo_);
-      }
-      if (entryId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, entryId_);
-      }
-      if (slotId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, slotId_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.MessageIdData)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.MessageIdData other = (com.song.heracles.net.proto.HeraclesProto.MessageIdData) obj;
-
-      boolean result = true;
-      result = result && (getLogSegmentSequenceNo()
-          == other.getLogSegmentSequenceNo());
-      result = result && (getEntryId()
-          == other.getEntryId());
-      result = result && (getSlotId()
-          == other.getSlotId());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LOGSEGMENTSEQUENCENO_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLogSegmentSequenceNo());
-      hash = (37 * hash) + ENTRYID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEntryId());
-      hash = (37 * hash) + SLOTID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSlotId());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.MessageIdData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.MessageIdData}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.MessageIdData)
-        com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
-      }
+    public static final class MessageIdData extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.MessageIdData)
+        MessageIdDataOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.MessageIdData.class, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.MessageIdData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use MessageIdData.newBuilder() to construct.
+        private MessageIdData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        logSegmentSequenceNo_ = 0L;
 
-        entryId_ = 0L;
-
-        slotId_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData build() {
-        com.song.heracles.net.proto.HeraclesProto.MessageIdData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private MessageIdData() {
+            logSegmentSequenceNo_ = 0L;
+            entryId_ = 0L;
+            slotId_ = 0L;
         }
-        return result;
-      }
 
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.MessageIdData result = new com.song.heracles.net.proto.HeraclesProto.MessageIdData(this);
-        result.logSegmentSequenceNo_ = logSegmentSequenceNo_;
-        result.entryId_ = entryId_;
-        result.slotId_ = slotId_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.MessageIdData) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.MessageIdData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.MessageIdData other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance()) return this;
-        if (other.getLogSegmentSequenceNo() != 0L) {
-          setLogSegmentSequenceNo(other.getLogSegmentSequenceNo());
+        private MessageIdData(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+
+                            logSegmentSequenceNo_ = input.readUInt64();
+                            break;
+                        }
+                        case 16: {
+
+                            entryId_ = input.readUInt64();
+                            break;
+                        }
+                        case 24: {
+
+                            slotId_ = input.readUInt64();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getEntryId() != 0L) {
-          setEntryId(other.getEntryId());
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
         }
-        if (other.getSlotId() != 0L) {
-          setSlotId(other.getSlotId());
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.MessageIdData.class,
+                    com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder.class);
         }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
+        public static final int LOGSEGMENTSEQUENCENO_FIELD_NUMBER = 1;
+        private long logSegmentSequenceNo_;
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.MessageIdData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.MessageIdData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>uint64 logSegmentSequenceNo = 1;</code>
+         */
+        public long getLogSegmentSequenceNo() {
+            return logSegmentSequenceNo_;
         }
-        return this;
-      }
 
-      private long logSegmentSequenceNo_ ;
-      /**
-       * <code>uint64 logSegmentSequenceNo = 1;</code>
-       */
-      public long getLogSegmentSequenceNo() {
-        return logSegmentSequenceNo_;
-      }
-      /**
-       * <code>uint64 logSegmentSequenceNo = 1;</code>
-       */
-      public Builder setLogSegmentSequenceNo(long value) {
-        
-        logSegmentSequenceNo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 logSegmentSequenceNo = 1;</code>
-       */
-      public Builder clearLogSegmentSequenceNo() {
-        
-        logSegmentSequenceNo_ = 0L;
-        onChanged();
-        return this;
-      }
+        public static final int ENTRYID_FIELD_NUMBER = 2;
+        private long entryId_;
 
-      private long entryId_ ;
-      /**
-       * <code>uint64 entryId = 2;</code>
-       */
-      public long getEntryId() {
-        return entryId_;
-      }
-      /**
-       * <code>uint64 entryId = 2;</code>
-       */
-      public Builder setEntryId(long value) {
-        
-        entryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 entryId = 2;</code>
-       */
-      public Builder clearEntryId() {
-        
-        entryId_ = 0L;
-        onChanged();
-        return this;
-      }
+        /**
+         * <code>uint64 entryId = 2;</code>
+         */
+        public long getEntryId() {
+            return entryId_;
+        }
 
-      private long slotId_ ;
-      /**
-       * <code>uint64 slotId = 3;</code>
-       */
-      public long getSlotId() {
-        return slotId_;
-      }
-      /**
-       * <code>uint64 slotId = 3;</code>
-       */
-      public Builder setSlotId(long value) {
-        
-        slotId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 slotId = 3;</code>
-       */
-      public Builder clearSlotId() {
-        
-        slotId_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        public static final int SLOTID_FIELD_NUMBER = 3;
+        private long slotId_;
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        /**
+         * <code>uint64 slotId = 3;</code>
+         */
+        public long getSlotId() {
+            return slotId_;
+        }
 
+        private byte memoizedIsInitialized = -1;
 
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.MessageIdData)
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (logSegmentSequenceNo_ != 0L) {
+                output.writeUInt64(1, logSegmentSequenceNo_);
+            }
+            if (entryId_ != 0L) {
+                output.writeUInt64(2, entryId_);
+            }
+            if (slotId_ != 0L) {
+                output.writeUInt64(3, slotId_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (logSegmentSequenceNo_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(1, logSegmentSequenceNo_);
+            }
+            if (entryId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, entryId_);
+            }
+            if (slotId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(3, slotId_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.MessageIdData)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.MessageIdData other = (com.song.heracles.net.proto.HeraclesProto.MessageIdData) obj;
+
+            boolean result = true;
+            result = result && (getLogSegmentSequenceNo()
+                == other.getLogSegmentSequenceNo());
+            result = result && (getEntryId()
+                == other.getEntryId());
+            result = result && (getSlotId()
+                == other.getSlotId());
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + LOGSEGMENTSEQUENCENO_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getLogSegmentSequenceNo());
+            hash = (37 * hash) + ENTRYID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getEntryId());
+            hash = (37 * hash) + SLOTID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getSlotId());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.MessageIdData prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.MessageIdData}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.MessageIdData)
+            com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData.class,
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.MessageIdData.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                logSegmentSequenceNo_ = 0L;
+
+                entryId_ = 0L;
+
+                slotId_ = 0L;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData build() {
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData result = new com.song.heracles.net.proto.HeraclesProto.MessageIdData(
+                    this);
+                result.logSegmentSequenceNo_ = logSegmentSequenceNo_;
+                result.entryId_ = entryId_;
+                result.slotId_ = slotId_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.MessageIdData) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.MessageIdData) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (other.getLogSegmentSequenceNo() != 0L) {
+                    setLogSegmentSequenceNo(other.getLogSegmentSequenceNo());
+                }
+                if (other.getEntryId() != 0L) {
+                    setEntryId(other.getEntryId());
+                }
+                if (other.getSlotId() != 0L) {
+                    setSlotId(other.getSlotId());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.MessageIdData) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long logSegmentSequenceNo_;
+
+            /**
+             * <code>uint64 logSegmentSequenceNo = 1;</code>
+             */
+            public long getLogSegmentSequenceNo() {
+                return logSegmentSequenceNo_;
+            }
+
+            /**
+             * <code>uint64 logSegmentSequenceNo = 1;</code>
+             */
+            public Builder setLogSegmentSequenceNo(long value) {
+
+                logSegmentSequenceNo_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 logSegmentSequenceNo = 1;</code>
+             */
+            public Builder clearLogSegmentSequenceNo() {
+
+                logSegmentSequenceNo_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long entryId_;
+
+            /**
+             * <code>uint64 entryId = 2;</code>
+             */
+            public long getEntryId() {
+                return entryId_;
+            }
+
+            /**
+             * <code>uint64 entryId = 2;</code>
+             */
+            public Builder setEntryId(long value) {
+
+                entryId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 entryId = 2;</code>
+             */
+            public Builder clearEntryId() {
+
+                entryId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long slotId_;
+
+            /**
+             * <code>uint64 slotId = 3;</code>
+             */
+            public long getSlotId() {
+                return slotId_;
+            }
+
+            /**
+             * <code>uint64 slotId = 3;</code>
+             */
+            public Builder setSlotId(long value) {
+
+                slotId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 slotId = 3;</code>
+             */
+            public Builder clearSlotId() {
+
+                slotId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.MessageIdData)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.MessageIdData)
+        private static final com.song.heracles.net.proto.HeraclesProto.MessageIdData DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.MessageIdData();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.MessageIdData getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<MessageIdData>
+            PARSER = new com.google.protobuf.AbstractParser<MessageIdData>() {
+            public MessageIdData parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new MessageIdData(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<MessageIdData> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MessageIdData> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdData getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.MessageIdData)
-    private static final com.song.heracles.net.proto.HeraclesProto.MessageIdData DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.MessageIdData();
-    }
+    public interface ProducerConnectRequestOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ProducerConnectRequest)
+        com.google.protobuf.MessageOrBuilder {
 
-    public static com.song.heracles.net.proto.HeraclesProto.MessageIdData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>string topic = 1;</code>
+         */
+        java.lang.String getTopic();
 
-    private static final com.google.protobuf.Parser<MessageIdData>
-        PARSER = new com.google.protobuf.AbstractParser<MessageIdData>() {
-      public MessageIdData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MessageIdData(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MessageIdData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MessageIdData> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ProducerConnectRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ProducerConnectRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string topic = 1;</code>
-     */
-    java.lang.String getTopic();
-    /**
-     * <code>string topic = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string topic = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getTopicBytes();
 
-    /**
-     * <code>uint64 producerId = 2;</code>
-     */
-    long getProducerId();
+        /**
+         * <code>uint64 producerId = 2;</code>
+         */
+        long getProducerId();
 
-    /**
-     * <pre>
-     *&#47; If a producer name is specified, the name will be used,
-     * / otherwise the broker will generate a unique name
-     * </pre>
-     *
-     * <code>string producer_name = 3;</code>
-     */
-    java.lang.String getProducerName();
-    /**
-     * <pre>
-     *&#47; If a producer name is specified, the name will be used,
-     * / otherwise the broker will generate a unique name
-     * </pre>
-     *
-     * <code>string producer_name = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <pre>
+         * &#47; If a producer name is specified, the name will be used,
+         * / otherwise the broker will generate a unique name
+         * </pre>
+         *
+         * <code>string producer_name = 3;</code>
+         */
+        java.lang.String getProducerName();
+
+        /**
+         * <pre>
+         * &#47; If a producer name is specified, the name will be used,
+         * / otherwise the broker will generate a unique name
+         * </pre>
+         *
+         * <code>string producer_name = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getProducerNameBytes();
-  }
-  /**
-   * <pre>
-   *&#47; Create a new Producer on a topic, assigning the given producer_id,
-   * / all messages sent with this producer_id will be persisted on the topic
-   * </pre>
-   *
-   * Protobuf type {@code com.song.fastmq.broker.net.ProducerConnectRequest}
-   */
-  public  static final class ProducerConnectRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ProducerConnectRequest)
-      ProducerConnectRequestOrBuilder {
-    // Use ProducerConnectRequest.newBuilder() to construct.
-    private ProducerConnectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ProducerConnectRequest() {
-      topic_ = "";
-      producerId_ = 0L;
-      producerName_ = "";
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ProducerConnectRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              topic_ = s;
-              break;
-            }
-            case 16: {
-
-              producerId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              producerName_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.class, com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.Builder.class);
-    }
-
-    public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        topic_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PRODUCERID_FIELD_NUMBER = 2;
-    private long producerId_;
-    /**
-     * <code>uint64 producerId = 2;</code>
-     */
-    public long getProducerId() {
-      return producerId_;
-    }
-
-    public static final int PRODUCER_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object producerName_;
     /**
      * <pre>
-     *&#47; If a producer name is specified, the name will be used,
-     * / otherwise the broker will generate a unique name
-     * </pre>
-     *
-     * <code>string producer_name = 3;</code>
-     */
-    public java.lang.String getProducerName() {
-      java.lang.Object ref = producerName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        producerName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     *&#47; If a producer name is specified, the name will be used,
-     * / otherwise the broker will generate a unique name
-     * </pre>
-     *
-     * <code>string producer_name = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getProducerNameBytes() {
-      java.lang.Object ref = producerName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        producerName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getTopicBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
-      }
-      if (producerId_ != 0L) {
-        output.writeUInt64(2, producerId_);
-      }
-      if (!getProducerNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, producerName_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getTopicBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
-      }
-      if (producerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, producerId_);
-      }
-      if (!getProducerNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, producerName_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest other = (com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest) obj;
-
-      boolean result = true;
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && (getProducerId()
-          == other.getProducerId());
-      result = result && getProducerName()
-          .equals(other.getProducerName());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-      hash = (53 * hash) + getTopic().hashCode();
-      hash = (37 * hash) + PRODUCERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getProducerId());
-      hash = (37 * hash) + PRODUCER_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getProducerName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     *&#47; Create a new Producer on a topic, assigning the given producer_id,
+     * &#47; Create a new Producer on a topic, assigning the given producer_id,
      * / all messages sent with this producer_id will be persisted on the topic
      * </pre>
      *
      * Protobuf type {@code com.song.fastmq.broker.net.ProducerConnectRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ProducerConnectRequest)
-        com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
-      }
+    public static final class ProducerConnectRequest extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ProducerConnectRequest)
+        ProducerConnectRequestOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.class, com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use ProducerConnectRequest.newBuilder() to construct.
+        private ProducerConnectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        topic_ = "";
 
-        producerId_ = 0L;
-
-        producerName_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest build() {
-        com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ProducerConnectRequest() {
+            topic_ = "";
+            producerId_ = 0L;
+            producerName_ = "";
         }
-        return result;
-      }
 
-      public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest result = new com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest(this);
-        result.topic_ = topic_;
-        result.producerId_ = producerId_;
-        result.producerName_ = producerName_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.getDefaultInstance()) return this;
-        if (!other.getTopic().isEmpty()) {
-          topic_ = other.topic_;
-          onChanged();
+        private ProducerConnectRequest(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            topic_ = s;
+                            break;
+                        }
+                        case 16: {
+
+                            producerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 26: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            producerName_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getProducerId() != 0L) {
-          setProducerId(other.getProducerId());
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
         }
-        if (!other.getProducerName().isEmpty()) {
-          producerName_ = other.producerName_;
-          onChanged();
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.class,
+                    com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.Builder.class);
         }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
+        public static final int TOPIC_FIELD_NUMBER = 1;
+        private volatile java.lang.Object topic_;
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public java.lang.String getTopic() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                topic_ = s;
+                return s;
+            }
         }
-        return this;
-      }
 
-      private java.lang.Object topic_ = "";
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public java.lang.String getTopic() {
-        java.lang.Object ref = topic_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          topic_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTopicBytes() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                topic_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTopicBytes() {
-        java.lang.Object ref = topic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topic_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int PRODUCERID_FIELD_NUMBER = 2;
+        private long producerId_;
+
+        /**
+         * <code>uint64 producerId = 2;</code>
+         */
+        public long getProducerId() {
+            return producerId_;
         }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopic(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder clearTopic() {
-        
-        topic_ = getDefaultInstance().getTopic();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopicBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        topic_ = value;
-        onChanged();
-        return this;
-      }
 
-      private long producerId_ ;
-      /**
-       * <code>uint64 producerId = 2;</code>
-       */
-      public long getProducerId() {
-        return producerId_;
-      }
-      /**
-       * <code>uint64 producerId = 2;</code>
-       */
-      public Builder setProducerId(long value) {
-        
-        producerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 producerId = 2;</code>
-       */
-      public Builder clearProducerId() {
-        
-        producerId_ = 0L;
-        onChanged();
-        return this;
-      }
+        public static final int PRODUCER_NAME_FIELD_NUMBER = 3;
+        private volatile java.lang.Object producerName_;
 
-      private java.lang.Object producerName_ = "";
-      /**
-       * <pre>
-       *&#47; If a producer name is specified, the name will be used,
-       * / otherwise the broker will generate a unique name
-       * </pre>
-       *
-       * <code>string producer_name = 3;</code>
-       */
-      public java.lang.String getProducerName() {
-        java.lang.Object ref = producerName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          producerName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <pre>
+         * &#47; If a producer name is specified, the name will be used,
+         * / otherwise the broker will generate a unique name
+         * </pre>
+         *
+         * <code>string producer_name = 3;</code>
+         */
+        public java.lang.String getProducerName() {
+            java.lang.Object ref = producerName_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                producerName_ = s;
+                return s;
+            }
         }
-      }
-      /**
-       * <pre>
-       *&#47; If a producer name is specified, the name will be used,
-       * / otherwise the broker will generate a unique name
-       * </pre>
-       *
-       * <code>string producer_name = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getProducerNameBytes() {
-        java.lang.Object ref = producerName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          producerName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <pre>
+         * &#47; If a producer name is specified, the name will be used,
+         * / otherwise the broker will generate a unique name
+         * </pre>
+         *
+         * <code>string producer_name = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+        getProducerNameBytes() {
+            java.lang.Object ref = producerName_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                producerName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <pre>
-       *&#47; If a producer name is specified, the name will be used,
-       * / otherwise the broker will generate a unique name
-       * </pre>
-       *
-       * <code>string producer_name = 3;</code>
-       */
-      public Builder setProducerName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        producerName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *&#47; If a producer name is specified, the name will be used,
-       * / otherwise the broker will generate a unique name
-       * </pre>
-       *
-       * <code>string producer_name = 3;</code>
-       */
-      public Builder clearProducerName() {
-        
-        producerName_ = getDefaultInstance().getProducerName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       *&#47; If a producer name is specified, the name will be used,
-       * / otherwise the broker will generate a unique name
-       * </pre>
-       *
-       * <code>string producer_name = 3;</code>
-       */
-      public Builder setProducerNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        producerName_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
 
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ProducerConnectRequest)
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (!getTopicBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
+            }
+            if (producerId_ != 0L) {
+                output.writeUInt64(2, producerId_);
+            }
+            if (!getProducerNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, producerName_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (!getTopicBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
+            }
+            if (producerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, producerId_);
+            }
+            if (!getProducerNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, producerName_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest other = (com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest) obj;
+
+            boolean result = true;
+            result = result && getTopic()
+                .equals(other.getTopic());
+            result = result && (getProducerId()
+                == other.getProducerId());
+            result = result && getProducerName()
+                .equals(other.getProducerName());
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+            hash = (53 * hash) + getTopic().hashCode();
+            hash = (37 * hash) + PRODUCERID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getProducerId());
+            hash = (37 * hash) + PRODUCER_NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getProducerName().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         * &#47; Create a new Producer on a topic, assigning the given producer_id,
+         * / all messages sent with this producer_id will be persisted on the topic
+         * </pre>
+         *
+         * Protobuf type {@code com.song.fastmq.broker.net.ProducerConnectRequest}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ProducerConnectRequest)
+            com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequestOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.class,
+                        com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                topic_ = "";
+
+                producerId_ = 0L;
+
+                producerName_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest build() {
+                com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest result = new com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest(
+                    this);
+                result.topic_ = topic_;
+                result.producerId_ = producerId_;
+                result.producerName_ = producerName_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (!other.getTopic().isEmpty()) {
+                    topic_ = other.topic_;
+                    onChanged();
+                }
+                if (other.getProducerId() != 0L) {
+                    setProducerId(other.getProducerId());
+                }
+                if (!other.getProducerName().isEmpty()) {
+                    producerName_ = other.producerName_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private java.lang.Object topic_ = "";
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public java.lang.String getTopic() {
+                java.lang.Object ref = topic_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    topic_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTopicBytes() {
+                java.lang.Object ref = topic_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    topic_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopic(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder clearTopic() {
+
+                topic_ = getDefaultInstance().getTopic();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopicBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long producerId_;
+
+            /**
+             * <code>uint64 producerId = 2;</code>
+             */
+            public long getProducerId() {
+                return producerId_;
+            }
+
+            /**
+             * <code>uint64 producerId = 2;</code>
+             */
+            public Builder setProducerId(long value) {
+
+                producerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 producerId = 2;</code>
+             */
+            public Builder clearProducerId() {
+
+                producerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object producerName_ = "";
+
+            /**
+             * <pre>
+             * &#47; If a producer name is specified, the name will be used,
+             * / otherwise the broker will generate a unique name
+             * </pre>
+             *
+             * <code>string producer_name = 3;</code>
+             */
+            public java.lang.String getProducerName() {
+                java.lang.Object ref = producerName_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    producerName_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * &#47; If a producer name is specified, the name will be used,
+             * / otherwise the broker will generate a unique name
+             * </pre>
+             *
+             * <code>string producer_name = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getProducerNameBytes() {
+                java.lang.Object ref = producerName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    producerName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <pre>
+             * &#47; If a producer name is specified, the name will be used,
+             * / otherwise the broker will generate a unique name
+             * </pre>
+             *
+             * <code>string producer_name = 3;</code>
+             */
+            public Builder setProducerName(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                producerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * &#47; If a producer name is specified, the name will be used,
+             * / otherwise the broker will generate a unique name
+             * </pre>
+             *
+             * <code>string producer_name = 3;</code>
+             */
+            public Builder clearProducerName() {
+
+                producerName_ = getDefaultInstance().getProducerName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <pre>
+             * &#47; If a producer name is specified, the name will be used,
+             * / otherwise the broker will generate a unique name
+             * </pre>
+             *
+             * <code>string producer_name = 3;</code>
+             */
+            public Builder setProducerNameBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                producerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ProducerConnectRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ProducerConnectRequest)
+        private static final com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ProducerConnectRequest>
+            PARSER = new com.google.protobuf.AbstractParser<ProducerConnectRequest>() {
+            public ProducerConnectRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ProducerConnectRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ProducerConnectRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ProducerConnectRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ProducerConnectRequest)
-    private static final com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest();
-    }
+    public interface ProducerResponseOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ProducerResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>string producer_name = 1;</code>
+         */
+        java.lang.String getProducerName();
 
-    private static final com.google.protobuf.Parser<ProducerConnectRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ProducerConnectRequest>() {
-      public ProducerConnectRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProducerConnectRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ProducerConnectRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProducerConnectRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.ProducerConnectRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ProducerResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ProducerResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string producer_name = 1;</code>
-     */
-    java.lang.String getProducerName();
-    /**
-     * <code>string producer_name = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string producer_name = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getProducerNameBytes();
 
-    /**
-     * <code>uint64 producer_id = 2;</code>
-     */
-    long getProducerId();
-  }
-  /**
-   * <pre>
-   *&#47; Response from CommandProducer
-   * </pre>
-   *
-   * Protobuf type {@code com.song.fastmq.broker.net.ProducerResponse}
-   */
-  public  static final class ProducerResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ProducerResponse)
-      ProducerResponseOrBuilder {
-    // Use ProducerResponse.newBuilder() to construct.
-    private ProducerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ProducerResponse() {
-      producerName_ = "";
-      producerId_ = 0L;
+        /**
+         * <code>uint64 producer_id = 2;</code>
+         */
+        long getProducerId();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ProducerResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              producerName_ = s;
-              break;
-            }
-            case 16: {
-
-              producerId_ = input.readUInt64();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.ProducerResponse.class, com.song.heracles.net.proto.HeraclesProto.ProducerResponse.Builder.class);
-    }
-
-    public static final int PRODUCER_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object producerName_;
-    /**
-     * <code>string producer_name = 1;</code>
-     */
-    public java.lang.String getProducerName() {
-      java.lang.Object ref = producerName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        producerName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string producer_name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getProducerNameBytes() {
-      java.lang.Object ref = producerName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        producerName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PRODUCER_ID_FIELD_NUMBER = 2;
-    private long producerId_;
-    /**
-     * <code>uint64 producer_id = 2;</code>
-     */
-    public long getProducerId() {
-      return producerId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getProducerNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, producerName_);
-      }
-      if (producerId_ != 0L) {
-        output.writeUInt64(2, producerId_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getProducerNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, producerName_);
-      }
-      if (producerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, producerId_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ProducerResponse)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.ProducerResponse other = (com.song.heracles.net.proto.HeraclesProto.ProducerResponse) obj;
-
-      boolean result = true;
-      result = result && getProducerName()
-          .equals(other.getProducerName());
-      result = result && (getProducerId()
-          == other.getProducerId());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PRODUCER_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getProducerName().hashCode();
-      hash = (37 * hash) + PRODUCER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getProducerId());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.ProducerResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * <pre>
-     *&#47; Response from CommandProducer
+     * &#47; Response from CommandProducer
      * </pre>
      *
      * Protobuf type {@code com.song.fastmq.broker.net.ProducerResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ProducerResponse)
-        com.song.heracles.net.proto.HeraclesProto.ProducerResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
-      }
+    public static final class ProducerResponse extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ProducerResponse)
+        ProducerResponseOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.ProducerResponse.class, com.song.heracles.net.proto.HeraclesProto.ProducerResponse.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.ProducerResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use ProducerResponse.newBuilder() to construct.
+        private ProducerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        producerName_ = "";
 
-        producerId_ = 0L;
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ProducerResponse getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.ProducerResponse.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ProducerResponse build() {
-        com.song.heracles.net.proto.HeraclesProto.ProducerResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ProducerResponse() {
+            producerName_ = "";
+            producerId_ = 0L;
         }
-        return result;
-      }
 
-      public com.song.heracles.net.proto.HeraclesProto.ProducerResponse buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.ProducerResponse result = new com.song.heracles.net.proto.HeraclesProto.ProducerResponse(this);
-        result.producerName_ = producerName_;
-        result.producerId_ = producerId_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.ProducerResponse) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.ProducerResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.ProducerResponse other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.ProducerResponse.getDefaultInstance()) return this;
-        if (!other.getProducerName().isEmpty()) {
-          producerName_ = other.producerName_;
-          onChanged();
-        }
-        if (other.getProducerId() != 0L) {
-          setProducerId(other.getProducerId());
-        }
-        onChanged();
-        return this;
-      }
+        private ProducerResponse(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
+                            producerName_ = s;
+                            break;
+                        }
+                        case 16: {
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.ProducerResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ProducerResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object producerName_ = "";
-      /**
-       * <code>string producer_name = 1;</code>
-       */
-      public java.lang.String getProducerName() {
-        java.lang.Object ref = producerName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          producerName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string producer_name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getProducerNameBytes() {
-        java.lang.Object ref = producerName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          producerName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string producer_name = 1;</code>
-       */
-      public Builder setProducerName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        producerName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string producer_name = 1;</code>
-       */
-      public Builder clearProducerName() {
-        
-        producerName_ = getDefaultInstance().getProducerName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string producer_name = 1;</code>
-       */
-      public Builder setProducerNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        producerName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long producerId_ ;
-      /**
-       * <code>uint64 producer_id = 2;</code>
-       */
-      public long getProducerId() {
-        return producerId_;
-      }
-      /**
-       * <code>uint64 producer_id = 2;</code>
-       */
-      public Builder setProducerId(long value) {
-        
-        producerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 producer_id = 2;</code>
-       */
-      public Builder clearProducerId() {
-        
-        producerId_ = 0L;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ProducerResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ProducerResponse)
-    private static final com.song.heracles.net.proto.HeraclesProto.ProducerResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ProducerResponse();
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ProducerResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ProducerResponse>() {
-      public ProducerResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProducerResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ProducerResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProducerResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.ProducerResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SendMessageRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.SendMessageRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 producer_id = 1;</code>
-     */
-    long getProducerId();
-
-    /**
-     * <code>uint64 sequence_id = 2;</code>
-     */
-    long getSequenceId();
-
-    /**
-     * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-     */
-    boolean hasMessage();
-    /**
-     * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.Message getMessage();
-    /**
-     * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessageOrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.SendMessageRequest}
-   */
-  public  static final class SendMessageRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.SendMessageRequest)
-      SendMessageRequestOrBuilder {
-    // Use SendMessageRequest.newBuilder() to construct.
-    private SendMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SendMessageRequest() {
-      producerId_ = 0L;
-      sequenceId_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private SendMessageRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            producerId_ = input.readUInt64();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              producerId_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              sequenceId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              com.song.heracles.net.proto.HeraclesProto.Message.Builder subBuilder = null;
-              if (message_ != null) {
-                subBuilder = message_.toBuilder();
-              }
-              message_ = input.readMessage(com.song.heracles.net.proto.HeraclesProto.Message.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(message_);
-                message_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
-    }
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
+        }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.class, com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.Builder.class);
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.ProducerResponse.class,
+                    com.song.heracles.net.proto.HeraclesProto.ProducerResponse.Builder.class);
+        }
+
+        public static final int PRODUCER_NAME_FIELD_NUMBER = 1;
+        private volatile java.lang.Object producerName_;
+
+        /**
+         * <code>string producer_name = 1;</code>
+         */
+        public java.lang.String getProducerName() {
+            java.lang.Object ref = producerName_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                producerName_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string producer_name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getProducerNameBytes() {
+            java.lang.Object ref = producerName_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                producerName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int PRODUCER_ID_FIELD_NUMBER = 2;
+        private long producerId_;
+
+        /**
+         * <code>uint64 producer_id = 2;</code>
+         */
+        public long getProducerId() {
+            return producerId_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (!getProducerNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, producerName_);
+            }
+            if (producerId_ != 0L) {
+                output.writeUInt64(2, producerId_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (!getProducerNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, producerName_);
+            }
+            if (producerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, producerId_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ProducerResponse)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.ProducerResponse other = (com.song.heracles.net.proto.HeraclesProto.ProducerResponse) obj;
+
+            boolean result = true;
+            result = result && getProducerName()
+                .equals(other.getProducerName());
+            result = result && (getProducerId()
+                == other.getProducerId());
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + PRODUCER_NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getProducerName().hashCode();
+            hash = (37 * hash) + PRODUCER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getProducerId());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.ProducerResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * <pre>
+         * &#47; Response from CommandProducer
+         * </pre>
+         *
+         * Protobuf type {@code com.song.fastmq.broker.net.ProducerResponse}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ProducerResponse)
+            com.song.heracles.net.proto.HeraclesProto.ProducerResponseOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.ProducerResponse.class,
+                        com.song.heracles.net.proto.HeraclesProto.ProducerResponse.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.ProducerResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                producerName_ = "";
+
+                producerId_ = 0L;
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ProducerResponse getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.ProducerResponse
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ProducerResponse build() {
+                com.song.heracles.net.proto.HeraclesProto.ProducerResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ProducerResponse buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.ProducerResponse result = new com.song.heracles.net.proto.HeraclesProto.ProducerResponse(
+                    this);
+                result.producerName_ = producerName_;
+                result.producerId_ = producerId_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.ProducerResponse) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.ProducerResponse) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.ProducerResponse other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.ProducerResponse
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (!other.getProducerName().isEmpty()) {
+                    producerName_ = other.producerName_;
+                    onChanged();
+                }
+                if (other.getProducerId() != 0L) {
+                    setProducerId(other.getProducerId());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.ProducerResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ProducerResponse) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private java.lang.Object producerName_ = "";
+
+            /**
+             * <code>string producer_name = 1;</code>
+             */
+            public java.lang.String getProducerName() {
+                java.lang.Object ref = producerName_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    producerName_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string producer_name = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getProducerNameBytes() {
+                java.lang.Object ref = producerName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    producerName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string producer_name = 1;</code>
+             */
+            public Builder setProducerName(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                producerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string producer_name = 1;</code>
+             */
+            public Builder clearProducerName() {
+
+                producerName_ = getDefaultInstance().getProducerName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string producer_name = 1;</code>
+             */
+            public Builder setProducerNameBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                producerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long producerId_;
+
+            /**
+             * <code>uint64 producer_id = 2;</code>
+             */
+            public long getProducerId() {
+                return producerId_;
+            }
+
+            /**
+             * <code>uint64 producer_id = 2;</code>
+             */
+            public Builder setProducerId(long value) {
+
+                producerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 producer_id = 2;</code>
+             */
+            public Builder clearProducerId() {
+
+                producerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ProducerResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ProducerResponse)
+        private static final com.song.heracles.net.proto.HeraclesProto.ProducerResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ProducerResponse();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ProducerResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ProducerResponse>
+            PARSER = new com.google.protobuf.AbstractParser<ProducerResponse>() {
+            public ProducerResponse parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ProducerResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ProducerResponse> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ProducerResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.ProducerResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int PRODUCER_ID_FIELD_NUMBER = 1;
-    private long producerId_;
-    /**
-     * <code>uint64 producer_id = 1;</code>
-     */
-    public long getProducerId() {
-      return producerId_;
+    public interface SendMessageRequestOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.SendMessageRequest)
+        com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>uint64 producer_id = 1;</code>
+         */
+        long getProducerId();
+
+        /**
+         * <code>uint64 sequence_id = 2;</code>
+         */
+        long getSequenceId();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+         */
+        boolean hasMessage();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.Message getMessage();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessageOrBuilder();
     }
 
-    public static final int SEQUENCE_ID_FIELD_NUMBER = 2;
-    private long sequenceId_;
-    /**
-     * <code>uint64 sequence_id = 2;</code>
-     */
-    public long getSequenceId() {
-      return sequenceId_;
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 3;
-    private com.song.heracles.net.proto.HeraclesProto.Message message_;
-    /**
-     * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-     */
-    public boolean hasMessage() {
-      return message_ != null;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.Message getMessage() {
-      return message_ == null ? com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance() : message_;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessageOrBuilder() {
-      return getMessage();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (producerId_ != 0L) {
-        output.writeUInt64(1, producerId_);
-      }
-      if (sequenceId_ != 0L) {
-        output.writeUInt64(2, sequenceId_);
-      }
-      if (message_ != null) {
-        output.writeMessage(3, getMessage());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (producerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, producerId_);
-      }
-      if (sequenceId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, sequenceId_);
-      }
-      if (message_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getMessage());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageRequest)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.SendMessageRequest other = (com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) obj;
-
-      boolean result = true;
-      result = result && (getProducerId()
-          == other.getProducerId());
-      result = result && (getSequenceId()
-          == other.getSequenceId());
-      result = result && (hasMessage() == other.hasMessage());
-      if (hasMessage()) {
-        result = result && getMessage()
-            .equals(other.getMessage());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PRODUCER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getProducerId());
-      hash = (37 * hash) + SEQUENCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSequenceId());
-      if (hasMessage()) {
-        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-        hash = (53 * hash) + getMessage().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.SendMessageRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.SendMessageRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.SendMessageRequest)
-        com.song.heracles.net.proto.HeraclesProto.SendMessageRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
-      }
+    public static final class SendMessageRequest extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.SendMessageRequest)
+        SendMessageRequestOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.class, com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        producerId_ = 0L;
-
-        sequenceId_ = 0L;
-
-        if (messageBuilder_ == null) {
-          message_ = null;
-        } else {
-          message_ = null;
-          messageBuilder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest build() {
-        com.song.heracles.net.proto.HeraclesProto.SendMessageRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.SendMessageRequest result = new com.song.heracles.net.proto.HeraclesProto.SendMessageRequest(this);
-        result.producerId_ = producerId_;
-        result.sequenceId_ = sequenceId_;
-        if (messageBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = messageBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.SendMessageRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.SendMessageRequest other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.getDefaultInstance()) return this;
-        if (other.getProducerId() != 0L) {
-          setProducerId(other.getProducerId());
-        }
-        if (other.getSequenceId() != 0L) {
-          setSequenceId(other.getSequenceId());
-        }
-        if (other.hasMessage()) {
-          mergeMessage(other.getMessage());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long producerId_ ;
-      /**
-       * <code>uint64 producer_id = 1;</code>
-       */
-      public long getProducerId() {
-        return producerId_;
-      }
-      /**
-       * <code>uint64 producer_id = 1;</code>
-       */
-      public Builder setProducerId(long value) {
-        
-        producerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 producer_id = 1;</code>
-       */
-      public Builder clearProducerId() {
-        
-        producerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long sequenceId_ ;
-      /**
-       * <code>uint64 sequence_id = 2;</code>
-       */
-      public long getSequenceId() {
-        return sequenceId_;
-      }
-      /**
-       * <code>uint64 sequence_id = 2;</code>
-       */
-      public Builder setSequenceId(long value) {
-        
-        sequenceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 sequence_id = 2;</code>
-       */
-      public Builder clearSequenceId() {
-        
-        sequenceId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.song.heracles.net.proto.HeraclesProto.Message message_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> messageBuilder_;
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public boolean hasMessage() {
-        return messageBuilder_ != null || message_ != null;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.Message getMessage() {
-        if (messageBuilder_ == null) {
-          return message_ == null ? com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance() : message_;
-        } else {
-          return messageBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public Builder setMessage(com.song.heracles.net.proto.HeraclesProto.Message value) {
-        if (messageBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          message_ = value;
-          onChanged();
-        } else {
-          messageBuilder_.setMessage(value);
+        // Use SendMessageRequest.newBuilder() to construct.
+        private SendMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public Builder setMessage(
-          com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
-        if (messageBuilder_ == null) {
-          message_ = builderForValue.build();
-          onChanged();
-        } else {
-          messageBuilder_.setMessage(builderForValue.build());
+        private SendMessageRequest() {
+            producerId_ = 0L;
+            sequenceId_ = 0L;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public Builder mergeMessage(com.song.heracles.net.proto.HeraclesProto.Message value) {
-        if (messageBuilder_ == null) {
-          if (message_ != null) {
-            message_ =
-              com.song.heracles.net.proto.HeraclesProto.Message.newBuilder(message_).mergeFrom(value).buildPartial();
-          } else {
-            message_ = value;
-          }
-          onChanged();
-        } else {
-          messageBuilder_.mergeFrom(value);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public Builder clearMessage() {
-        if (messageBuilder_ == null) {
-          message_ = null;
-          onChanged();
-        } else {
-          message_ = null;
-          messageBuilder_ = null;
-        }
+        private SendMessageRequest(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.Message.Builder getMessageBuilder() {
-        
-        onChanged();
-        return getMessageFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessageOrBuilder() {
-        if (messageBuilder_ != null) {
-          return messageBuilder_.getMessageOrBuilder();
-        } else {
-          return message_ == null ?
-              com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance() : message_;
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> 
-          getMessageFieldBuilder() {
-        if (messageBuilder_ == null) {
-          messageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>(
-                  getMessage(),
-                  getParentForChildren(),
-                  isClean());
-          message_ = null;
-        }
-        return messageBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+                            producerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 16: {
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+                            sequenceId_ = input.readUInt64();
+                            break;
+                        }
+                        case 26: {
+                            com.song.heracles.net.proto.HeraclesProto.Message.Builder subBuilder = null;
+                            if (message_ != null) {
+                                subBuilder = message_.toBuilder();
+                            }
+                            message_ = input.readMessage(
+                                com.song.heracles.net.proto.HeraclesProto.Message.parser(),
+                                extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(message_);
+                                message_ = subBuilder.buildPartial();
+                            }
 
-
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.SendMessageRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.SendMessageRequest)
-    private static final com.song.heracles.net.proto.HeraclesProto.SendMessageRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.SendMessageRequest();
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SendMessageRequest>
-        PARSER = new com.google.protobuf.AbstractParser<SendMessageRequest>() {
-      public SendMessageRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SendMessageRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SendMessageRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SendMessageRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SendMessageResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.SendMessageResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 producer_id = 1;</code>
-     */
-    long getProducerId();
-
-    /**
-     * <code>uint64 sequence_id = 2;</code>
-     */
-    long getSequenceId();
-
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-     */
-    boolean hasMessageId();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdData getMessageId();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getMessageIdOrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.SendMessageResponse}
-   */
-  public  static final class SendMessageResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.SendMessageResponse)
-      SendMessageResponseOrBuilder {
-    // Use SendMessageResponse.newBuilder() to construct.
-    private SendMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SendMessageResponse() {
-      producerId_ = 0L;
-      sequenceId_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private SendMessageResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              producerId_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              sequenceId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
-              if (messageId_ != null) {
-                subBuilder = messageId_.toBuilder();
-              }
-              messageId_ = input.readMessage(com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(messageId_);
-                messageId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
-    }
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
+        }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.class, com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.Builder.class);
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.class,
+                    com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.Builder.class);
+        }
+
+        public static final int PRODUCER_ID_FIELD_NUMBER = 1;
+        private long producerId_;
+
+        /**
+         * <code>uint64 producer_id = 1;</code>
+         */
+        public long getProducerId() {
+            return producerId_;
+        }
+
+        public static final int SEQUENCE_ID_FIELD_NUMBER = 2;
+        private long sequenceId_;
+
+        /**
+         * <code>uint64 sequence_id = 2;</code>
+         */
+        public long getSequenceId() {
+            return sequenceId_;
+        }
+
+        public static final int MESSAGE_FIELD_NUMBER = 3;
+        private com.song.heracles.net.proto.HeraclesProto.Message message_;
+
+        /**
+         * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+         */
+        public boolean hasMessage() {
+            return message_ != null;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.Message getMessage() {
+            return message_ == null ? com.song.heracles.net.proto.HeraclesProto.Message
+                .getDefaultInstance() : message_;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessageOrBuilder() {
+            return getMessage();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (producerId_ != 0L) {
+                output.writeUInt64(1, producerId_);
+            }
+            if (sequenceId_ != 0L) {
+                output.writeUInt64(2, sequenceId_);
+            }
+            if (message_ != null) {
+                output.writeMessage(3, getMessage());
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (producerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(1, producerId_);
+            }
+            if (sequenceId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, sequenceId_);
+            }
+            if (message_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, getMessage());
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageRequest)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.SendMessageRequest other = (com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) obj;
+
+            boolean result = true;
+            result = result && (getProducerId()
+                == other.getProducerId());
+            result = result && (getSequenceId()
+                == other.getSequenceId());
+            result = result && (hasMessage() == other.hasMessage());
+            if (hasMessage()) {
+                result = result && getMessage()
+                    .equals(other.getMessage());
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + PRODUCER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getProducerId());
+            hash = (37 * hash) + SEQUENCE_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getSequenceId());
+            if (hasMessage()) {
+                hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+                hash = (53 * hash) + getMessage().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.SendMessageRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.SendMessageRequest}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.SendMessageRequest)
+            com.song.heracles.net.proto.HeraclesProto.SendMessageRequestOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.class,
+                        com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.SendMessageRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                producerId_ = 0L;
+
+                sequenceId_ = 0L;
+
+                if (messageBuilder_ == null) {
+                    message_ = null;
+                } else {
+                    message_ = null;
+                    messageBuilder_ = null;
+                }
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.SendMessageRequest
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest build() {
+                com.song.heracles.net.proto.HeraclesProto.SendMessageRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.SendMessageRequest result = new com.song.heracles.net.proto.HeraclesProto.SendMessageRequest(
+                    this);
+                result.producerId_ = producerId_;
+                result.sequenceId_ = sequenceId_;
+                if (messageBuilder_ == null) {
+                    result.message_ = message_;
+                } else {
+                    result.message_ = messageBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.SendMessageRequest other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.SendMessageRequest
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (other.getProducerId() != 0L) {
+                    setProducerId(other.getProducerId());
+                }
+                if (other.getSequenceId() != 0L) {
+                    setSequenceId(other.getSequenceId());
+                }
+                if (other.hasMessage()) {
+                    mergeMessage(other.getMessage());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.SendMessageRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.SendMessageRequest) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long producerId_;
+
+            /**
+             * <code>uint64 producer_id = 1;</code>
+             */
+            public long getProducerId() {
+                return producerId_;
+            }
+
+            /**
+             * <code>uint64 producer_id = 1;</code>
+             */
+            public Builder setProducerId(long value) {
+
+                producerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 producer_id = 1;</code>
+             */
+            public Builder clearProducerId() {
+
+                producerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long sequenceId_;
+
+            /**
+             * <code>uint64 sequence_id = 2;</code>
+             */
+            public long getSequenceId() {
+                return sequenceId_;
+            }
+
+            /**
+             * <code>uint64 sequence_id = 2;</code>
+             */
+            public Builder setSequenceId(long value) {
+
+                sequenceId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 sequence_id = 2;</code>
+             */
+            public Builder clearSequenceId() {
+
+                sequenceId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private com.song.heracles.net.proto.HeraclesProto.Message message_ = null;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> messageBuilder_;
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public boolean hasMessage() {
+                return messageBuilder_ != null || message_ != null;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.Message getMessage() {
+                if (messageBuilder_ == null) {
+                    return message_ == null ? com.song.heracles.net.proto.HeraclesProto.Message
+                        .getDefaultInstance() : message_;
+                } else {
+                    return messageBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public Builder setMessage(com.song.heracles.net.proto.HeraclesProto.Message value) {
+                if (messageBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    message_ = value;
+                    onChanged();
+                } else {
+                    messageBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public Builder setMessage(
+                com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
+                if (messageBuilder_ == null) {
+                    message_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    messageBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public Builder mergeMessage(com.song.heracles.net.proto.HeraclesProto.Message value) {
+                if (messageBuilder_ == null) {
+                    if (message_ != null) {
+                        message_ =
+                            com.song.heracles.net.proto.HeraclesProto.Message.newBuilder(message_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        message_ = value;
+                    }
+                    onChanged();
+                } else {
+                    messageBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public Builder clearMessage() {
+                if (messageBuilder_ == null) {
+                    message_ = null;
+                    onChanged();
+                } else {
+                    message_ = null;
+                    messageBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.Message.Builder getMessageBuilder() {
+
+                onChanged();
+                return getMessageFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessageOrBuilder() {
+                if (messageBuilder_ != null) {
+                    return messageBuilder_.getMessageOrBuilder();
+                } else {
+                    return message_ == null ?
+                        com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance()
+                        : message_;
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.Message message = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>
+            getMessageFieldBuilder() {
+                if (messageBuilder_ == null) {
+                    messageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>(
+                        getMessage(),
+                        getParentForChildren(),
+                        isClean());
+                    message_ = null;
+                }
+                return messageBuilder_;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.SendMessageRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.SendMessageRequest)
+        private static final com.song.heracles.net.proto.HeraclesProto.SendMessageRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.SendMessageRequest();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SendMessageRequest>
+            PARSER = new com.google.protobuf.AbstractParser<SendMessageRequest>() {
+            public SendMessageRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new SendMessageRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<SendMessageRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SendMessageRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.SendMessageRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int PRODUCER_ID_FIELD_NUMBER = 1;
-    private long producerId_;
-    /**
-     * <code>uint64 producer_id = 1;</code>
-     */
-    public long getProducerId() {
-      return producerId_;
+    public interface SendMessageResponseOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.SendMessageResponse)
+        com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>uint64 producer_id = 1;</code>
+         */
+        long getProducerId();
+
+        /**
+         * <code>uint64 sequence_id = 2;</code>
+         */
+        long getSequenceId();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+         */
+        boolean hasMessageId();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdData getMessageId();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getMessageIdOrBuilder();
     }
 
-    public static final int SEQUENCE_ID_FIELD_NUMBER = 2;
-    private long sequenceId_;
-    /**
-     * <code>uint64 sequence_id = 2;</code>
-     */
-    public long getSequenceId() {
-      return sequenceId_;
-    }
-
-    public static final int MESSAGE_ID_FIELD_NUMBER = 3;
-    private com.song.heracles.net.proto.HeraclesProto.MessageIdData messageId_;
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-     */
-    public boolean hasMessageId() {
-      return messageId_ != null;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdData getMessageId() {
-      return messageId_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : messageId_;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getMessageIdOrBuilder() {
-      return getMessageId();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (producerId_ != 0L) {
-        output.writeUInt64(1, producerId_);
-      }
-      if (sequenceId_ != 0L) {
-        output.writeUInt64(2, sequenceId_);
-      }
-      if (messageId_ != null) {
-        output.writeMessage(3, getMessageId());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (producerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, producerId_);
-      }
-      if (sequenceId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, sequenceId_);
-      }
-      if (messageId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getMessageId());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageResponse)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.SendMessageResponse other = (com.song.heracles.net.proto.HeraclesProto.SendMessageResponse) obj;
-
-      boolean result = true;
-      result = result && (getProducerId()
-          == other.getProducerId());
-      result = result && (getSequenceId()
-          == other.getSequenceId());
-      result = result && (hasMessageId() == other.hasMessageId());
-      if (hasMessageId()) {
-        result = result && getMessageId()
-            .equals(other.getMessageId());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PRODUCER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getProducerId());
-      hash = (37 * hash) + SEQUENCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSequenceId());
-      if (hasMessageId()) {
-        hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getMessageId().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.SendMessageResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.SendMessageResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.SendMessageResponse)
-        com.song.heracles.net.proto.HeraclesProto.SendMessageResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
-      }
+    public static final class SendMessageResponse extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.SendMessageResponse)
+        SendMessageResponseOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.class, com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        producerId_ = 0L;
-
-        sequenceId_ = 0L;
-
-        if (messageIdBuilder_ == null) {
-          messageId_ = null;
-        } else {
-          messageId_ = null;
-          messageIdBuilder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse build() {
-        com.song.heracles.net.proto.HeraclesProto.SendMessageResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.SendMessageResponse result = new com.song.heracles.net.proto.HeraclesProto.SendMessageResponse(this);
-        result.producerId_ = producerId_;
-        result.sequenceId_ = sequenceId_;
-        if (messageIdBuilder_ == null) {
-          result.messageId_ = messageId_;
-        } else {
-          result.messageId_ = messageIdBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageResponse) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.SendMessageResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.SendMessageResponse other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.getDefaultInstance()) return this;
-        if (other.getProducerId() != 0L) {
-          setProducerId(other.getProducerId());
-        }
-        if (other.getSequenceId() != 0L) {
-          setSequenceId(other.getSequenceId());
-        }
-        if (other.hasMessageId()) {
-          mergeMessageId(other.getMessageId());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.SendMessageResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long producerId_ ;
-      /**
-       * <code>uint64 producer_id = 1;</code>
-       */
-      public long getProducerId() {
-        return producerId_;
-      }
-      /**
-       * <code>uint64 producer_id = 1;</code>
-       */
-      public Builder setProducerId(long value) {
-        
-        producerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 producer_id = 1;</code>
-       */
-      public Builder clearProducerId() {
-        
-        producerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long sequenceId_ ;
-      /**
-       * <code>uint64 sequence_id = 2;</code>
-       */
-      public long getSequenceId() {
-        return sequenceId_;
-      }
-      /**
-       * <code>uint64 sequence_id = 2;</code>
-       */
-      public Builder setSequenceId(long value) {
-        
-        sequenceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 sequence_id = 2;</code>
-       */
-      public Builder clearSequenceId() {
-        
-        sequenceId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.song.heracles.net.proto.HeraclesProto.MessageIdData messageId_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> messageIdBuilder_;
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public boolean hasMessageId() {
-        return messageIdBuilder_ != null || messageId_ != null;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData getMessageId() {
-        if (messageIdBuilder_ == null) {
-          return messageId_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : messageId_;
-        } else {
-          return messageIdBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public Builder setMessageId(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (messageIdBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          messageId_ = value;
-          onChanged();
-        } else {
-          messageIdBuilder_.setMessage(value);
+        // Use SendMessageResponse.newBuilder() to construct.
+        private SendMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public Builder setMessageId(
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
-        if (messageIdBuilder_ == null) {
-          messageId_ = builderForValue.build();
-          onChanged();
-        } else {
-          messageIdBuilder_.setMessage(builderForValue.build());
+        private SendMessageResponse() {
+            producerId_ = 0L;
+            sequenceId_ = 0L;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public Builder mergeMessageId(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (messageIdBuilder_ == null) {
-          if (messageId_ != null) {
-            messageId_ =
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.newBuilder(messageId_).mergeFrom(value).buildPartial();
-          } else {
-            messageId_ = value;
-          }
-          onChanged();
-        } else {
-          messageIdBuilder_.mergeFrom(value);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public Builder clearMessageId() {
-        if (messageIdBuilder_ == null) {
-          messageId_ = null;
-          onChanged();
-        } else {
-          messageId_ = null;
-          messageIdBuilder_ = null;
+        private SendMessageResponse(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+
+                            producerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 16: {
+
+                            sequenceId_ = input.readUInt64();
+                            break;
+                        }
+                        case 26: {
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
+                            if (messageId_ != null) {
+                                subBuilder = messageId_.toBuilder();
+                            }
+                            messageId_ = input.readMessage(
+                                com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(),
+                                extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(messageId_);
+                                messageId_ = subBuilder.buildPartial();
+                            }
+
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getMessageIdBuilder() {
-        
-        onChanged();
-        return getMessageIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getMessageIdOrBuilder() {
-        if (messageIdBuilder_ != null) {
-          return messageIdBuilder_.getMessageOrBuilder();
-        } else {
-          return messageId_ == null ?
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : messageId_;
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
         }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> 
-          getMessageIdFieldBuilder() {
-        if (messageIdBuilder_ == null) {
-          messageIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
-                  getMessageId(),
-                  getParentForChildren(),
-                  isClean());
-          messageId_ = null;
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.class,
+                    com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.Builder.class);
         }
-        return messageIdBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        public static final int PRODUCER_ID_FIELD_NUMBER = 1;
+        private long producerId_;
 
+        /**
+         * <code>uint64 producer_id = 1;</code>
+         */
+        public long getProducerId() {
+            return producerId_;
+        }
 
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.SendMessageResponse)
+        public static final int SEQUENCE_ID_FIELD_NUMBER = 2;
+        private long sequenceId_;
+
+        /**
+         * <code>uint64 sequence_id = 2;</code>
+         */
+        public long getSequenceId() {
+            return sequenceId_;
+        }
+
+        public static final int MESSAGE_ID_FIELD_NUMBER = 3;
+        private com.song.heracles.net.proto.HeraclesProto.MessageIdData messageId_;
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+         */
+        public boolean hasMessageId() {
+            return messageId_ != null;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdData getMessageId() {
+            return messageId_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                .getDefaultInstance() : messageId_;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getMessageIdOrBuilder() {
+            return getMessageId();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (producerId_ != 0L) {
+                output.writeUInt64(1, producerId_);
+            }
+            if (sequenceId_ != 0L) {
+                output.writeUInt64(2, sequenceId_);
+            }
+            if (messageId_ != null) {
+                output.writeMessage(3, getMessageId());
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (producerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(1, producerId_);
+            }
+            if (sequenceId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, sequenceId_);
+            }
+            if (messageId_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, getMessageId());
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageResponse)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.SendMessageResponse other = (com.song.heracles.net.proto.HeraclesProto.SendMessageResponse) obj;
+
+            boolean result = true;
+            result = result && (getProducerId()
+                == other.getProducerId());
+            result = result && (getSequenceId()
+                == other.getSequenceId());
+            result = result && (hasMessageId() == other.hasMessageId());
+            if (hasMessageId()) {
+                result = result && getMessageId()
+                    .equals(other.getMessageId());
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + PRODUCER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getProducerId());
+            hash = (37 * hash) + SEQUENCE_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getSequenceId());
+            if (hasMessageId()) {
+                hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
+                hash = (53 * hash) + getMessageId().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.SendMessageResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.SendMessageResponse}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.SendMessageResponse)
+            com.song.heracles.net.proto.HeraclesProto.SendMessageResponseOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.class,
+                        com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.SendMessageResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                producerId_ = 0L;
+
+                sequenceId_ = 0L;
+
+                if (messageIdBuilder_ == null) {
+                    messageId_ = null;
+                } else {
+                    messageId_ = null;
+                    messageIdBuilder_ = null;
+                }
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.SendMessageResponse
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse build() {
+                com.song.heracles.net.proto.HeraclesProto.SendMessageResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.SendMessageResponse result = new com.song.heracles.net.proto.HeraclesProto.SendMessageResponse(
+                    this);
+                result.producerId_ = producerId_;
+                result.sequenceId_ = sequenceId_;
+                if (messageIdBuilder_ == null) {
+                    result.messageId_ = messageId_;
+                } else {
+                    result.messageId_ = messageIdBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.SendMessageResponse) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.SendMessageResponse) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.SendMessageResponse other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.SendMessageResponse
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (other.getProducerId() != 0L) {
+                    setProducerId(other.getProducerId());
+                }
+                if (other.getSequenceId() != 0L) {
+                    setSequenceId(other.getSequenceId());
+                }
+                if (other.hasMessageId()) {
+                    mergeMessageId(other.getMessageId());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.SendMessageResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.SendMessageResponse) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long producerId_;
+
+            /**
+             * <code>uint64 producer_id = 1;</code>
+             */
+            public long getProducerId() {
+                return producerId_;
+            }
+
+            /**
+             * <code>uint64 producer_id = 1;</code>
+             */
+            public Builder setProducerId(long value) {
+
+                producerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 producer_id = 1;</code>
+             */
+            public Builder clearProducerId() {
+
+                producerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private long sequenceId_;
+
+            /**
+             * <code>uint64 sequence_id = 2;</code>
+             */
+            public long getSequenceId() {
+                return sequenceId_;
+            }
+
+            /**
+             * <code>uint64 sequence_id = 2;</code>
+             */
+            public Builder setSequenceId(long value) {
+
+                sequenceId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 sequence_id = 2;</code>
+             */
+            public Builder clearSequenceId() {
+
+                sequenceId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private com.song.heracles.net.proto.HeraclesProto.MessageIdData messageId_ = null;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> messageIdBuilder_;
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public boolean hasMessageId() {
+                return messageIdBuilder_ != null || messageId_ != null;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData getMessageId() {
+                if (messageIdBuilder_ == null) {
+                    return messageId_ == null
+                        ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                        .getDefaultInstance() : messageId_;
+                } else {
+                    return messageIdBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public Builder setMessageId(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (messageIdBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    messageId_ = value;
+                    onChanged();
+                } else {
+                    messageIdBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public Builder setMessageId(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
+                if (messageIdBuilder_ == null) {
+                    messageId_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    messageIdBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public Builder mergeMessageId(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (messageIdBuilder_ == null) {
+                    if (messageId_ != null) {
+                        messageId_ =
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                                .newBuilder(messageId_).mergeFrom(value).buildPartial();
+                    } else {
+                        messageId_ = value;
+                    }
+                    onChanged();
+                } else {
+                    messageIdBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public Builder clearMessageId() {
+                if (messageIdBuilder_ == null) {
+                    messageId_ = null;
+                    onChanged();
+                } else {
+                    messageId_ = null;
+                    messageIdBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getMessageIdBuilder() {
+
+                onChanged();
+                return getMessageIdFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getMessageIdOrBuilder() {
+                if (messageIdBuilder_ != null) {
+                    return messageIdBuilder_.getMessageOrBuilder();
+                } else {
+                    return messageId_ == null ?
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance()
+                        : messageId_;
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData message_id = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>
+            getMessageIdFieldBuilder() {
+                if (messageIdBuilder_ == null) {
+                    messageIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
+                        getMessageId(),
+                        getParentForChildren(),
+                        isClean());
+                    messageId_ = null;
+                }
+                return messageIdBuilder_;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.SendMessageResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.SendMessageResponse)
+        private static final com.song.heracles.net.proto.HeraclesProto.SendMessageResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.SendMessageResponse();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SendMessageResponse>
+            PARSER = new com.google.protobuf.AbstractParser<SendMessageResponse>() {
+            public SendMessageResponse parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new SendMessageResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<SendMessageResponse> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SendMessageResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.SendMessageResponse)
-    private static final com.song.heracles.net.proto.HeraclesProto.SendMessageResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.SendMessageResponse();
-    }
+    public interface ConsumerConnectRequestOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerConnectRequest)
+        com.google.protobuf.MessageOrBuilder {
 
-    public static com.song.heracles.net.proto.HeraclesProto.SendMessageResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>string topic = 1;</code>
+         */
+        java.lang.String getTopic();
 
-    private static final com.google.protobuf.Parser<SendMessageResponse>
-        PARSER = new com.google.protobuf.AbstractParser<SendMessageResponse>() {
-      public SendMessageResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SendMessageResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SendMessageResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SendMessageResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.SendMessageResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ConsumerConnectRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerConnectRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string topic = 1;</code>
-     */
-    java.lang.String getTopic();
-    /**
-     * <code>string topic = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string topic = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getTopicBytes();
 
-    /**
-     * <code>uint64 consumer_id = 2;</code>
-     */
-    long getConsumerId();
+        /**
+         * <code>uint64 consumer_id = 2;</code>
+         */
+        long getConsumerId();
 
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    java.lang.String getConsumerName();
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        java.lang.String getConsumerName();
+
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getConsumerNameBytes();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.ConsumerConnectRequest}
-   */
-  public  static final class ConsumerConnectRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerConnectRequest)
-      ConsumerConnectRequestOrBuilder {
-    // Use ConsumerConnectRequest.newBuilder() to construct.
-    private ConsumerConnectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ConsumerConnectRequest() {
-      topic_ = "";
-      consumerId_ = 0L;
-      consumerName_ = "";
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ConsumerConnectRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              topic_ = s;
-              break;
-            }
-            case 16: {
-
-              consumerId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              consumerName_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.class, com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.Builder.class);
-    }
-
-    public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        topic_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CONSUMER_ID_FIELD_NUMBER = 2;
-    private long consumerId_;
-    /**
-     * <code>uint64 consumer_id = 2;</code>
-     */
-    public long getConsumerId() {
-      return consumerId_;
-    }
-
-    public static final int CONSUMER_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object consumerName_;
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    public java.lang.String getConsumerName() {
-      java.lang.Object ref = consumerName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        consumerName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getConsumerNameBytes() {
-      java.lang.Object ref = consumerName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        consumerName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getTopicBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
-      }
-      if (consumerId_ != 0L) {
-        output.writeUInt64(2, consumerId_);
-      }
-      if (!getConsumerNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, consumerName_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getTopicBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
-      }
-      if (consumerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, consumerId_);
-      }
-      if (!getConsumerNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, consumerName_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest other = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) obj;
-
-      boolean result = true;
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && (getConsumerId()
-          == other.getConsumerId());
-      result = result && getConsumerName()
-          .equals(other.getConsumerName());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-      hash = (53 * hash) + getTopic().hashCode();
-      hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConsumerId());
-      hash = (37 * hash) + CONSUMER_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getConsumerName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.ConsumerConnectRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerConnectRequest)
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
-      }
+    public static final class ConsumerConnectRequest extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerConnectRequest)
+        ConsumerConnectRequestOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.class, com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use ConsumerConnectRequest.newBuilder() to construct.
+        private ConsumerConnectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        topic_ = "";
 
-        consumerId_ = 0L;
-
-        consumerName_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest build() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ConsumerConnectRequest() {
+            topic_ = "";
+            consumerId_ = 0L;
+            consumerName_ = "";
         }
-        return result;
-      }
 
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest result = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest(this);
-        result.topic_ = topic_;
-        result.consumerId_ = consumerId_;
-        result.consumerName_ = consumerName_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.getDefaultInstance()) return this;
-        if (!other.getTopic().isEmpty()) {
-          topic_ = other.topic_;
-          onChanged();
-        }
-        if (other.getConsumerId() != 0L) {
-          setConsumerId(other.getConsumerId());
-        }
-        if (!other.getConsumerName().isEmpty()) {
-          consumerName_ = other.consumerName_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
+        private ConsumerConnectRequest(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
 
-      public final boolean isInitialized() {
-        return true;
-      }
+                            topic_ = s;
+                            break;
+                        }
+                        case 16: {
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+                            consumerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 26: {
+                            java.lang.String s = input.readStringRequireUtf8();
 
-      private java.lang.Object topic_ = "";
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public java.lang.String getTopic() {
-        java.lang.Object ref = topic_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          topic_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTopicBytes() {
-        java.lang.Object ref = topic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topic_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopic(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder clearTopic() {
-        
-        topic_ = getDefaultInstance().getTopic();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopicBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long consumerId_ ;
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public long getConsumerId() {
-        return consumerId_;
-      }
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public Builder setConsumerId(long value) {
-        
-        consumerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public Builder clearConsumerId() {
-        
-        consumerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object consumerName_ = "";
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public java.lang.String getConsumerName() {
-        java.lang.Object ref = consumerName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          consumerName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getConsumerNameBytes() {
-        java.lang.Object ref = consumerName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          consumerName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public Builder setConsumerName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        consumerName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public Builder clearConsumerName() {
-        
-        consumerName_ = getDefaultInstance().getConsumerName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public Builder setConsumerNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        consumerName_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerConnectRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerConnectRequest)
-    private static final com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest();
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ConsumerConnectRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ConsumerConnectRequest>() {
-      public ConsumerConnectRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConsumerConnectRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ConsumerConnectRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ConsumerConnectRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ConsumerConnectResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerConnectResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 consumer_id = 1;</code>
-     */
-    long getConsumerId();
-
-    /**
-     * <code>string consumer_name = 2;</code>
-     */
-    java.lang.String getConsumerName();
-    /**
-     * <code>string consumer_name = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getConsumerNameBytes();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.ConsumerConnectResponse}
-   */
-  public  static final class ConsumerConnectResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerConnectResponse)
-      ConsumerConnectResponseOrBuilder {
-    // Use ConsumerConnectResponse.newBuilder() to construct.
-    private ConsumerConnectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ConsumerConnectResponse() {
-      consumerId_ = 0L;
-      consumerName_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ConsumerConnectResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            consumerName_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              consumerId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              consumerName_ = s;
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
-    }
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
+        }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.class, com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.Builder.class);
-    }
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.class,
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.Builder.class);
+        }
 
-    public static final int CONSUMER_ID_FIELD_NUMBER = 1;
-    private long consumerId_;
-    /**
-     * <code>uint64 consumer_id = 1;</code>
-     */
-    public long getConsumerId() {
-      return consumerId_;
-    }
+        public static final int TOPIC_FIELD_NUMBER = 1;
+        private volatile java.lang.Object topic_;
 
-    public static final int CONSUMER_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object consumerName_;
-    /**
-     * <code>string consumer_name = 2;</code>
-     */
-    public java.lang.String getConsumerName() {
-      java.lang.Object ref = consumerName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        consumerName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string consumer_name = 2;</code>
-     */
-    public com.google.protobuf.ByteString
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public java.lang.String getTopic() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                topic_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTopicBytes() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                topic_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int CONSUMER_ID_FIELD_NUMBER = 2;
+        private long consumerId_;
+
+        /**
+         * <code>uint64 consumer_id = 2;</code>
+         */
+        public long getConsumerId() {
+            return consumerId_;
+        }
+
+        public static final int CONSUMER_NAME_FIELD_NUMBER = 3;
+        private volatile java.lang.Object consumerName_;
+
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        public java.lang.String getConsumerName() {
+            java.lang.Object ref = consumerName_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                consumerName_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        public com.google.protobuf.ByteString
         getConsumerNameBytes() {
-      java.lang.Object ref = consumerName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        consumerName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+            java.lang.Object ref = consumerName_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                consumerName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (!getTopicBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
+            }
+            if (consumerId_ != 0L) {
+                output.writeUInt64(2, consumerId_);
+            }
+            if (!getConsumerNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, consumerName_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (!getTopicBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
+            }
+            if (consumerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, consumerId_);
+            }
+            if (!getConsumerNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, consumerName_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest other = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) obj;
+
+            boolean result = true;
+            result = result && getTopic()
+                .equals(other.getTopic());
+            result = result && (getConsumerId()
+                == other.getConsumerId());
+            result = result && getConsumerName()
+                .equals(other.getConsumerName());
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+            hash = (53 * hash) + getTopic().hashCode();
+            hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getConsumerId());
+            hash = (37 * hash) + CONSUMER_NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getConsumerName().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.ConsumerConnectRequest}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerConnectRequest)
+            com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequestOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.class,
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                topic_ = "";
+
+                consumerId_ = 0L;
+
+                consumerName_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest build() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest result = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest(
+                    this);
+                result.topic_ = topic_;
+                result.consumerId_ = consumerId_;
+                result.consumerName_ = consumerName_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (!other.getTopic().isEmpty()) {
+                    topic_ = other.topic_;
+                    onChanged();
+                }
+                if (other.getConsumerId() != 0L) {
+                    setConsumerId(other.getConsumerId());
+                }
+                if (!other.getConsumerName().isEmpty()) {
+                    consumerName_ = other.consumerName_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private java.lang.Object topic_ = "";
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public java.lang.String getTopic() {
+                java.lang.Object ref = topic_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    topic_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTopicBytes() {
+                java.lang.Object ref = topic_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    topic_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopic(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder clearTopic() {
+
+                topic_ = getDefaultInstance().getTopic();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopicBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long consumerId_;
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public long getConsumerId() {
+                return consumerId_;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public Builder setConsumerId(long value) {
+
+                consumerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public Builder clearConsumerId() {
+
+                consumerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object consumerName_ = "";
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public java.lang.String getConsumerName() {
+                java.lang.Object ref = consumerName_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    consumerName_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getConsumerNameBytes() {
+                java.lang.Object ref = consumerName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    consumerName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public Builder setConsumerName(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                consumerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public Builder clearConsumerName() {
+
+                consumerName_ = getDefaultInstance().getConsumerName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public Builder setConsumerNameBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                consumerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerConnectRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerConnectRequest)
+        private static final com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ConsumerConnectRequest>
+            PARSER = new com.google.protobuf.AbstractParser<ConsumerConnectRequest>() {
+            public ConsumerConnectRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ConsumerConnectRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ConsumerConnectRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ConsumerConnectRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+    public interface ConsumerConnectResponseOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerConnectResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-      memoizedIsInitialized = 1;
-      return true;
-    }
+        /**
+         * <code>uint64 consumer_id = 1;</code>
+         */
+        long getConsumerId();
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (consumerId_ != 0L) {
-        output.writeUInt64(1, consumerId_);
-      }
-      if (!getConsumerNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, consumerName_);
-      }
-    }
+        /**
+         * <code>string consumer_name = 2;</code>
+         */
+        java.lang.String getConsumerName();
 
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (consumerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, consumerId_);
-      }
-      if (!getConsumerNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, consumerName_);
-      }
-      memoizedSize = size;
-      return size;
+        /**
+         * <code>string consumer_name = 2;</code>
+         */
+        com.google.protobuf.ByteString
+        getConsumerNameBytes();
     }
 
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse other = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse) obj;
-
-      boolean result = true;
-      result = result && (getConsumerId()
-          == other.getConsumerId());
-      result = result && getConsumerName()
-          .equals(other.getConsumerName());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConsumerId());
-      hash = (37 * hash) + CONSUMER_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getConsumerName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.ConsumerConnectResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerConnectResponse)
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
-      }
+    public static final class ConsumerConnectResponse extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerConnectResponse)
+        ConsumerConnectResponseOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.class, com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use ConsumerConnectResponse.newBuilder() to construct.
+        private ConsumerConnectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        consumerId_ = 0L;
 
-        consumerName_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse build() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private ConsumerConnectResponse() {
+            consumerId_ = 0L;
+            consumerName_ = "";
         }
-        return result;
-      }
 
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse result = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse(this);
-        result.consumerId_ = consumerId_;
-        result.consumerName_ = consumerName_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.getDefaultInstance()) return this;
-        if (other.getConsumerId() != 0L) {
-          setConsumerId(other.getConsumerId());
-        }
-        if (!other.getConsumerName().isEmpty()) {
-          consumerName_ = other.consumerName_;
-          onChanged();
-        }
-        onChanged();
-        return this;
-      }
+        private ConsumerConnectResponse(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
 
-      public final boolean isInitialized() {
-        return true;
-      }
+                            consumerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 18: {
+                            java.lang.String s = input.readStringRequireUtf8();
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long consumerId_ ;
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public long getConsumerId() {
-        return consumerId_;
-      }
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public Builder setConsumerId(long value) {
-        
-        consumerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public Builder clearConsumerId() {
-        
-        consumerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object consumerName_ = "";
-      /**
-       * <code>string consumer_name = 2;</code>
-       */
-      public java.lang.String getConsumerName() {
-        java.lang.Object ref = consumerName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          consumerName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string consumer_name = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getConsumerNameBytes() {
-        java.lang.Object ref = consumerName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          consumerName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string consumer_name = 2;</code>
-       */
-      public Builder setConsumerName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        consumerName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string consumer_name = 2;</code>
-       */
-      public Builder clearConsumerName() {
-        
-        consumerName_ = getDefaultInstance().getConsumerName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string consumer_name = 2;</code>
-       */
-      public Builder setConsumerNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        consumerName_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerConnectResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerConnectResponse)
-    private static final com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse();
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ConsumerConnectResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ConsumerConnectResponse>() {
-      public ConsumerConnectResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConsumerConnectResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ConsumerConnectResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ConsumerConnectResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ConsumerPullMessageRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 consumer_id = 1;</code>
-     */
-    long getConsumerId();
-
-    /**
-     * <code>uint32 max_message = 2;</code>
-     */
-    int getMaxMessage();
-
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    boolean hasOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.ConsumerPullMessageRequest}
-   */
-  public  static final class ConsumerPullMessageRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
-      ConsumerPullMessageRequestOrBuilder {
-    // Use ConsumerPullMessageRequest.newBuilder() to construct.
-    private ConsumerPullMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ConsumerPullMessageRequest() {
-      consumerId_ = 0L;
-      maxMessage_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ConsumerPullMessageRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            consumerName_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              consumerId_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              maxMessage_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
-              if (offset_ != null) {
-                subBuilder = offset_.toBuilder();
-              }
-              offset_ = input.readMessage(com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(offset_);
-                offset_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
-    }
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
+        }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.class, com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.Builder.class);
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.class,
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.Builder.class);
+        }
+
+        public static final int CONSUMER_ID_FIELD_NUMBER = 1;
+        private long consumerId_;
+
+        /**
+         * <code>uint64 consumer_id = 1;</code>
+         */
+        public long getConsumerId() {
+            return consumerId_;
+        }
+
+        public static final int CONSUMER_NAME_FIELD_NUMBER = 2;
+        private volatile java.lang.Object consumerName_;
+
+        /**
+         * <code>string consumer_name = 2;</code>
+         */
+        public java.lang.String getConsumerName() {
+            java.lang.Object ref = consumerName_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                consumerName_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string consumer_name = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+        getConsumerNameBytes() {
+            java.lang.Object ref = consumerName_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                consumerName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (consumerId_ != 0L) {
+                output.writeUInt64(1, consumerId_);
+            }
+            if (!getConsumerNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, consumerName_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (consumerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(1, consumerId_);
+            }
+            if (!getConsumerNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, consumerName_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse other = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse) obj;
+
+            boolean result = true;
+            result = result && (getConsumerId()
+                == other.getConsumerId());
+            result = result && getConsumerName()
+                .equals(other.getConsumerName());
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getConsumerId());
+            hash = (37 * hash) + CONSUMER_NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getConsumerName().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.ConsumerConnectResponse}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerConnectResponse)
+            com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponseOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.class,
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                consumerId_ = 0L;
+
+                consumerName_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse build() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse result = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse(
+                    this);
+                result.consumerId_ = consumerId_;
+                result.consumerName_ = consumerName_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (other.getConsumerId() != 0L) {
+                    setConsumerId(other.getConsumerId());
+                }
+                if (!other.getConsumerName().isEmpty()) {
+                    consumerName_ = other.consumerName_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long consumerId_;
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public long getConsumerId() {
+                return consumerId_;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public Builder setConsumerId(long value) {
+
+                consumerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public Builder clearConsumerId() {
+
+                consumerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object consumerName_ = "";
+
+            /**
+             * <code>string consumer_name = 2;</code>
+             */
+            public java.lang.String getConsumerName() {
+                java.lang.Object ref = consumerName_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    consumerName_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string consumer_name = 2;</code>
+             */
+            public com.google.protobuf.ByteString
+            getConsumerNameBytes() {
+                java.lang.Object ref = consumerName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    consumerName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string consumer_name = 2;</code>
+             */
+            public Builder setConsumerName(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                consumerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string consumer_name = 2;</code>
+             */
+            public Builder clearConsumerName() {
+
+                consumerName_ = getDefaultInstance().getConsumerName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string consumer_name = 2;</code>
+             */
+            public Builder setConsumerNameBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                consumerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerConnectResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerConnectResponse)
+        private static final com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ConsumerConnectResponse>
+            PARSER = new com.google.protobuf.AbstractParser<ConsumerConnectResponse>() {
+            public ConsumerConnectResponse parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ConsumerConnectResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ConsumerConnectResponse> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ConsumerConnectResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.ConsumerConnectResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    public static final int CONSUMER_ID_FIELD_NUMBER = 1;
-    private long consumerId_;
-    /**
-     * <code>uint64 consumer_id = 1;</code>
-     */
-    public long getConsumerId() {
-      return consumerId_;
+    public interface ConsumerPullMessageRequestOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
+        com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>uint64 consumer_id = 1;</code>
+         */
+        long getConsumerId();
+
+        /**
+         * <code>uint32 max_message = 2;</code>
+         */
+        int getMaxMessage();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        boolean hasOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder();
     }
 
-    public static final int MAX_MESSAGE_FIELD_NUMBER = 2;
-    private int maxMessage_;
-    /**
-     * <code>uint32 max_message = 2;</code>
-     */
-    public int getMaxMessage() {
-      return maxMessage_;
-    }
-
-    public static final int OFFSET_FIELD_NUMBER = 3;
-    private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_;
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public boolean hasOffset() {
-      return offset_ != null;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
-      return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
-      return getOffset();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (consumerId_ != 0L) {
-        output.writeUInt64(1, consumerId_);
-      }
-      if (maxMessage_ != 0) {
-        output.writeUInt32(2, maxMessage_);
-      }
-      if (offset_ != null) {
-        output.writeMessage(3, getOffset());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (consumerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, consumerId_);
-      }
-      if (maxMessage_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, maxMessage_);
-      }
-      if (offset_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getOffset());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest other = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) obj;
-
-      boolean result = true;
-      result = result && (getConsumerId()
-          == other.getConsumerId());
-      result = result && (getMaxMessage()
-          == other.getMaxMessage());
-      result = result && (hasOffset() == other.hasOffset());
-      if (hasOffset()) {
-        result = result && getOffset()
-            .equals(other.getOffset());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConsumerId());
-      hash = (37 * hash) + MAX_MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxMessage();
-      if (hasOffset()) {
-        hash = (37 * hash) + OFFSET_FIELD_NUMBER;
-        hash = (53 * hash) + getOffset().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.ConsumerPullMessageRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
-      }
+    public static final class ConsumerPullMessageRequest extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
+        ConsumerPullMessageRequestOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.class, com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        consumerId_ = 0L;
-
-        maxMessage_ = 0;
-
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-        } else {
-          offset_ = null;
-          offsetBuilder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest build() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest result = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest(this);
-        result.consumerId_ = consumerId_;
-        result.maxMessage_ = maxMessage_;
-        if (offsetBuilder_ == null) {
-          result.offset_ = offset_;
-        } else {
-          result.offset_ = offsetBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.getDefaultInstance()) return this;
-        if (other.getConsumerId() != 0L) {
-          setConsumerId(other.getConsumerId());
-        }
-        if (other.getMaxMessage() != 0) {
-          setMaxMessage(other.getMaxMessage());
-        }
-        if (other.hasOffset()) {
-          mergeOffset(other.getOffset());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long consumerId_ ;
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public long getConsumerId() {
-        return consumerId_;
-      }
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public Builder setConsumerId(long value) {
-        
-        consumerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public Builder clearConsumerId() {
-        
-        consumerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int maxMessage_ ;
-      /**
-       * <code>uint32 max_message = 2;</code>
-       */
-      public int getMaxMessage() {
-        return maxMessage_;
-      }
-      /**
-       * <code>uint32 max_message = 2;</code>
-       */
-      public Builder setMaxMessage(int value) {
-        
-        maxMessage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 max_message = 2;</code>
-       */
-      public Builder clearMaxMessage() {
-        
-        maxMessage_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> offsetBuilder_;
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public boolean hasOffset() {
-        return offsetBuilder_ != null || offset_ != null;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
-        if (offsetBuilder_ == null) {
-          return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-        } else {
-          return offsetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder setOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (offsetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          offset_ = value;
-          onChanged();
-        } else {
-          offsetBuilder_.setMessage(value);
+        // Use ConsumerPullMessageRequest.newBuilder() to construct.
+        private ConsumerPullMessageRequest(
+            com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder setOffset(
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
-        if (offsetBuilder_ == null) {
-          offset_ = builderForValue.build();
-          onChanged();
-        } else {
-          offsetBuilder_.setMessage(builderForValue.build());
+        private ConsumerPullMessageRequest() {
+            consumerId_ = 0L;
+            maxMessage_ = 0;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder mergeOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (offsetBuilder_ == null) {
-          if (offset_ != null) {
-            offset_ =
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.newBuilder(offset_).mergeFrom(value).buildPartial();
-          } else {
-            offset_ = value;
-          }
-          onChanged();
-        } else {
-          offsetBuilder_.mergeFrom(value);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder clearOffset() {
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-          onChanged();
-        } else {
-          offset_ = null;
-          offsetBuilder_ = null;
-        }
+        private ConsumerPullMessageRequest(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getOffsetBuilder() {
-        
-        onChanged();
-        return getOffsetFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
-        if (offsetBuilder_ != null) {
-          return offsetBuilder_.getMessageOrBuilder();
-        } else {
-          return offset_ == null ?
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> 
-          getOffsetFieldBuilder() {
-        if (offsetBuilder_ == null) {
-          offsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
-                  getOffset(),
-                  getParentForChildren(),
-                  isClean());
-          offset_ = null;
-        }
-        return offsetBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+                            consumerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 16: {
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+                            maxMessage_ = input.readUInt32();
+                            break;
+                        }
+                        case 26: {
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
+                            if (offset_ != null) {
+                                subBuilder = offset_.toBuilder();
+                            }
+                            offset_ = input.readMessage(
+                                com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(),
+                                extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(offset_);
+                                offset_ = subBuilder.buildPartial();
+                            }
 
-
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
-    private static final com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest();
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ConsumerPullMessageRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ConsumerPullMessageRequest>() {
-      public ConsumerPullMessageRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConsumerPullMessageRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ConsumerPullMessageRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ConsumerPullMessageRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ConsumerPullMessageResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 consumer_id = 1;</code>
-     */
-    long getConsumerId();
-
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> 
-        getMessagesList();
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.Message getMessages(int index);
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    int getMessagesCount();
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    java.util.List<? extends com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> 
-        getMessagesOrBuilderList();
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessagesOrBuilder(
-        int index);
-
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-     */
-    boolean hasNextPullOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdData getNextPullOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getNextPullOffsetOrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.ConsumerPullMessageResponse}
-   */
-  public  static final class ConsumerPullMessageResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
-      ConsumerPullMessageResponseOrBuilder {
-    // Use ConsumerPullMessageResponse.newBuilder() to construct.
-    private ConsumerPullMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ConsumerPullMessageResponse() {
-      consumerId_ = 0L;
-      messages_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private ConsumerPullMessageResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 8: {
-
-              consumerId_ = input.readUInt64();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                messages_ = new java.util.ArrayList<com.song.heracles.net.proto.HeraclesProto.Message>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              messages_.add(
-                  input.readMessage(com.song.heracles.net.proto.HeraclesProto.Message.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
-              if (nextPullOffset_ != null) {
-                subBuilder = nextPullOffset_.toBuilder();
-              }
-              nextPullOffset_ = input.readMessage(com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nextPullOffset_);
-                nextPullOffset_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          messages_ = java.util.Collections.unmodifiableList(messages_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
-    }
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
+        }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.class, com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.Builder.class);
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.class,
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.Builder.class);
+        }
+
+        public static final int CONSUMER_ID_FIELD_NUMBER = 1;
+        private long consumerId_;
+
+        /**
+         * <code>uint64 consumer_id = 1;</code>
+         */
+        public long getConsumerId() {
+            return consumerId_;
+        }
+
+        public static final int MAX_MESSAGE_FIELD_NUMBER = 2;
+        private int maxMessage_;
+
+        /**
+         * <code>uint32 max_message = 2;</code>
+         */
+        public int getMaxMessage() {
+            return maxMessage_;
+        }
+
+        public static final int OFFSET_FIELD_NUMBER = 3;
+        private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_;
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public boolean hasOffset() {
+            return offset_ != null;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
+            return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                .getDefaultInstance() : offset_;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
+            return getOffset();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (consumerId_ != 0L) {
+                output.writeUInt64(1, consumerId_);
+            }
+            if (maxMessage_ != 0) {
+                output.writeUInt32(2, maxMessage_);
+            }
+            if (offset_ != null) {
+                output.writeMessage(3, getOffset());
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (consumerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(1, consumerId_);
+            }
+            if (maxMessage_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt32Size(2, maxMessage_);
+            }
+            if (offset_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, getOffset());
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest other = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) obj;
+
+            boolean result = true;
+            result = result && (getConsumerId()
+                == other.getConsumerId());
+            result = result && (getMaxMessage()
+                == other.getMaxMessage());
+            result = result && (hasOffset() == other.hasOffset());
+            if (hasOffset()) {
+                result = result && getOffset()
+                    .equals(other.getOffset());
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getConsumerId());
+            hash = (37 * hash) + MAX_MESSAGE_FIELD_NUMBER;
+            hash = (53 * hash) + getMaxMessage();
+            if (hasOffset()) {
+                hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+                hash = (53 * hash) + getOffset().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.ConsumerPullMessageRequest}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
+            com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequestOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.class,
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                consumerId_ = 0L;
+
+                maxMessage_ = 0;
+
+                if (offsetBuilder_ == null) {
+                    offset_ = null;
+                } else {
+                    offset_ = null;
+                    offsetBuilder_ = null;
+                }
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest build() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest result = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest(
+                    this);
+                result.consumerId_ = consumerId_;
+                result.maxMessage_ = maxMessage_;
+                if (offsetBuilder_ == null) {
+                    result.offset_ = offset_;
+                } else {
+                    result.offset_ = offsetBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (other.getConsumerId() != 0L) {
+                    setConsumerId(other.getConsumerId());
+                }
+                if (other.getMaxMessage() != 0) {
+                    setMaxMessage(other.getMaxMessage());
+                }
+                if (other.hasOffset()) {
+                    mergeOffset(other.getOffset());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private long consumerId_;
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public long getConsumerId() {
+                return consumerId_;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public Builder setConsumerId(long value) {
+
+                consumerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public Builder clearConsumerId() {
+
+                consumerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private int maxMessage_;
+
+            /**
+             * <code>uint32 max_message = 2;</code>
+             */
+            public int getMaxMessage() {
+                return maxMessage_;
+            }
+
+            /**
+             * <code>uint32 max_message = 2;</code>
+             */
+            public Builder setMaxMessage(int value) {
+
+                maxMessage_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint32 max_message = 2;</code>
+             */
+            public Builder clearMaxMessage() {
+
+                maxMessage_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_ = null;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> offsetBuilder_;
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public boolean hasOffset() {
+                return offsetBuilder_ != null || offset_ != null;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
+                if (offsetBuilder_ == null) {
+                    return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                        .getDefaultInstance() : offset_;
+                } else {
+                    return offsetBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder setOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (offsetBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    offset_ = value;
+                    onChanged();
+                } else {
+                    offsetBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder setOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
+                if (offsetBuilder_ == null) {
+                    offset_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    offsetBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder mergeOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (offsetBuilder_ == null) {
+                    if (offset_ != null) {
+                        offset_ =
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                                .newBuilder(offset_).mergeFrom(value).buildPartial();
+                    } else {
+                        offset_ = value;
+                    }
+                    onChanged();
+                } else {
+                    offsetBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder clearOffset() {
+                if (offsetBuilder_ == null) {
+                    offset_ = null;
+                    onChanged();
+                } else {
+                    offset_ = null;
+                    offsetBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getOffsetBuilder() {
+
+                onChanged();
+                return getOffsetFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
+                if (offsetBuilder_ != null) {
+                    return offsetBuilder_.getMessageOrBuilder();
+                } else {
+                    return offset_ == null ?
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance()
+                        : offset_;
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>
+            getOffsetFieldBuilder() {
+                if (offsetBuilder_ == null) {
+                    offsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
+                        getOffset(),
+                        getParentForChildren(),
+                        isClean());
+                    offset_ = null;
+                }
+                return offsetBuilder_;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerPullMessageRequest)
+        private static final com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ConsumerPullMessageRequest>
+            PARSER = new com.google.protobuf.AbstractParser<ConsumerPullMessageRequest>() {
+            public ConsumerPullMessageRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ConsumerPullMessageRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ConsumerPullMessageRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ConsumerPullMessageRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    private int bitField0_;
-    public static final int CONSUMER_ID_FIELD_NUMBER = 1;
-    private long consumerId_;
-    /**
-     * <code>uint64 consumer_id = 1;</code>
-     */
-    public long getConsumerId() {
-      return consumerId_;
+    public interface ConsumerPullMessageResponseOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
+        com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>uint64 consumer_id = 1;</code>
+         */
+        long getConsumerId();
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        java.util.List<com.song.heracles.net.proto.HeraclesProto.Message>
+        getMessagesList();
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.Message getMessages(int index);
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        int getMessagesCount();
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        java.util.List<? extends com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>
+        getMessagesOrBuilderList();
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessagesOrBuilder(
+            int index);
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+         */
+        boolean hasNextPullOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdData getNextPullOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getNextPullOffsetOrBuilder();
     }
 
-    public static final int MESSAGES_FIELD_NUMBER = 2;
-    private java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> messages_;
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    public java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> getMessagesList() {
-      return messages_;
-    }
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    public java.util.List<? extends com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> 
-        getMessagesOrBuilderList() {
-      return messages_;
-    }
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    public int getMessagesCount() {
-      return messages_.size();
-    }
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.Message getMessages(int index) {
-      return messages_.get(index);
-    }
-    /**
-     * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessagesOrBuilder(
-        int index) {
-      return messages_.get(index);
-    }
-
-    public static final int NEXTPULLOFFSET_FIELD_NUMBER = 3;
-    private com.song.heracles.net.proto.HeraclesProto.MessageIdData nextPullOffset_;
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-     */
-    public boolean hasNextPullOffset() {
-      return nextPullOffset_ != null;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdData getNextPullOffset() {
-      return nextPullOffset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : nextPullOffset_;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getNextPullOffsetOrBuilder() {
-      return getNextPullOffset();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (consumerId_ != 0L) {
-        output.writeUInt64(1, consumerId_);
-      }
-      for (int i = 0; i < messages_.size(); i++) {
-        output.writeMessage(2, messages_.get(i));
-      }
-      if (nextPullOffset_ != null) {
-        output.writeMessage(3, getNextPullOffset());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (consumerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, consumerId_);
-      }
-      for (int i = 0; i < messages_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, messages_.get(i));
-      }
-      if (nextPullOffset_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getNextPullOffset());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse other = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse) obj;
-
-      boolean result = true;
-      result = result && (getConsumerId()
-          == other.getConsumerId());
-      result = result && getMessagesList()
-          .equals(other.getMessagesList());
-      result = result && (hasNextPullOffset() == other.hasNextPullOffset());
-      if (hasNextPullOffset()) {
-        result = result && getNextPullOffset()
-            .equals(other.getNextPullOffset());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConsumerId());
-      if (getMessagesCount() > 0) {
-        hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
-        hash = (53 * hash) + getMessagesList().hashCode();
-      }
-      if (hasNextPullOffset()) {
-        hash = (37 * hash) + NEXTPULLOFFSET_FIELD_NUMBER;
-        hash = (53 * hash) + getNextPullOffset().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.ConsumerPullMessageResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
-      }
+    public static final class ConsumerPullMessageResponse extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
+        ConsumerPullMessageResponseOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.class, com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMessagesFieldBuilder();
+        // Use ConsumerPullMessageResponse.newBuilder() to construct.
+        private ConsumerPullMessageResponse(
+            com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        consumerId_ = 0L;
 
-        if (messagesBuilder_ == null) {
-          messages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          messagesBuilder_.clear();
+        private ConsumerPullMessageResponse() {
+            consumerId_ = 0L;
+            messages_ = java.util.Collections.emptyList();
         }
-        if (nextPullOffsetBuilder_ == null) {
-          nextPullOffset_ = null;
-        } else {
-          nextPullOffset_ = null;
-          nextPullOffsetBuilder_ = null;
-        }
-        return this;
-      }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse build() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-        return result;
-      }
 
-      public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse result = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.consumerId_ = consumerId_;
-        if (messagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            messages_ = java.util.Collections.unmodifiableList(messages_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.messages_ = messages_;
-        } else {
-          result.messages_ = messagesBuilder_.build();
-        }
-        if (nextPullOffsetBuilder_ == null) {
-          result.nextPullOffset_ = nextPullOffset_;
-        } else {
-          result.nextPullOffset_ = nextPullOffsetBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
+        private ConsumerPullMessageResponse(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
 
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
+                            consumerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 18: {
+                            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                                messages_ = new java.util.ArrayList<com.song.heracles.net.proto.HeraclesProto.Message>();
+                                mutable_bitField0_ |= 0x00000002;
+                            }
+                            messages_.add(
+                                input.readMessage(
+                                    com.song.heracles.net.proto.HeraclesProto.Message.parser(),
+                                    extensionRegistry));
+                            break;
+                        }
+                        case 26: {
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
+                            if (nextPullOffset_ != null) {
+                                subBuilder = nextPullOffset_.toBuilder();
+                            }
+                            nextPullOffset_ = input.readMessage(
+                                com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(),
+                                extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(nextPullOffset_);
+                                nextPullOffset_ = subBuilder.buildPartial();
+                            }
 
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.getDefaultInstance()) return this;
-        if (other.getConsumerId() != 0L) {
-          setConsumerId(other.getConsumerId());
-        }
-        if (messagesBuilder_ == null) {
-          if (!other.messages_.isEmpty()) {
-            if (messages_.isEmpty()) {
-              messages_ = other.messages_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureMessagesIsMutable();
-              messages_.addAll(other.messages_);
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                    messages_ = java.util.Collections.unmodifiableList(messages_);
+                }
+                makeExtensionsImmutable();
             }
-            onChanged();
-          }
-        } else {
-          if (!other.messages_.isEmpty()) {
-            if (messagesBuilder_.isEmpty()) {
-              messagesBuilder_.dispose();
-              messagesBuilder_ = null;
-              messages_ = other.messages_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              messagesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMessagesFieldBuilder() : null;
-            } else {
-              messagesBuilder_.addAllMessages(other.messages_);
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.class,
+                    com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int CONSUMER_ID_FIELD_NUMBER = 1;
+        private long consumerId_;
+
+        /**
+         * <code>uint64 consumer_id = 1;</code>
+         */
+        public long getConsumerId() {
+            return consumerId_;
+        }
+
+        public static final int MESSAGES_FIELD_NUMBER = 2;
+        private java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> messages_;
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        public java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> getMessagesList() {
+            return messages_;
+        }
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        public java.util.List<? extends com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>
+        getMessagesOrBuilderList() {
+            return messages_;
+        }
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        public int getMessagesCount() {
+            return messages_.size();
+        }
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.Message getMessages(int index) {
+            return messages_.get(index);
+        }
+
+        /**
+         * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessagesOrBuilder(
+            int index) {
+            return messages_.get(index);
+        }
+
+        public static final int NEXTPULLOFFSET_FIELD_NUMBER = 3;
+        private com.song.heracles.net.proto.HeraclesProto.MessageIdData nextPullOffset_;
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+         */
+        public boolean hasNextPullOffset() {
+            return nextPullOffset_ != null;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdData getNextPullOffset() {
+            return nextPullOffset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                .getDefaultInstance() : nextPullOffset_;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getNextPullOffsetOrBuilder() {
+            return getNextPullOffset();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
             }
-          }
-        }
-        if (other.hasNextPullOffset()) {
-          mergeNextPullOffset(other.getNextPullOffset());
-        }
-        onChanged();
-        return this;
-      }
+            if (isInitialized == 0) {
+                return false;
+            }
 
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long consumerId_ ;
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public long getConsumerId() {
-        return consumerId_;
-      }
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public Builder setConsumerId(long value) {
-        
-        consumerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 consumer_id = 1;</code>
-       */
-      public Builder clearConsumerId() {
-        
-        consumerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> messages_ =
-        java.util.Collections.emptyList();
-      private void ensureMessagesIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          messages_ = new java.util.ArrayList<com.song.heracles.net.proto.HeraclesProto.Message>(messages_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> messagesBuilder_;
-
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> getMessagesList() {
-        if (messagesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(messages_);
-        } else {
-          return messagesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public int getMessagesCount() {
-        if (messagesBuilder_ == null) {
-          return messages_.size();
-        } else {
-          return messagesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.Message getMessages(int index) {
-        if (messagesBuilder_ == null) {
-          return messages_.get(index);
-        } else {
-          return messagesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder setMessages(
-          int index, com.song.heracles.net.proto.HeraclesProto.Message value) {
-        if (messagesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMessagesIsMutable();
-          messages_.set(index, value);
-          onChanged();
-        } else {
-          messagesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder setMessages(
-          int index, com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
-        if (messagesBuilder_ == null) {
-          ensureMessagesIsMutable();
-          messages_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          messagesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder addMessages(com.song.heracles.net.proto.HeraclesProto.Message value) {
-        if (messagesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMessagesIsMutable();
-          messages_.add(value);
-          onChanged();
-        } else {
-          messagesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder addMessages(
-          int index, com.song.heracles.net.proto.HeraclesProto.Message value) {
-        if (messagesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMessagesIsMutable();
-          messages_.add(index, value);
-          onChanged();
-        } else {
-          messagesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder addMessages(
-          com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
-        if (messagesBuilder_ == null) {
-          ensureMessagesIsMutable();
-          messages_.add(builderForValue.build());
-          onChanged();
-        } else {
-          messagesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder addMessages(
-          int index, com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
-        if (messagesBuilder_ == null) {
-          ensureMessagesIsMutable();
-          messages_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          messagesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder addAllMessages(
-          java.lang.Iterable<? extends com.song.heracles.net.proto.HeraclesProto.Message> values) {
-        if (messagesBuilder_ == null) {
-          ensureMessagesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, messages_);
-          onChanged();
-        } else {
-          messagesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder clearMessages() {
-        if (messagesBuilder_ == null) {
-          messages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          messagesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public Builder removeMessages(int index) {
-        if (messagesBuilder_ == null) {
-          ensureMessagesIsMutable();
-          messages_.remove(index);
-          onChanged();
-        } else {
-          messagesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.Message.Builder getMessagesBuilder(
-          int index) {
-        return getMessagesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessagesOrBuilder(
-          int index) {
-        if (messagesBuilder_ == null) {
-          return messages_.get(index);  } else {
-          return messagesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public java.util.List<? extends com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> 
-           getMessagesOrBuilderList() {
-        if (messagesBuilder_ != null) {
-          return messagesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(messages_);
-        }
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.Message.Builder addMessagesBuilder() {
-        return getMessagesFieldBuilder().addBuilder(
-            com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.Message.Builder addMessagesBuilder(
-          int index) {
-        return getMessagesFieldBuilder().addBuilder(
-            index, com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
-       */
-      public java.util.List<com.song.heracles.net.proto.HeraclesProto.Message.Builder> 
-           getMessagesBuilderList() {
-        return getMessagesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> 
-          getMessagesFieldBuilder() {
-        if (messagesBuilder_ == null) {
-          messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>(
-                  messages_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          messages_ = null;
-        }
-        return messagesBuilder_;
-      }
-
-      private com.song.heracles.net.proto.HeraclesProto.MessageIdData nextPullOffset_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> nextPullOffsetBuilder_;
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public boolean hasNextPullOffset() {
-        return nextPullOffsetBuilder_ != null || nextPullOffset_ != null;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData getNextPullOffset() {
-        if (nextPullOffsetBuilder_ == null) {
-          return nextPullOffset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : nextPullOffset_;
-        } else {
-          return nextPullOffsetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public Builder setNextPullOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (nextPullOffsetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          nextPullOffset_ = value;
-          onChanged();
-        } else {
-          nextPullOffsetBuilder_.setMessage(value);
+            memoizedIsInitialized = 1;
+            return true;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public Builder setNextPullOffset(
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
-        if (nextPullOffsetBuilder_ == null) {
-          nextPullOffset_ = builderForValue.build();
-          onChanged();
-        } else {
-          nextPullOffsetBuilder_.setMessage(builderForValue.build());
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (consumerId_ != 0L) {
+                output.writeUInt64(1, consumerId_);
+            }
+            for (int i = 0; i < messages_.size(); i++) {
+                output.writeMessage(2, messages_.get(i));
+            }
+            if (nextPullOffset_ != null) {
+                output.writeMessage(3, getNextPullOffset());
+            }
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public Builder mergeNextPullOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (nextPullOffsetBuilder_ == null) {
-          if (nextPullOffset_ != null) {
-            nextPullOffset_ =
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.newBuilder(nextPullOffset_).mergeFrom(value).buildPartial();
-          } else {
-            nextPullOffset_ = value;
-          }
-          onChanged();
-        } else {
-          nextPullOffsetBuilder_.mergeFrom(value);
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (consumerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(1, consumerId_);
+            }
+            for (int i = 0; i < messages_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(2, messages_.get(i));
+            }
+            if (nextPullOffset_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, getNextPullOffset());
+            }
+            memoizedSize = size;
+            return size;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public Builder clearNextPullOffset() {
-        if (nextPullOffsetBuilder_ == null) {
-          nextPullOffset_ = null;
-          onChanged();
-        } else {
-          nextPullOffset_ = null;
-          nextPullOffsetBuilder_ = null;
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse other = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse) obj;
+
+            boolean result = true;
+            result = result && (getConsumerId()
+                == other.getConsumerId());
+            result = result && getMessagesList()
+                .equals(other.getMessagesList());
+            result = result && (hasNextPullOffset() == other.hasNextPullOffset());
+            if (hasNextPullOffset()) {
+                result = result && getNextPullOffset()
+                    .equals(other.getNextPullOffset());
+            }
+            return result;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getNextPullOffsetBuilder() {
-        
-        onChanged();
-        return getNextPullOffsetFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getNextPullOffsetOrBuilder() {
-        if (nextPullOffsetBuilder_ != null) {
-          return nextPullOffsetBuilder_.getMessageOrBuilder();
-        } else {
-          return nextPullOffset_ == null ?
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : nextPullOffset_;
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getConsumerId());
+            if (getMessagesCount() > 0) {
+                hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
+                hash = (53 * hash) + getMessagesList().hashCode();
+            }
+            if (hasNextPullOffset()) {
+                hash = (37 * hash) + NEXTPULLOFFSET_FIELD_NUMBER;
+                hash = (53 * hash) + getNextPullOffset().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
         }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> 
-          getNextPullOffsetFieldBuilder() {
-        if (nextPullOffsetBuilder_ == null) {
-          nextPullOffsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
-                  getNextPullOffset(),
-                  getParentForChildren(),
-                  isClean());
-          nextPullOffset_ = null;
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-        return nextPullOffsetBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
 
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
 
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.ConsumerPullMessageResponse}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
+            com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponseOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.class,
+                        com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                    getMessagesFieldBuilder();
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                consumerId_ = 0L;
+
+                if (messagesBuilder_ == null) {
+                    messages_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                } else {
+                    messagesBuilder_.clear();
+                }
+                if (nextPullOffsetBuilder_ == null) {
+                    nextPullOffset_ = null;
+                } else {
+                    nextPullOffset_ = null;
+                    nextPullOffsetBuilder_ = null;
+                }
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse build() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse result = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse(
+                    this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                result.consumerId_ = consumerId_;
+                if (messagesBuilder_ == null) {
+                    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                        messages_ = java.util.Collections.unmodifiableList(messages_);
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    }
+                    result.messages_ = messages_;
+                } else {
+                    result.messages_ = messagesBuilder_.build();
+                }
+                if (nextPullOffsetBuilder_ == null) {
+                    result.nextPullOffset_ = nextPullOffset_;
+                } else {
+                    result.nextPullOffset_ = nextPullOffsetBuilder_.build();
+                }
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (other.getConsumerId() != 0L) {
+                    setConsumerId(other.getConsumerId());
+                }
+                if (messagesBuilder_ == null) {
+                    if (!other.messages_.isEmpty()) {
+                        if (messages_.isEmpty()) {
+                            messages_ = other.messages_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                        } else {
+                            ensureMessagesIsMutable();
+                            messages_.addAll(other.messages_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.messages_.isEmpty()) {
+                        if (messagesBuilder_.isEmpty()) {
+                            messagesBuilder_.dispose();
+                            messagesBuilder_ = null;
+                            messages_ = other.messages_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                            messagesBuilder_ =
+                                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                    getMessagesFieldBuilder() : null;
+                        } else {
+                            messagesBuilder_.addAllMessages(other.messages_);
+                        }
+                    }
+                }
+                if (other.hasNextPullOffset()) {
+                    mergeNextPullOffset(other.getNextPullOffset());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private long consumerId_;
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public long getConsumerId() {
+                return consumerId_;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public Builder setConsumerId(long value) {
+
+                consumerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 1;</code>
+             */
+            public Builder clearConsumerId() {
+
+                consumerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> messages_ =
+                java.util.Collections.emptyList();
+
+            private void ensureMessagesIsMutable() {
+                if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+                    messages_ = new java.util.ArrayList<com.song.heracles.net.proto.HeraclesProto.Message>(
+                        messages_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder> messagesBuilder_;
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public java.util.List<com.song.heracles.net.proto.HeraclesProto.Message> getMessagesList() {
+                if (messagesBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(messages_);
+                } else {
+                    return messagesBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public int getMessagesCount() {
+                if (messagesBuilder_ == null) {
+                    return messages_.size();
+                } else {
+                    return messagesBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.Message getMessages(int index) {
+                if (messagesBuilder_ == null) {
+                    return messages_.get(index);
+                } else {
+                    return messagesBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder setMessages(
+                int index, com.song.heracles.net.proto.HeraclesProto.Message value) {
+                if (messagesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureMessagesIsMutable();
+                    messages_.set(index, value);
+                    onChanged();
+                } else {
+                    messagesBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder setMessages(
+                int index,
+                com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
+                if (messagesBuilder_ == null) {
+                    ensureMessagesIsMutable();
+                    messages_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    messagesBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder addMessages(com.song.heracles.net.proto.HeraclesProto.Message value) {
+                if (messagesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureMessagesIsMutable();
+                    messages_.add(value);
+                    onChanged();
+                } else {
+                    messagesBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder addMessages(
+                int index, com.song.heracles.net.proto.HeraclesProto.Message value) {
+                if (messagesBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureMessagesIsMutable();
+                    messages_.add(index, value);
+                    onChanged();
+                } else {
+                    messagesBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder addMessages(
+                com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
+                if (messagesBuilder_ == null) {
+                    ensureMessagesIsMutable();
+                    messages_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    messagesBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder addMessages(
+                int index,
+                com.song.heracles.net.proto.HeraclesProto.Message.Builder builderForValue) {
+                if (messagesBuilder_ == null) {
+                    ensureMessagesIsMutable();
+                    messages_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    messagesBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder addAllMessages(
+                java.lang.Iterable<? extends com.song.heracles.net.proto.HeraclesProto.Message> values) {
+                if (messagesBuilder_ == null) {
+                    ensureMessagesIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, messages_);
+                    onChanged();
+                } else {
+                    messagesBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder clearMessages() {
+                if (messagesBuilder_ == null) {
+                    messages_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                    onChanged();
+                } else {
+                    messagesBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public Builder removeMessages(int index) {
+                if (messagesBuilder_ == null) {
+                    ensureMessagesIsMutable();
+                    messages_.remove(index);
+                    onChanged();
+                } else {
+                    messagesBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.Message.Builder getMessagesBuilder(
+                int index) {
+                return getMessagesFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder getMessagesOrBuilder(
+                int index) {
+                if (messagesBuilder_ == null) {
+                    return messages_.get(index);
+                } else {
+                    return messagesBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public java.util.List<? extends com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>
+            getMessagesOrBuilderList() {
+                if (messagesBuilder_ != null) {
+                    return messagesBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(messages_);
+                }
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.Message.Builder addMessagesBuilder() {
+                return getMessagesFieldBuilder().addBuilder(
+                    com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance());
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.Message.Builder addMessagesBuilder(
+                int index) {
+                return getMessagesFieldBuilder().addBuilder(
+                    index, com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance());
+            }
+
+            /**
+             * <code>repeated .com.song.fastmq.broker.net.Message messages = 2;</code>
+             */
+            public java.util.List<com.song.heracles.net.proto.HeraclesProto.Message.Builder>
+            getMessagesBuilderList() {
+                return getMessagesFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>
+            getMessagesFieldBuilder() {
+                if (messagesBuilder_ == null) {
+                    messagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                        com.song.heracles.net.proto.HeraclesProto.Message, com.song.heracles.net.proto.HeraclesProto.Message.Builder, com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder>(
+                        messages_,
+                        ((bitField0_ & 0x00000002) == 0x00000002),
+                        getParentForChildren(),
+                        isClean());
+                    messages_ = null;
+                }
+                return messagesBuilder_;
+            }
+
+            private com.song.heracles.net.proto.HeraclesProto.MessageIdData nextPullOffset_ = null;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> nextPullOffsetBuilder_;
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public boolean hasNextPullOffset() {
+                return nextPullOffsetBuilder_ != null || nextPullOffset_ != null;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData getNextPullOffset() {
+                if (nextPullOffsetBuilder_ == null) {
+                    return nextPullOffset_ == null
+                        ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                        .getDefaultInstance() : nextPullOffset_;
+                } else {
+                    return nextPullOffsetBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public Builder setNextPullOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (nextPullOffsetBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    nextPullOffset_ = value;
+                    onChanged();
+                } else {
+                    nextPullOffsetBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public Builder setNextPullOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
+                if (nextPullOffsetBuilder_ == null) {
+                    nextPullOffset_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    nextPullOffsetBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public Builder mergeNextPullOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (nextPullOffsetBuilder_ == null) {
+                    if (nextPullOffset_ != null) {
+                        nextPullOffset_ =
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                                .newBuilder(nextPullOffset_).mergeFrom(value).buildPartial();
+                    } else {
+                        nextPullOffset_ = value;
+                    }
+                    onChanged();
+                } else {
+                    nextPullOffsetBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public Builder clearNextPullOffset() {
+                if (nextPullOffsetBuilder_ == null) {
+                    nextPullOffset_ = null;
+                    onChanged();
+                } else {
+                    nextPullOffset_ = null;
+                    nextPullOffsetBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getNextPullOffsetBuilder() {
+
+                onChanged();
+                return getNextPullOffsetFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getNextPullOffsetOrBuilder() {
+                if (nextPullOffsetBuilder_ != null) {
+                    return nextPullOffsetBuilder_.getMessageOrBuilder();
+                } else {
+                    return nextPullOffset_ == null ?
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance()
+                        : nextPullOffset_;
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData nextPullOffset = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>
+            getNextPullOffsetFieldBuilder() {
+                if (nextPullOffsetBuilder_ == null) {
+                    nextPullOffsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
+                        getNextPullOffset(),
+                        getParentForChildren(),
+                        isClean());
+                    nextPullOffset_ = null;
+                }
+                return nextPullOffsetBuilder_;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
+        private static final com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ConsumerPullMessageResponse>
+            PARSER = new com.google.protobuf.AbstractParser<ConsumerPullMessageResponse>() {
+            public ConsumerPullMessageResponse parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new ConsumerPullMessageResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<ConsumerPullMessageResponse> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ConsumerPullMessageResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.ConsumerPullMessageResponse)
-    private static final com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse();
-    }
+    public interface PullOffsetRequestOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.PullOffsetRequest)
+        com.google.protobuf.MessageOrBuilder {
 
-    public static com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>string topic = 1;</code>
+         */
+        java.lang.String getTopic();
 
-    private static final com.google.protobuf.Parser<ConsumerPullMessageResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ConsumerPullMessageResponse>() {
-      public ConsumerPullMessageResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConsumerPullMessageResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ConsumerPullMessageResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ConsumerPullMessageResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.ConsumerPullMessageResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PullOffsetRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.PullOffsetRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string topic = 1;</code>
-     */
-    java.lang.String getTopic();
-    /**
-     * <code>string topic = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string topic = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getTopicBytes();
 
-    /**
-     * <code>uint64 consumer_id = 2;</code>
-     */
-    long getConsumerId();
+        /**
+         * <code>uint64 consumer_id = 2;</code>
+         */
+        long getConsumerId();
 
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    java.lang.String getConsumerName();
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        java.lang.String getConsumerName();
+
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getConsumerNameBytes();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.PullOffsetRequest}
-   */
-  public  static final class PullOffsetRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.PullOffsetRequest)
-      PullOffsetRequestOrBuilder {
-    // Use PullOffsetRequest.newBuilder() to construct.
-    private PullOffsetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PullOffsetRequest() {
-      topic_ = "";
-      consumerId_ = 0L;
-      consumerName_ = "";
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private PullOffsetRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              topic_ = s;
-              break;
-            }
-            case 16: {
-
-              consumerId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              consumerName_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.class, com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.Builder.class);
-    }
-
-    public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        topic_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CONSUMER_ID_FIELD_NUMBER = 2;
-    private long consumerId_;
-    /**
-     * <code>uint64 consumer_id = 2;</code>
-     */
-    public long getConsumerId() {
-      return consumerId_;
-    }
-
-    public static final int CONSUMER_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object consumerName_;
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    public java.lang.String getConsumerName() {
-      java.lang.Object ref = consumerName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        consumerName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string consumer_name = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getConsumerNameBytes() {
-      java.lang.Object ref = consumerName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        consumerName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getTopicBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
-      }
-      if (consumerId_ != 0L) {
-        output.writeUInt64(2, consumerId_);
-      }
-      if (!getConsumerNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, consumerName_);
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getTopicBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
-      }
-      if (consumerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, consumerId_);
-      }
-      if (!getConsumerNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, consumerName_);
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest other = (com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) obj;
-
-      boolean result = true;
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && (getConsumerId()
-          == other.getConsumerId());
-      result = result && getConsumerName()
-          .equals(other.getConsumerName());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-      hash = (53 * hash) + getTopic().hashCode();
-      hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConsumerId());
-      hash = (37 * hash) + CONSUMER_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getConsumerName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.PullOffsetRequest}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.PullOffsetRequest)
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
-      }
+    public static final class PullOffsetRequest extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.PullOffsetRequest)
+        PullOffsetRequestOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.class, com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use PullOffsetRequest.newBuilder() to construct.
+        private PullOffsetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      public Builder clear() {
-        super.clear();
-        topic_ = "";
 
-        consumerId_ = 0L;
-
-        consumerName_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest build() {
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private PullOffsetRequest() {
+            topic_ = "";
+            consumerId_ = 0L;
+            consumerName_ = "";
         }
-        return result;
-      }
 
-      public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest result = new com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest(this);
-        result.topic_ = topic_;
-        result.consumerId_ = consumerId_;
-        result.consumerName_ = consumerName_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
-      }
 
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.getDefaultInstance()) return this;
-        if (!other.getTopic().isEmpty()) {
-          topic_ = other.topic_;
-          onChanged();
+        private PullOffsetRequest(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            topic_ = s;
+                            break;
+                        }
+                        case 16: {
+
+                            consumerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 26: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            consumerName_ = s;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getConsumerId() != 0L) {
-          setConsumerId(other.getConsumerId());
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
         }
-        if (!other.getConsumerName().isEmpty()) {
-          consumerName_ = other.consumerName_;
-          onChanged();
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.class,
+                    com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.Builder.class);
         }
-        onChanged();
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        return true;
-      }
+        public static final int TOPIC_FIELD_NUMBER = 1;
+        private volatile java.lang.Object topic_;
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public java.lang.String getTopic() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                topic_ = s;
+                return s;
+            }
         }
-        return this;
-      }
 
-      private java.lang.Object topic_ = "";
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public java.lang.String getTopic() {
-        java.lang.Object ref = topic_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          topic_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTopicBytes() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                topic_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTopicBytes() {
-        java.lang.Object ref = topic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topic_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        public static final int CONSUMER_ID_FIELD_NUMBER = 2;
+        private long consumerId_;
+
+        /**
+         * <code>uint64 consumer_id = 2;</code>
+         */
+        public long getConsumerId() {
+            return consumerId_;
         }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopic(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder clearTopic() {
-        
-        topic_ = getDefaultInstance().getTopic();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopicBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        topic_ = value;
-        onChanged();
-        return this;
-      }
 
-      private long consumerId_ ;
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public long getConsumerId() {
-        return consumerId_;
-      }
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public Builder setConsumerId(long value) {
-        
-        consumerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public Builder clearConsumerId() {
-        
-        consumerId_ = 0L;
-        onChanged();
-        return this;
-      }
+        public static final int CONSUMER_NAME_FIELD_NUMBER = 3;
+        private volatile java.lang.Object consumerName_;
 
-      private java.lang.Object consumerName_ = "";
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public java.lang.String getConsumerName() {
-        java.lang.Object ref = consumerName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          consumerName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        public java.lang.String getConsumerName() {
+            java.lang.Object ref = consumerName_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                consumerName_ = s;
+                return s;
+            }
         }
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getConsumerNameBytes() {
-        java.lang.Object ref = consumerName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          consumerName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <code>string consumer_name = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+        getConsumerNameBytes() {
+            java.lang.Object ref = consumerName_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                consumerName_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public Builder setConsumerName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        consumerName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public Builder clearConsumerName() {
-        
-        consumerName_ = getDefaultInstance().getConsumerName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string consumer_name = 3;</code>
-       */
-      public Builder setConsumerNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        consumerName_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
 
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.PullOffsetRequest)
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (!getTopicBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
+            }
+            if (consumerId_ != 0L) {
+                output.writeUInt64(2, consumerId_);
+            }
+            if (!getConsumerNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, consumerName_);
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (!getTopicBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
+            }
+            if (consumerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, consumerId_);
+            }
+            if (!getConsumerNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, consumerName_);
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest other = (com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) obj;
+
+            boolean result = true;
+            result = result && getTopic()
+                .equals(other.getTopic());
+            result = result && (getConsumerId()
+                == other.getConsumerId());
+            result = result && getConsumerName()
+                .equals(other.getConsumerName());
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+            hash = (53 * hash) + getTopic().hashCode();
+            hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getConsumerId());
+            hash = (37 * hash) + CONSUMER_NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getConsumerName().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.PullOffsetRequest}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.PullOffsetRequest)
+            com.song.heracles.net.proto.HeraclesProto.PullOffsetRequestOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.class,
+                        com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                topic_ = "";
+
+                consumerId_ = 0L;
+
+                consumerName_ = "";
+
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest build() {
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest result = new com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest(
+                    this);
+                result.topic_ = topic_;
+                result.consumerId_ = consumerId_;
+                result.consumerName_ = consumerName_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (!other.getTopic().isEmpty()) {
+                    topic_ = other.topic_;
+                    onChanged();
+                }
+                if (other.getConsumerId() != 0L) {
+                    setConsumerId(other.getConsumerId());
+                }
+                if (!other.getConsumerName().isEmpty()) {
+                    consumerName_ = other.consumerName_;
+                    onChanged();
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private java.lang.Object topic_ = "";
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public java.lang.String getTopic() {
+                java.lang.Object ref = topic_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    topic_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTopicBytes() {
+                java.lang.Object ref = topic_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    topic_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopic(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder clearTopic() {
+
+                topic_ = getDefaultInstance().getTopic();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopicBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long consumerId_;
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public long getConsumerId() {
+                return consumerId_;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public Builder setConsumerId(long value) {
+
+                consumerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public Builder clearConsumerId() {
+
+                consumerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private java.lang.Object consumerName_ = "";
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public java.lang.String getConsumerName() {
+                java.lang.Object ref = consumerName_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    consumerName_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getConsumerNameBytes() {
+                java.lang.Object ref = consumerName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    consumerName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public Builder setConsumerName(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                consumerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public Builder clearConsumerName() {
+
+                consumerName_ = getDefaultInstance().getConsumerName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string consumer_name = 3;</code>
+             */
+            public Builder setConsumerNameBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                consumerName_ = value;
+                onChanged();
+                return this;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.PullOffsetRequest)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.PullOffsetRequest)
+        private static final com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<PullOffsetRequest>
+            PARSER = new com.google.protobuf.AbstractParser<PullOffsetRequest>() {
+            public PullOffsetRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new PullOffsetRequest(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<PullOffsetRequest> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<PullOffsetRequest> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.PullOffsetRequest)
-    private static final com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest();
-    }
+    public interface PullOffsetResponseOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.PullOffsetResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>string topic = 1;</code>
+         */
+        java.lang.String getTopic();
 
-    private static final com.google.protobuf.Parser<PullOffsetRequest>
-        PARSER = new com.google.protobuf.AbstractParser<PullOffsetRequest>() {
-      public PullOffsetRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PullOffsetRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PullOffsetRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PullOffsetRequest> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.PullOffsetRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PullOffsetResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.PullOffsetResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string topic = 1;</code>
-     */
-    java.lang.String getTopic();
-    /**
-     * <code>string topic = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>string topic = 1;</code>
+         */
+        com.google.protobuf.ByteString
         getTopicBytes();
 
-    /**
-     * <code>uint64 consumer_id = 2;</code>
-     */
-    long getConsumerId();
+        /**
+         * <code>uint64 consumer_id = 2;</code>
+         */
+        long getConsumerId();
 
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    boolean hasOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.PullOffsetResponse}
-   */
-  public  static final class PullOffsetResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.PullOffsetResponse)
-      PullOffsetResponseOrBuilder {
-    // Use PullOffsetResponse.newBuilder() to construct.
-    private PullOffsetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PullOffsetResponse() {
-      topic_ = "";
-      consumerId_ = 0L;
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        boolean hasOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private PullOffsetResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              topic_ = s;
-              break;
-            }
-            case 16: {
-
-              consumerId_ = input.readUInt64();
-              break;
-            }
-            case 26: {
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
-              if (offset_ != null) {
-                subBuilder = offset_.toBuilder();
-              }
-              offset_ = input.readMessage(com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(offset_);
-                offset_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.class, com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.Builder.class);
-    }
-
-    public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public java.lang.String getTopic() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        topic_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string topic = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
-      java.lang.Object ref = topic_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topic_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CONSUMER_ID_FIELD_NUMBER = 2;
-    private long consumerId_;
-    /**
-     * <code>uint64 consumer_id = 2;</code>
-     */
-    public long getConsumerId() {
-      return consumerId_;
-    }
-
-    public static final int OFFSET_FIELD_NUMBER = 3;
-    private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_;
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public boolean hasOffset() {
-      return offset_ != null;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
-      return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
-      return getOffset();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getTopicBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
-      }
-      if (consumerId_ != 0L) {
-        output.writeUInt64(2, consumerId_);
-      }
-      if (offset_ != null) {
-        output.writeMessage(3, getOffset());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getTopicBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
-      }
-      if (consumerId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, consumerId_);
-      }
-      if (offset_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getOffset());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse other = (com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse) obj;
-
-      boolean result = true;
-      result = result && getTopic()
-          .equals(other.getTopic());
-      result = result && (getConsumerId()
-          == other.getConsumerId());
-      result = result && (hasOffset() == other.hasOffset());
-      if (hasOffset()) {
-        result = result && getOffset()
-            .equals(other.getOffset());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOPIC_FIELD_NUMBER;
-      hash = (53 * hash) + getTopic().hashCode();
-      hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConsumerId());
-      if (hasOffset()) {
-        hash = (37 * hash) + OFFSET_FIELD_NUMBER;
-        hash = (53 * hash) + getOffset().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.PullOffsetResponse}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.PullOffsetResponse)
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
-      }
+    public static final class PullOffsetResponse extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.PullOffsetResponse)
+        PullOffsetResponseOrBuilder {
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.class, com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        topic_ = "";
-
-        consumerId_ = 0L;
-
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-        } else {
-          offset_ = null;
-          offsetBuilder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse build() {
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse result = new com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse(this);
-        result.topic_ = topic_;
-        result.consumerId_ = consumerId_;
-        if (offsetBuilder_ == null) {
-          result.offset_ = offset_;
-        } else {
-          result.offset_ = offsetBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.getDefaultInstance()) return this;
-        if (!other.getTopic().isEmpty()) {
-          topic_ = other.topic_;
-          onChanged();
-        }
-        if (other.getConsumerId() != 0L) {
-          setConsumerId(other.getConsumerId());
-        }
-        if (other.hasOffset()) {
-          mergeOffset(other.getOffset());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object topic_ = "";
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public java.lang.String getTopic() {
-        java.lang.Object ref = topic_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          topic_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTopicBytes() {
-        java.lang.Object ref = topic_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topic_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopic(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder clearTopic() {
-        
-        topic_ = getDefaultInstance().getTopic();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string topic = 1;</code>
-       */
-      public Builder setTopicBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        topic_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long consumerId_ ;
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public long getConsumerId() {
-        return consumerId_;
-      }
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public Builder setConsumerId(long value) {
-        
-        consumerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 consumer_id = 2;</code>
-       */
-      public Builder clearConsumerId() {
-        
-        consumerId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> offsetBuilder_;
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public boolean hasOffset() {
-        return offsetBuilder_ != null || offset_ != null;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
-        if (offsetBuilder_ == null) {
-          return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-        } else {
-          return offsetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder setOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (offsetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          offset_ = value;
-          onChanged();
-        } else {
-          offsetBuilder_.setMessage(value);
+        // Use PullOffsetResponse.newBuilder() to construct.
+        private PullOffsetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder setOffset(
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
-        if (offsetBuilder_ == null) {
-          offset_ = builderForValue.build();
-          onChanged();
-        } else {
-          offsetBuilder_.setMessage(builderForValue.build());
+        private PullOffsetResponse() {
+            topic_ = "";
+            consumerId_ = 0L;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder mergeOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (offsetBuilder_ == null) {
-          if (offset_ != null) {
-            offset_ =
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.newBuilder(offset_).mergeFrom(value).buildPartial();
-          } else {
-            offset_ = value;
-          }
-          onChanged();
-        } else {
-          offsetBuilder_.mergeFrom(value);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder clearOffset() {
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-          onChanged();
-        } else {
-          offset_ = null;
-          offsetBuilder_ = null;
-        }
+        private PullOffsetResponse(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getOffsetBuilder() {
-        
-        onChanged();
-        return getOffsetFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
-        if (offsetBuilder_ != null) {
-          return offsetBuilder_.getMessageOrBuilder();
-        } else {
-          return offset_ == null ?
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> 
-          getOffsetFieldBuilder() {
-        if (offsetBuilder_ == null) {
-          offsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
-                  getOffset(),
-                  getParentForChildren(),
-                  isClean());
-          offset_ = null;
-        }
-        return offsetBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+                            topic_ = s;
+                            break;
+                        }
+                        case 16: {
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+                            consumerId_ = input.readUInt64();
+                            break;
+                        }
+                        case 26: {
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
+                            if (offset_ != null) {
+                                subBuilder = offset_.toBuilder();
+                            }
+                            offset_ = input.readMessage(
+                                com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(),
+                                extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(offset_);
+                                offset_ = subBuilder.buildPartial();
+                            }
 
-
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.PullOffsetResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.PullOffsetResponse)
-    private static final com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse();
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PullOffsetResponse>
-        PARSER = new com.google.protobuf.AbstractParser<PullOffsetResponse>() {
-      public PullOffsetResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PullOffsetResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PullOffsetResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PullOffsetResponse> getParserForType() {
-      return PARSER;
-    }
-
-    public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface MessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.Message)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-    int getHeadersCount();
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-    boolean containsHeaders(
-        java.lang.String key);
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeaders();
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeadersMap();
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-
-    java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-
-    java.lang.String getHeadersOrThrow(
-        java.lang.String key);
-
-    /**
-     * <code>bytes body = 2;</code>
-     */
-    com.google.protobuf.ByteString getBody();
-
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    boolean hasOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset();
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.song.fastmq.broker.net.Message}
-   */
-  public  static final class Message extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.Message)
-      MessageOrBuilder {
-    // Use Message.newBuilder() to construct.
-    private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Message() {
-      body_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private Message(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
             }
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                headers_ = com.google.protobuf.MapField.newMapField(
-                    HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              headers__ = input.readMessage(
-                  HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              headers_.getMutableMap().put(
-                  headers__.getKey(), headers__.getValue());
-              break;
-            }
-            case 18: {
-
-              body_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
-              if (offset_ != null) {
-                subBuilder = offset_.toBuilder();
-              }
-              offset_ = input.readMessage(com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(offset_);
-                offset_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+        public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_descriptor;
-    }
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
+        }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetHeaders();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.song.heracles.net.proto.HeraclesProto.Message.class, com.song.heracles.net.proto.HeraclesProto.Message.Builder.class);
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.class,
+                    com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.Builder.class);
+        }
+
+        public static final int TOPIC_FIELD_NUMBER = 1;
+        private volatile java.lang.Object topic_;
+
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public java.lang.String getTopic() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                topic_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string topic = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+        getTopicBytes() {
+            java.lang.Object ref = topic_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+                topic_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        public static final int CONSUMER_ID_FIELD_NUMBER = 2;
+        private long consumerId_;
+
+        /**
+         * <code>uint64 consumer_id = 2;</code>
+         */
+        public long getConsumerId() {
+            return consumerId_;
+        }
+
+        public static final int OFFSET_FIELD_NUMBER = 3;
+        private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_;
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public boolean hasOffset() {
+            return offset_ != null;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
+            return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                .getDefaultInstance() : offset_;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
+            return getOffset();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            if (!getTopicBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topic_);
+            }
+            if (consumerId_ != 0L) {
+                output.writeUInt64(2, consumerId_);
+            }
+            if (offset_ != null) {
+                output.writeMessage(3, getOffset());
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            if (!getTopicBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, topic_);
+            }
+            if (consumerId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeUInt64Size(2, consumerId_);
+            }
+            if (offset_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, getOffset());
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse other = (com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse) obj;
+
+            boolean result = true;
+            result = result && getTopic()
+                .equals(other.getTopic());
+            result = result && (getConsumerId()
+                == other.getConsumerId());
+            result = result && (hasOffset() == other.hasOffset());
+            if (hasOffset()) {
+                result = result && getOffset()
+                    .equals(other.getOffset());
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + TOPIC_FIELD_NUMBER;
+            hash = (53 * hash) + getTopic().hashCode();
+            hash = (37 * hash) + CONSUMER_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                getConsumerId());
+            if (hasOffset()) {
+                hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+                hash = (53 * hash) + getOffset().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.PullOffsetResponse}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.PullOffsetResponse)
+            com.song.heracles.net.proto.HeraclesProto.PullOffsetResponseOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.class,
+                        com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                topic_ = "";
+
+                consumerId_ = 0L;
+
+                if (offsetBuilder_ == null) {
+                    offset_ = null;
+                } else {
+                    offset_ = null;
+                    offsetBuilder_ = null;
+                }
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse
+                    .getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse build() {
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse result = new com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse(
+                    this);
+                result.topic_ = topic_;
+                result.consumerId_ = consumerId_;
+                if (offsetBuilder_ == null) {
+                    result.offset_ = offset_;
+                } else {
+                    result.offset_ = offsetBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse) {
+                    return mergeFrom(
+                        (com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                if (!other.getTopic().isEmpty()) {
+                    topic_ = other.topic_;
+                    onChanged();
+                }
+                if (other.getConsumerId() != 0L) {
+                    setConsumerId(other.getConsumerId());
+                }
+                if (other.hasOffset()) {
+                    mergeOffset(other.getOffset());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private java.lang.Object topic_ = "";
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public java.lang.String getTopic() {
+                java.lang.Object ref = topic_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    topic_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public com.google.protobuf.ByteString
+            getTopicBytes() {
+                java.lang.Object ref = topic_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+                    topic_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopic(
+                java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder clearTopic() {
+
+                topic_ = getDefaultInstance().getTopic();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string topic = 1;</code>
+             */
+            public Builder setTopicBytes(
+                com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                topic_ = value;
+                onChanged();
+                return this;
+            }
+
+            private long consumerId_;
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public long getConsumerId() {
+                return consumerId_;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public Builder setConsumerId(long value) {
+
+                consumerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint64 consumer_id = 2;</code>
+             */
+            public Builder clearConsumerId() {
+
+                consumerId_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_ = null;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> offsetBuilder_;
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public boolean hasOffset() {
+                return offsetBuilder_ != null || offset_ != null;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
+                if (offsetBuilder_ == null) {
+                    return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                        .getDefaultInstance() : offset_;
+                } else {
+                    return offsetBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder setOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (offsetBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    offset_ = value;
+                    onChanged();
+                } else {
+                    offsetBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder setOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
+                if (offsetBuilder_ == null) {
+                    offset_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    offsetBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder mergeOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (offsetBuilder_ == null) {
+                    if (offset_ != null) {
+                        offset_ =
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                                .newBuilder(offset_).mergeFrom(value).buildPartial();
+                    } else {
+                        offset_ = value;
+                    }
+                    onChanged();
+                } else {
+                    offsetBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder clearOffset() {
+                if (offsetBuilder_ == null) {
+                    offset_ = null;
+                    onChanged();
+                } else {
+                    offset_ = null;
+                    offsetBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getOffsetBuilder() {
+
+                onChanged();
+                return getOffsetFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
+                if (offsetBuilder_ != null) {
+                    return offsetBuilder_.getMessageOrBuilder();
+                } else {
+                    return offset_ == null ?
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance()
+                        : offset_;
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>
+            getOffsetFieldBuilder() {
+                if (offsetBuilder_ == null) {
+                    offsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
+                        getOffset(),
+                        getParentForChildren(),
+                        isClean());
+                    offset_ = null;
+                }
+                return offsetBuilder_;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.PullOffsetResponse)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.PullOffsetResponse)
+        private static final com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<PullOffsetResponse>
+            PARSER = new com.google.protobuf.AbstractParser<PullOffsetResponse>() {
+            public PullOffsetResponse parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new PullOffsetResponse(input, extensionRegistry);
+            }
+        };
+
+        public static com.google.protobuf.Parser<PullOffsetResponse> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<PullOffsetResponse> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.PullOffsetResponse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    private int bitField0_;
-    public static final int HEADERS_FIELD_NUMBER = 1;
-    private static final class HeadersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> headers_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetHeaders() {
-      if (headers_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
-      }
-      return headers_;
+    public interface MessageOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.song.fastmq.broker.net.Message)
+        com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
+        int getHeadersCount();
+
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
+        boolean containsHeaders(
+            java.lang.String key);
+
+        /**
+         * Use {@link #getHeadersMap()} instead.
+         */
+        @java.lang.Deprecated
+        java.util.Map<java.lang.String, java.lang.String>
+        getHeaders();
+
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
+        java.util.Map<java.lang.String, java.lang.String>
+        getHeadersMap();
+
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
+
+        java.lang.String getHeadersOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue);
+
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
+
+        java.lang.String getHeadersOrThrow(
+            java.lang.String key);
+
+        /**
+         * <code>bytes body = 2;</code>
+         */
+        com.google.protobuf.ByteString getBody();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        boolean hasOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset();
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder();
     }
 
-    public int getHeadersCount() {
-      return internalGetHeaders().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-
-    public boolean containsHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetHeaders().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
-      return getHeadersMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
-      return internalGetHeaders().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-
-    public java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 1;</code>
-     */
-
-    public java.lang.String getHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int BODY_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString body_;
-    /**
-     * <code>bytes body = 2;</code>
-     */
-    public com.google.protobuf.ByteString getBody() {
-      return body_;
-    }
-
-    public static final int OFFSET_FIELD_NUMBER = 3;
-    private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_;
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public boolean hasOffset() {
-      return offset_ != null;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
-      return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-    }
-    /**
-     * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-     */
-    public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
-      return getOffset();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetHeaders(),
-          HeadersDefaultEntryHolder.defaultEntry,
-          1);
-      if (!body_.isEmpty()) {
-        output.writeBytes(2, body_);
-      }
-      if (offset_ != null) {
-        output.writeMessage(3, getOffset());
-      }
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetHeaders().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, headers__);
-      }
-      if (!body_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, body_);
-      }
-      if (offset_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getOffset());
-      }
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.Message)) {
-        return super.equals(obj);
-      }
-      com.song.heracles.net.proto.HeraclesProto.Message other = (com.song.heracles.net.proto.HeraclesProto.Message) obj;
-
-      boolean result = true;
-      result = result && internalGetHeaders().equals(
-          other.internalGetHeaders());
-      result = result && getBody()
-          .equals(other.getBody());
-      result = result && (hasOffset() == other.hasOffset());
-      if (hasOffset()) {
-        result = result && getOffset()
-            .equals(other.getOffset());
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetHeaders().getMap().isEmpty()) {
-        hash = (37 * hash) + HEADERS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetHeaders().hashCode();
-      }
-      hash = (37 * hash) + BODY_FIELD_NUMBER;
-      hash = (53 * hash) + getBody().hashCode();
-      if (hasOffset()) {
-        hash = (37 * hash) + OFFSET_FIELD_NUMBER;
-        hash = (53 * hash) + getOffset().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.song.heracles.net.proto.HeraclesProto.Message prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.song.fastmq.broker.net.Message}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.Message)
-        com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_descriptor;
-      }
+    public static final class Message extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.song.fastmq.broker.net.Message)
+        MessageOrBuilder {
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetHeaders();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableHeaders();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.song.heracles.net.proto.HeraclesProto.Message.class, com.song.heracles.net.proto.HeraclesProto.Message.Builder.class);
-      }
-
-      // Construct using com.song.heracles.net.proto.HeraclesProto.Message.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        internalGetMutableHeaders().clear();
-        body_ = com.google.protobuf.ByteString.EMPTY;
-
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-        } else {
-          offset_ = null;
-          offsetBuilder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_descriptor;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.Message getDefaultInstanceForType() {
-        return com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance();
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.Message build() {
-        com.song.heracles.net.proto.HeraclesProto.Message result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.song.heracles.net.proto.HeraclesProto.Message buildPartial() {
-        com.song.heracles.net.proto.HeraclesProto.Message result = new com.song.heracles.net.proto.HeraclesProto.Message(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.headers_ = internalGetHeaders();
-        result.headers_.makeImmutable();
-        result.body_ = body_;
-        if (offsetBuilder_ == null) {
-          result.offset_ = offset_;
-        } else {
-          result.offset_ = offsetBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.song.heracles.net.proto.HeraclesProto.Message) {
-          return mergeFrom((com.song.heracles.net.proto.HeraclesProto.Message)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.Message other) {
-        if (other == com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance()) return this;
-        internalGetMutableHeaders().mergeFrom(
-            other.internalGetHeaders());
-        if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
-          setBody(other.getBody());
-        }
-        if (other.hasOffset()) {
-          mergeOffset(other.getOffset());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.song.heracles.net.proto.HeraclesProto.Message parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.song.heracles.net.proto.HeraclesProto.Message) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> headers_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetHeaders() {
-        if (headers_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
-        }
-        return headers_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableHeaders() {
-        onChanged();;
-        if (headers_ == null) {
-          headers_ = com.google.protobuf.MapField.newMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
-        }
-        if (!headers_.isMutable()) {
-          headers_ = headers_.copy();
-        }
-        return headers_;
-      }
-
-      public int getHeadersCount() {
-        return internalGetHeaders().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 1;</code>
-       */
-
-      public boolean containsHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetHeaders().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getHeadersMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
-        return getHeadersMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 1;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
-        return internalGetHeaders().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 1;</code>
-       */
-
-      public java.lang.String getHeadersOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 1;</code>
-       */
-
-      public java.lang.String getHeadersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearHeaders() {
-        internalGetMutableHeaders().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 1;</code>
-       */
-
-      public Builder removeHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableHeaders() {
-        return internalGetMutableHeaders().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 1;</code>
-       */
-      public Builder putHeaders(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 1;</code>
-       */
-
-      public Builder putAllHeaders(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableHeaders().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
-      private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes body = 2;</code>
-       */
-      public com.google.protobuf.ByteString getBody() {
-        return body_;
-      }
-      /**
-       * <code>bytes body = 2;</code>
-       */
-      public Builder setBody(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        body_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes body = 2;</code>
-       */
-      public Builder clearBody() {
-        
-        body_ = getDefaultInstance().getBody();
-        onChanged();
-        return this;
-      }
-
-      private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> offsetBuilder_;
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public boolean hasOffset() {
-        return offsetBuilder_ != null || offset_ != null;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
-        if (offsetBuilder_ == null) {
-          return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
-        } else {
-          return offsetBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder setOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (offsetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          offset_ = value;
-          onChanged();
-        } else {
-          offsetBuilder_.setMessage(value);
+        // Use Message.newBuilder() to construct.
+        private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder setOffset(
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
-        if (offsetBuilder_ == null) {
-          offset_ = builderForValue.build();
-          onChanged();
-        } else {
-          offsetBuilder_.setMessage(builderForValue.build());
+        private Message() {
+            body_ = com.google.protobuf.ByteString.EMPTY;
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder mergeOffset(com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
-        if (offsetBuilder_ == null) {
-          if (offset_ != null) {
-            offset_ =
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.newBuilder(offset_).mergeFrom(value).buildPartial();
-          } else {
-            offset_ = value;
-          }
-          onChanged();
-        } else {
-          offsetBuilder_.mergeFrom(value);
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public Builder clearOffset() {
-        if (offsetBuilder_ == null) {
-          offset_ = null;
-          onChanged();
-        } else {
-          offset_ = null;
-          offsetBuilder_ = null;
+        private Message(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!input.skipField(tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                                headers_ = com.google.protobuf.MapField.newMapField(
+                                    HeadersDefaultEntryHolder.defaultEntry);
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                                headers__ = input.readMessage(
+                                HeadersDefaultEntryHolder.defaultEntry.getParserForType(),
+                                extensionRegistry);
+                            headers_.getMutableMap().put(
+                                headers__.getKey(), headers__.getValue());
+                            break;
+                        }
+                        case 18: {
+
+                            body_ = input.readBytes();
+                            break;
+                        }
+                        case 26: {
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder subBuilder = null;
+                            if (offset_ != null) {
+                                subBuilder = offset_.toBuilder();
+                            }
+                            offset_ = input.readMessage(
+                                com.song.heracles.net.proto.HeraclesProto.MessageIdData.parser(),
+                                extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(offset_);
+                                offset_ = subBuilder.buildPartial();
+                            }
+
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
         }
 
-        return this;
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getOffsetBuilder() {
-        
-        onChanged();
-        return getOffsetFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
-        if (offsetBuilder_ != null) {
-          return offsetBuilder_.getMessageOrBuilder();
-        } else {
-          return offset_ == null ?
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance() : offset_;
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_descriptor;
         }
-      }
-      /**
-       * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> 
-          getOffsetFieldBuilder() {
-        if (offsetBuilder_ == null) {
-          offsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
-                  getOffset(),
-                  getParentForChildren(),
-                  isClean());
-          offset_ = null;
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+            switch (number) {
+                case 1:
+                    return internalGetHeaders();
+                default:
+                    throw new RuntimeException(
+                        "Invalid map field number: " + number);
+            }
         }
-        return offsetBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.song.heracles.net.proto.HeraclesProto.Message.class,
+                    com.song.heracles.net.proto.HeraclesProto.Message.Builder.class);
+        }
 
+        private int bitField0_;
+        public static final int HEADERS_FIELD_NUMBER = 1;
 
-      // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.Message)
-    }
+        private static final class HeadersDefaultEntryHolder {
 
-    // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.Message)
-    private static final com.song.heracles.net.proto.HeraclesProto.Message DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.Message();
-    }
+            static final com.google.protobuf.MapEntry<
+                java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                    .<java.lang.String, java.lang.String>newDefaultInstance(
+                        com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "");
+        }
 
-    public static com.song.heracles.net.proto.HeraclesProto.Message getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> headers_;
 
-    private static final com.google.protobuf.Parser<Message>
-        PARSER = new com.google.protobuf.AbstractParser<Message>() {
-      public Message parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Message(input, extensionRegistry);
-      }
-    };
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetHeaders() {
+            if (headers_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                    HeadersDefaultEntryHolder.defaultEntry);
+            }
+            return headers_;
+        }
 
-    public static com.google.protobuf.Parser<Message> parser() {
-      return PARSER;
-    }
+        public int getHeadersCount() {
+            return internalGetHeaders().getMap().size();
+        }
 
-    @java.lang.Override
-    public com.google.protobuf.Parser<Message> getParserForType() {
-      return PARSER;
-    }
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
 
-    public com.song.heracles.net.proto.HeraclesProto.Message getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
+        public boolean containsHeaders(
+            java.lang.String key) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            return internalGetHeaders().getMap().containsKey(key);
+        }
 
-  }
+        /**
+         * Use {@link #getHeadersMap()} instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
+            return getHeadersMap();
+        }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_Message_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_fieldAccessorTable;
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\021heraclesApi.proto\022\032com.song.fastmq.bro" +
-      "ker.net\"N\n\rMessageIdData\022\034\n\024logSegmentSe" +
-      "quenceNo\030\001 \001(\004\022\017\n\007entryId\030\002 \001(\004\022\016\n\006slotI" +
-      "d\030\003 \001(\004\"R\n\026ProducerConnectRequest\022\r\n\005top" +
-      "ic\030\001 \001(\t\022\022\n\nproducerId\030\002 \001(\004\022\025\n\rproducer" +
-      "_name\030\003 \001(\t\">\n\020ProducerResponse\022\025\n\rprodu" +
-      "cer_name\030\001 \001(\t\022\023\n\013producer_id\030\002 \001(\004\"t\n\022S" +
-      "endMessageRequest\022\023\n\013producer_id\030\001 \001(\004\022\023" +
-      "\n\013sequence_id\030\002 \001(\004\0224\n\007message\030\003 \001(\0132#.c" +
-      "om.song.fastmq.broker.net.Message\"~\n\023Sen",
-      "dMessageResponse\022\023\n\013producer_id\030\001 \001(\004\022\023\n" +
-      "\013sequence_id\030\002 \001(\004\022=\n\nmessage_id\030\003 \001(\0132)" +
-      ".com.song.fastmq.broker.net.MessageIdDat" +
-      "a\"S\n\026ConsumerConnectRequest\022\r\n\005topic\030\001 \001" +
-      "(\t\022\023\n\013consumer_id\030\002 \001(\004\022\025\n\rconsumer_name" +
-      "\030\003 \001(\t\"E\n\027ConsumerConnectResponse\022\023\n\013con" +
-      "sumer_id\030\001 \001(\004\022\025\n\rconsumer_name\030\002 \001(\t\"\201\001" +
-      "\n\032ConsumerPullMessageRequest\022\023\n\013consumer" +
-      "_id\030\001 \001(\004\022\023\n\013max_message\030\002 \001(\r\0229\n\006offset" +
-      "\030\003 \001(\0132).com.song.fastmq.broker.net.Mess",
-      "ageIdData\"\254\001\n\033ConsumerPullMessageRespons" +
-      "e\022\023\n\013consumer_id\030\001 \001(\004\0225\n\010messages\030\002 \003(\013" +
-      "2#.com.song.fastmq.broker.net.Message\022A\n" +
-      "\016nextPullOffset\030\003 \001(\0132).com.song.fastmq." +
-      "broker.net.MessageIdData\"N\n\021PullOffsetRe" +
-      "quest\022\r\n\005topic\030\001 \001(\t\022\023\n\013consumer_id\030\002 \001(" +
-      "\004\022\025\n\rconsumer_name\030\003 \001(\t\"s\n\022PullOffsetRe" +
-      "sponse\022\r\n\005topic\030\001 \001(\t\022\023\n\013consumer_id\030\002 \001" +
-      "(\004\0229\n\006offset\030\003 \001(\0132).com.song.fastmq.bro" +
-      "ker.net.MessageIdData\"\305\001\n\007Message\022A\n\007hea",
-      "ders\030\001 \003(\01320.com.song.fastmq.broker.net." +
-      "Message.HeadersEntry\022\014\n\004body\030\002 \001(\014\0229\n\006of" +
-      "fset\030\003 \001(\0132).com.song.fastmq.broker.net." +
-      "MessageIdData\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\215\005\n\013HeraclesApi\022{\n" +
-      "\025handleProducerConnect\0222.com.song.fastmq" +
-      ".broker.net.ProducerConnectRequest\032,.com" +
-      ".song.fastmq.broker.net.ProducerResponse" +
-      "\"\000\022v\n\021handleSendMessage\022..com.song.fastm" +
-      "q.broker.net.SendMessageRequest\032/.com.so",
-      "ng.fastmq.broker.net.SendMessageResponse" +
-      "\"\000\022\202\001\n\025handleConsumerConnect\0222.com.song." +
-      "fastmq.broker.net.ConsumerConnectRequest" +
-      "\0323.com.song.fastmq.broker.net.ConsumerCo" +
-      "nnectResponse\"\000\022\216\001\n\031handleConsumerPullMe" +
-      "ssage\0226.com.song.fastmq.broker.net.Consu" +
-      "merPullMessageRequest\0327.com.song.fastmq." +
-      "broker.net.ConsumerPullMessageResponse\"\000" +
-      "\022s\n\020handlePullOffset\022-.com.song.fastmq.b" +
-      "roker.net.PullOffsetRequest\032..com.song.f",
-      "astmq.broker.net.PullOffsetResponse\"\000B,\n" +
-      "\033com.song.heracles.net.protoB\rHeraclesPr" +
-      "otob\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
+        public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
+            return internalGetHeaders().getMap();
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
+
+        public java.lang.String getHeadersOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            java.util.Map<java.lang.String, java.lang.String> map =
+                internalGetHeaders().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+
+        /**
+         * <code>map&lt;string, string&gt; headers = 1;</code>
+         */
+
+        public java.lang.String getHeadersOrThrow(
+            java.lang.String key) {
+            if (key == null) {
+                throw new java.lang.NullPointerException();
+            }
+            java.util.Map<java.lang.String, java.lang.String> map =
+                internalGetHeaders().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
+        }
+
+        public static final int BODY_FIELD_NUMBER = 2;
+        private com.google.protobuf.ByteString body_;
+
+        /**
+         * <code>bytes body = 2;</code>
+         */
+        public com.google.protobuf.ByteString getBody() {
+            return body_;
+        }
+
+        public static final int OFFSET_FIELD_NUMBER = 3;
+        private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_;
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public boolean hasOffset() {
+            return offset_ != null;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
+            return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                .getDefaultInstance() : offset_;
+        }
+
+        /**
+         * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+         */
+        public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
+            return getOffset();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) {
+                return true;
+            }
+            if (isInitialized == 0) {
+                return false;
+            }
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+            com.google.protobuf.GeneratedMessageV3
+                .serializeStringMapTo(
+                    output,
+                    internalGetHeaders(),
+                    HeadersDefaultEntryHolder.defaultEntry,
+                    1);
+            if (!body_.isEmpty()) {
+                output.writeBytes(2, body_);
+            }
+            if (offset_ != null) {
+                output.writeMessage(3, getOffset());
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) {
+                return size;
+            }
+
+            size = 0;
+            for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+                : internalGetHeaders().getMap().entrySet()) {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(1, headers__);
+            }
+            if (!body_.isEmpty()) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeBytesSize(2, body_);
+            }
+            if (offset_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, getOffset());
+            }
+            memoizedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.song.heracles.net.proto.HeraclesProto.Message)) {
+                return super.equals(obj);
+            }
+            com.song.heracles.net.proto.HeraclesProto.Message other = (com.song.heracles.net.proto.HeraclesProto.Message) obj;
+
+            boolean result = true;
+            result = result && internalGetHeaders().equals(
+                other.internalGetHeaders());
+            result = result && getBody()
+                .equals(other.getBody());
+            result = result && (hasOffset() == other.hasOffset());
+            if (hasOffset()) {
+                result = result && getOffset()
+                    .equals(other.getOffset());
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (!internalGetHeaders().getMap().isEmpty()) {
+                hash = (37 * hash) + HEADERS_FIELD_NUMBER;
+                hash = (53 * hash) + internalGetHeaders().hashCode();
+            }
+            hash = (37 * hash) + BODY_FIELD_NUMBER;
+            hash = (53 * hash) + getBody().hashCode();
+            if (hasOffset()) {
+                hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+                hash = (53 * hash) + getOffset().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseDelimitedFrom(
+            java.io.InputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.song.heracles.net.proto.HeraclesProto.Message prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.song.fastmq.broker.net.Message}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.song.fastmq.broker.net.Message)
+            com.song.heracles.net.proto.HeraclesProto.MessageOrBuilder {
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_descriptor;
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMapField(
+                int number) {
+                switch (number) {
+                    case 1:
+                        return internalGetHeaders();
+                    default:
+                        throw new RuntimeException(
+                            "Invalid map field number: " + number);
+                }
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMutableMapField(
+                int number) {
+                switch (number) {
+                    case 1:
+                        return internalGetMutableHeaders();
+                    default:
+                        throw new RuntimeException(
+                            "Invalid map field number: " + number);
+                }
+            }
+
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.song.heracles.net.proto.HeraclesProto.Message.class,
+                        com.song.heracles.net.proto.HeraclesProto.Message.Builder.class);
+            }
+
+            // Construct using com.song.heracles.net.proto.HeraclesProto.Message.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+                }
+            }
+
+            public Builder clear() {
+                super.clear();
+                internalGetMutableHeaders().clear();
+                body_ = com.google.protobuf.ByteString.EMPTY;
+
+                if (offsetBuilder_ == null) {
+                    offset_ = null;
+                } else {
+                    offset_ = null;
+                    offsetBuilder_ = null;
+                }
+                return this;
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.song.heracles.net.proto.HeraclesProto.internal_static_com_song_fastmq_broker_net_Message_descriptor;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.Message getDefaultInstanceForType() {
+                return com.song.heracles.net.proto.HeraclesProto.Message.getDefaultInstance();
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.Message build() {
+                com.song.heracles.net.proto.HeraclesProto.Message result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.song.heracles.net.proto.HeraclesProto.Message buildPartial() {
+                com.song.heracles.net.proto.HeraclesProto.Message result = new com.song.heracles.net.proto.HeraclesProto.Message(
+                    this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                result.headers_ = internalGetHeaders();
+                result.headers_.makeImmutable();
+                result.body_ = body_;
+                if (offsetBuilder_ == null) {
+                    result.offset_ = offset_;
+                } else {
+                    result.offset_ = offsetBuilder_.build();
+                }
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder clone() {
+                return (Builder) super.clone();
+            }
+
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.setField(field, value);
+            }
+
+            public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return (Builder) super.clearField(field);
+            }
+
+            public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return (Builder) super.clearOneof(oneof);
+            }
+
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, Object value) {
+                return (Builder) super.setRepeatedField(field, index, value);
+            }
+
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                Object value) {
+                return (Builder) super.addRepeatedField(field, value);
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.song.heracles.net.proto.HeraclesProto.Message) {
+                    return mergeFrom((com.song.heracles.net.proto.HeraclesProto.Message) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.song.heracles.net.proto.HeraclesProto.Message other) {
+                if (other == com.song.heracles.net.proto.HeraclesProto.Message
+                    .getDefaultInstance()) {
+                    return this;
+                }
+                internalGetMutableHeaders().mergeFrom(
+                    other.internalGetHeaders());
+                if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
+                    setBody(other.getBody());
+                }
+                if (other.hasOffset()) {
+                    mergeOffset(other.getOffset());
+                }
+                onChanged();
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+                com.song.heracles.net.proto.HeraclesProto.Message parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.song.heracles.net.proto.HeraclesProto.Message) e
+                        .getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private com.google.protobuf.MapField<
+                java.lang.String, java.lang.String> headers_;
+
+            private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+            internalGetHeaders() {
+                if (headers_ == null) {
+                    return com.google.protobuf.MapField.emptyMapField(
+                        HeadersDefaultEntryHolder.defaultEntry);
+                }
+                return headers_;
+            }
+
+            private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+            internalGetMutableHeaders() {
+                onChanged();
+                ;
+                if (headers_ == null) {
+                    headers_ = com.google.protobuf.MapField.newMapField(
+                        HeadersDefaultEntryHolder.defaultEntry);
+                }
+                if (!headers_.isMutable()) {
+                    headers_ = headers_.copy();
+                }
+                return headers_;
+            }
+
+            public int getHeadersCount() {
+                return internalGetHeaders().getMap().size();
+            }
+
+            /**
+             * <code>map&lt;string, string&gt; headers = 1;</code>
+             */
+
+            public boolean containsHeaders(
+                java.lang.String key) {
+                if (key == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                return internalGetHeaders().getMap().containsKey(key);
+            }
+
+            /**
+             * Use {@link #getHeadersMap()} instead.
+             */
+            @java.lang.Deprecated
+            public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
+                return getHeadersMap();
+            }
+
+            /**
+             * <code>map&lt;string, string&gt; headers = 1;</code>
+             */
+
+            public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
+                return internalGetHeaders().getMap();
+            }
+
+            /**
+             * <code>map&lt;string, string&gt; headers = 1;</code>
+             */
+
+            public java.lang.String getHeadersOrDefault(
+                java.lang.String key,
+                java.lang.String defaultValue) {
+                if (key == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                java.util.Map<java.lang.String, java.lang.String> map =
+                    internalGetHeaders().getMap();
+                return map.containsKey(key) ? map.get(key) : defaultValue;
+            }
+
+            /**
+             * <code>map&lt;string, string&gt; headers = 1;</code>
+             */
+
+            public java.lang.String getHeadersOrThrow(
+                java.lang.String key) {
+                if (key == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                java.util.Map<java.lang.String, java.lang.String> map =
+                    internalGetHeaders().getMap();
+                if (!map.containsKey(key)) {
+                    throw new java.lang.IllegalArgumentException();
+                }
+                return map.get(key);
+            }
+
+            public Builder clearHeaders() {
+                internalGetMutableHeaders().getMutableMap()
+                    .clear();
+                return this;
+            }
+
+            /**
+             * <code>map&lt;string, string&gt; headers = 1;</code>
+             */
+
+            public Builder removeHeaders(
+                java.lang.String key) {
+                if (key == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                internalGetMutableHeaders().getMutableMap()
+                    .remove(key);
+                return this;
+            }
+
+            /**
+             * Use alternate mutation accessors instead.
+             */
+            @java.lang.Deprecated
+            public java.util.Map<java.lang.String, java.lang.String>
+            getMutableHeaders() {
+                return internalGetMutableHeaders().getMutableMap();
+            }
+
+            /**
+             * <code>map&lt;string, string&gt; headers = 1;</code>
+             */
+            public Builder putHeaders(
+                java.lang.String key,
+                java.lang.String value) {
+                if (key == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                if (value == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                internalGetMutableHeaders().getMutableMap()
+                    .put(key, value);
+                return this;
+            }
+
+            /**
+             * <code>map&lt;string, string&gt; headers = 1;</code>
+             */
+
+            public Builder putAllHeaders(
+                java.util.Map<java.lang.String, java.lang.String> values) {
+                internalGetMutableHeaders().getMutableMap()
+                    .putAll(values);
+                return this;
+            }
+
+            private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
+
+            /**
+             * <code>bytes body = 2;</code>
+             */
+            public com.google.protobuf.ByteString getBody() {
+                return body_;
+            }
+
+            /**
+             * <code>bytes body = 2;</code>
+             */
+            public Builder setBody(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                body_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>bytes body = 2;</code>
+             */
+            public Builder clearBody() {
+
+                body_ = getDefaultInstance().getBody();
+                onChanged();
+                return this;
+            }
+
+            private com.song.heracles.net.proto.HeraclesProto.MessageIdData offset_ = null;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder> offsetBuilder_;
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public boolean hasOffset() {
+                return offsetBuilder_ != null || offset_ != null;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData getOffset() {
+                if (offsetBuilder_ == null) {
+                    return offset_ == null ? com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                        .getDefaultInstance() : offset_;
+                } else {
+                    return offsetBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder setOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (offsetBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    offset_ = value;
+                    onChanged();
+                } else {
+                    offsetBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder setOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder builderForValue) {
+                if (offsetBuilder_ == null) {
+                    offset_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    offsetBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder mergeOffset(
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData value) {
+                if (offsetBuilder_ == null) {
+                    if (offset_ != null) {
+                        offset_ =
+                            com.song.heracles.net.proto.HeraclesProto.MessageIdData
+                                .newBuilder(offset_).mergeFrom(value).buildPartial();
+                    } else {
+                        offset_ = value;
+                    }
+                    onChanged();
+                } else {
+                    offsetBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public Builder clearOffset() {
+                if (offsetBuilder_ == null) {
+                    offset_ = null;
+                    onChanged();
+                } else {
+                    offset_ = null;
+                    offsetBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder getOffsetBuilder() {
+
+                onChanged();
+                return getOffsetFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            public com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder getOffsetOrBuilder() {
+                if (offsetBuilder_ != null) {
+                    return offsetBuilder_.getMessageOrBuilder();
+                } else {
+                    return offset_ == null ?
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData.getDefaultInstance()
+                        : offset_;
+                }
+            }
+
+            /**
+             * <code>.com.song.fastmq.broker.net.MessageIdData offset = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>
+            getOffsetFieldBuilder() {
+                if (offsetBuilder_ == null) {
+                    offsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.song.heracles.net.proto.HeraclesProto.MessageIdData, com.song.heracles.net.proto.HeraclesProto.MessageIdData.Builder, com.song.heracles.net.proto.HeraclesProto.MessageIdDataOrBuilder>(
+                        getOffset(),
+                        getParentForChildren(),
+                        isClean());
+                    offset_ = null;
+                }
+                return offsetBuilder_;
+            }
+
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.song.fastmq.broker.net.Message)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.song.fastmq.broker.net.Message)
+        private static final com.song.heracles.net.proto.HeraclesProto.Message DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new com.song.heracles.net.proto.HeraclesProto.Message();
+        }
+
+        public static com.song.heracles.net.proto.HeraclesProto.Message getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Message>
+            PARSER = new com.google.protobuf.AbstractParser<Message>() {
+            public Message parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Message(input, extensionRegistry);
+            }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor,
-        new java.lang.String[] { "LogSegmentSequenceNo", "EntryId", "SlotId", });
-    internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor,
-        new java.lang.String[] { "Topic", "ProducerId", "ProducerName", });
-    internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor,
-        new java.lang.String[] { "ProducerName", "ProducerId", });
-    internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor,
-        new java.lang.String[] { "ProducerId", "SequenceId", "Message", });
-    internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor,
-        new java.lang.String[] { "ProducerId", "SequenceId", "MessageId", });
-    internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor,
-        new java.lang.String[] { "Topic", "ConsumerId", "ConsumerName", });
-    internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor,
-        new java.lang.String[] { "ConsumerId", "ConsumerName", });
-    internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor,
-        new java.lang.String[] { "ConsumerId", "MaxMessage", "Offset", });
-    internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor,
-        new java.lang.String[] { "ConsumerId", "Messages", "NextPullOffset", });
-    internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor,
-        new java.lang.String[] { "Topic", "ConsumerId", "ConsumerName", });
-    internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor,
-        new java.lang.String[] { "Topic", "ConsumerId", "Offset", });
-    internal_static_com_song_fastmq_broker_net_Message_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_Message_descriptor,
-        new java.lang.String[] { "Headers", "Body", "Offset", });
-    internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor =
-      internal_static_com_song_fastmq_broker_net_Message_descriptor.getNestedTypes().get(0);
-    internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-  }
 
-  // @@protoc_insertion_point(outer_class_scope)
+        public static com.google.protobuf.Parser<Message> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Message> getParserForType() {
+            return PARSER;
+        }
+
+        public com.song.heracles.net.proto.HeraclesProto.Message getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+    }
+
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_Message_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+        internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor;
+    private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor
+        descriptor;
+
+    static {
+        java.lang.String[] descriptorData = {
+            "\n\021heraclesApi.proto\022\032com.song.fastmq.bro" +
+                "ker.net\"N\n\rMessageIdData\022\034\n\024logSegmentSe" +
+                "quenceNo\030\001 \001(\004\022\017\n\007entryId\030\002 \001(\004\022\016\n\006slotI"
+                +
+                "d\030\003 \001(\004\"R\n\026ProducerConnectRequest\022\r\n\005top" +
+                "ic\030\001 \001(\t\022\022\n\nproducerId\030\002 \001(\004\022\025\n\rproducer" +
+                "_name\030\003 \001(\t\">\n\020ProducerResponse\022\025\n\rprodu" +
+                "cer_name\030\001 \001(\t\022\023\n\013producer_id\030\002 \001(\004\"t\n\022S" +
+                "endMessageRequest\022\023\n\013producer_id\030\001 \001(\004\022\023" +
+                "\n\013sequence_id\030\002 \001(\004\0224\n\007message\030\003 \001(\0132#.c" +
+                "om.song.fastmq.broker.net.Message\"~\n\023Sen",
+            "dMessageResponse\022\023\n\013producer_id\030\001 \001(\004\022\023\n" +
+                "\013sequence_id\030\002 \001(\004\022=\n\nmessage_id\030\003 \001(\0132)" +
+                ".com.song.fastmq.broker.net.MessageIdDat" +
+                "a\"S\n\026ConsumerConnectRequest\022\r\n\005topic\030\001 \001" +
+                "(\t\022\023\n\013consumer_id\030\002 \001(\004\022\025\n\rconsumer_name" +
+                "\030\003 \001(\t\"E\n\027ConsumerConnectResponse\022\023\n\013con" +
+                "sumer_id\030\001 \001(\004\022\025\n\rconsumer_name\030\002 \001(\t\"\201\001" +
+                "\n\032ConsumerPullMessageRequest\022\023\n\013consumer" +
+                "_id\030\001 \001(\004\022\023\n\013max_message\030\002 \001(\r\0229\n\006offset" +
+                "\030\003 \001(\0132).com.song.fastmq.broker.net.Mess",
+            "ageIdData\"\254\001\n\033ConsumerPullMessageRespons" +
+                "e\022\023\n\013consumer_id\030\001 \001(\004\0225\n\010messages\030\002 \003(\013"
+                +
+                "2#.com.song.fastmq.broker.net.Message\022A\n" +
+                "\016nextPullOffset\030\003 \001(\0132).com.song.fastmq." +
+                "broker.net.MessageIdData\"N\n\021PullOffsetRe" +
+                "quest\022\r\n\005topic\030\001 \001(\t\022\023\n\013consumer_id\030\002 \001(" +
+                "\004\022\025\n\rconsumer_name\030\003 \001(\t\"s\n\022PullOffsetRe" +
+                "sponse\022\r\n\005topic\030\001 \001(\t\022\023\n\013consumer_id\030\002 \001" +
+                "(\004\0229\n\006offset\030\003 \001(\0132).com.song.fastmq.bro" +
+                "ker.net.MessageIdData\"\305\001\n\007Message\022A\n\007hea",
+            "ders\030\001 \003(\01320.com.song.fastmq.broker.net." +
+                "Message.HeadersEntry\022\014\n\004body\030\002 \001(\014\0229\n\006of" +
+                "fset\030\003 \001(\0132).com.song.fastmq.broker.net." +
+                "MessageIdData\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001" +
+                "(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\215\005\n\013HeraclesApi\022{\n" +
+                "\025handleProducerConnect\0222.com.song.fastmq" +
+                ".broker.net.ProducerConnectRequest\032,.com" +
+                ".song.fastmq.broker.net.ProducerResponse" +
+                "\"\000\022v\n\021handleSendMessage\022..com.song.fastm" +
+                "q.broker.net.SendMessageRequest\032/.com.so",
+            "ng.fastmq.broker.net.SendMessageResponse" +
+                "\"\000\022\202\001\n\025handleConsumerConnect\0222.com.song." +
+                "fastmq.broker.net.ConsumerConnectRequest" +
+                "\0323.com.song.fastmq.broker.net.ConsumerCo" +
+                "nnectResponse\"\000\022\216\001\n\031handleConsumerPullMe" +
+                "ssage\0226.com.song.fastmq.broker.net.Consu" +
+                "merPullMessageRequest\0327.com.song.fastmq." +
+                "broker.net.ConsumerPullMessageResponse\"\000" +
+                "\022s\n\020handlePullOffset\022-.com.song.fastmq.b" +
+                "roker.net.PullOffsetRequest\032..com.song.f",
+            "astmq.broker.net.PullOffsetResponse\"\000B,\n" +
+                "\033com.song.heracles.net.protoB\rHeraclesPr" +
+                "otob\006proto3"
+        };
+        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+            new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+                public com.google.protobuf.ExtensionRegistry assignDescriptors(
+                    com.google.protobuf.Descriptors.FileDescriptor root) {
+                    descriptor = root;
+                    return null;
+                }
+            };
+        com.google.protobuf.Descriptors.FileDescriptor
+            .internalBuildGeneratedFileFrom(descriptorData,
+                new com.google.protobuf.Descriptors.FileDescriptor[]{
+                }, assigner);
+        internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor =
+            getDescriptor().getMessageTypes().get(0);
+        internal_static_com_song_fastmq_broker_net_MessageIdData_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_MessageIdData_descriptor,
+            new java.lang.String[]{"LogSegmentSequenceNo", "EntryId", "SlotId",});
+        internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+        internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_ProducerConnectRequest_descriptor,
+            new java.lang.String[]{"Topic", "ProducerId", "ProducerName",});
+        internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+        internal_static_com_song_fastmq_broker_net_ProducerResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_ProducerResponse_descriptor,
+            new java.lang.String[]{"ProducerName", "ProducerId",});
+        internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+        internal_static_com_song_fastmq_broker_net_SendMessageRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_SendMessageRequest_descriptor,
+            new java.lang.String[]{"ProducerId", "SequenceId", "Message",});
+        internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+        internal_static_com_song_fastmq_broker_net_SendMessageResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_SendMessageResponse_descriptor,
+            new java.lang.String[]{"ProducerId", "SequenceId", "MessageId",});
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_ConsumerConnectRequest_descriptor,
+            new java.lang.String[]{"Topic", "ConsumerId", "ConsumerName",});
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor =
+            getDescriptor().getMessageTypes().get(6);
+        internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_ConsumerConnectResponse_descriptor,
+            new java.lang.String[]{"ConsumerId", "ConsumerName",});
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor =
+            getDescriptor().getMessageTypes().get(7);
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_ConsumerPullMessageRequest_descriptor,
+            new java.lang.String[]{"ConsumerId", "MaxMessage", "Offset",});
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor =
+            getDescriptor().getMessageTypes().get(8);
+        internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_ConsumerPullMessageResponse_descriptor,
+            new java.lang.String[]{"ConsumerId", "Messages", "NextPullOffset",});
+        internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor =
+            getDescriptor().getMessageTypes().get(9);
+        internal_static_com_song_fastmq_broker_net_PullOffsetRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_PullOffsetRequest_descriptor,
+            new java.lang.String[]{"Topic", "ConsumerId", "ConsumerName",});
+        internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor =
+            getDescriptor().getMessageTypes().get(10);
+        internal_static_com_song_fastmq_broker_net_PullOffsetResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_PullOffsetResponse_descriptor,
+            new java.lang.String[]{"Topic", "ConsumerId", "Offset",});
+        internal_static_com_song_fastmq_broker_net_Message_descriptor =
+            getDescriptor().getMessageTypes().get(11);
+        internal_static_com_song_fastmq_broker_net_Message_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_Message_descriptor,
+            new java.lang.String[]{"Headers", "Body", "Offset",});
+        internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor =
+            internal_static_com_song_fastmq_broker_net_Message_descriptor.getNestedTypes().get(0);
+        internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_song_fastmq_broker_net_Message_HeadersEntry_descriptor,
+            new java.lang.String[]{"Key", "Value",});
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }
