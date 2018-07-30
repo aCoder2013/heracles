@@ -6,3 +6,4 @@ zookeeperConnectionTimeout: 15000
 brokerPort: 7160
 bindAddress: 0.0.0.0
 distributedLogUri: distributedlog://127.0.0.1:7000/messaging/my_namespace
+bkZkServers: 127.0.0.1:7000

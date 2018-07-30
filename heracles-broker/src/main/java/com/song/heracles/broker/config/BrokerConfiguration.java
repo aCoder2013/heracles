@@ -39,4 +39,7 @@ public class BrokerConfiguration {
 
     @Required
     private String distributedLogUri;
+
+    @Required
+    private String bkZkServers;
 }
