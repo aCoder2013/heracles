@@ -17,7 +17,7 @@ public class CreateTopicCommand extends AbstractCommand {
         this.options.addOption("d", "distributed-log-uri", true, "distributed-log uri");
         this.options.addOption("t", "topic", true, "topic name");
         this.options
-            .addOption("p", "partitions", true, "topic partition number,such as 20,default is 16.");
+            .addOption("p", "partitions", true, "topic partition number,default is 16.");
     }
 
     @Override
