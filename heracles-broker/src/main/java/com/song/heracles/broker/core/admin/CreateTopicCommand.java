@@ -3,7 +3,6 @@ package com.song.heracles.broker.core.admin;
 import com.song.heracles.common.util.TopicUtils;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Options;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.distributedlog.tools.Tool;
 
 /**
@@ -43,10 +42,9 @@ public class CreateTopicCommand extends AbstractCommand {
             return -1;
         }
         String topic = cmdline.getOptionValue("t");
-        if (StringUtils.isBlank(topic)) {
-            System.err.println("Topic name can't be null or empty.");
-            return -1;
-        }
+
+        TopicUtils.validate(topic);
+
         if (TopicUtils.hasCollisionChars(topic)) {
             System.err.println(
                 "WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.");

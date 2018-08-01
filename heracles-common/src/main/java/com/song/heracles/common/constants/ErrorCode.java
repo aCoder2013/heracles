@@ -10,6 +10,7 @@ public enum ErrorCode {
     OWNER_ALREADY_EXIST(1003, "Owner already exist"),
     ILLEGAL_STATE(1004, "Illegal state"),
     RESOURCE_NOT_READY(1004, "Resource is not ready yet"),
+    INVALID_TOPIC(1005, "Invalid topic"),
     UNKNOWN_ERROR(9999, "unknown error"),;
 
     private int code;

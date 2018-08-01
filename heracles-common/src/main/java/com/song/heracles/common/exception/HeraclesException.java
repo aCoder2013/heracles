@@ -5,7 +5,7 @@ import com.song.heracles.common.constants.ErrorCode;
 /**
  * @author song
  */
-public class HeraclesException extends Exception {
+public class HeraclesException extends RuntimeException {
 
     private int code;
 
