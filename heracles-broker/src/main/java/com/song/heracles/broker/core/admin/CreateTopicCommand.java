@@ -1,9 +1,12 @@
 package com.song.heracles.broker.core.admin;
 
+import com.song.heracles.broker.core.zk.AdminZkClient;
 import com.song.heracles.common.util.TopicUtils;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Options;
-import org.apache.distributedlog.tools.Tool;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.retry.ExponentialBackoffRetry;
 
 /**
  * Command that's used to create heracles topic
@@ -15,8 +18,9 @@ public class CreateTopicCommand extends AbstractCommand {
     public CreateTopicCommand() {
         this.options.addOption("d", "distributed-log-uri", true, "distributed-log uri");
         this.options.addOption("t", "topic", true, "topic name");
-        this.options
-            .addOption("p", "partitions", true, "topic partition number,default is 16.");
+        this.options.addOption("p", "partitions", true, "topic partition number,default is 16.");
+        this.options.addOption("z", "heraclesZkServers", true,
+            "list of zk servers that heracles uses,comma separated host:port pairs, each corresponding to a zk server");
     }
 
     @Override
@@ -41,6 +45,12 @@ public class CreateTopicCommand extends AbstractCommand {
             System.err.println("No topic name!");
             return -1;
         }
+        if (!cmdline.hasOption("z")) {
+            System.err.println("No zkServers!");
+            return -1;
+        }
+        String zkServers = cmdline.getOptionValue("z");
+
         String topic = cmdline.getOptionValue("t");
 
         TopicUtils.validate(topic);
@@ -49,10 +59,17 @@ public class CreateTopicCommand extends AbstractCommand {
             System.err.println(
                 "WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.");
         }
-        String dlogUri = cmdline.getOptionValue("d");
+
         int partitions = Integer.parseInt(cmdline.getOptionValue("p", "16"));
-        Tool.main(new String[]{"org.apache.distributedlog.tools.DistributedLogTool", "create", "-u",
+
+        CuratorFramework curatorFramework = CuratorFrameworkFactory
+            .newClient(zkServers, 6000, 6000, new ExponentialBackoffRetry(1000, 3, 5000));
+        curatorFramework.start();
+        AdminZkClient adminZkClient = new AdminZkClient(curatorFramework);
+        adminZkClient.createTopicPartitionsConfigInZK(topic, partitions);
+        System.out.println("Write topic metadata to zookeeper.");
+        String dlogUri = cmdline.getOptionValue("d");
+        return DlogTool.process(new String[]{"org.apache.distributedlog.tools.DistributedLogTool", "create", "-u",
             dlogUri, "-f", "true", "-r", topic, "-e", "1-" + partitions});
-        return 0;
     }
 }
